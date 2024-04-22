@@ -1,0 +1,7 @@
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Adjust as needed */
+    /* Add any other styles you need for the sticky header */
+  }
