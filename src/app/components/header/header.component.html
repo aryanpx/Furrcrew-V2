@@ -1,22 +1,16 @@
 <header
   id="myHeader"
-  [class.sticky]="sticky"
-  class="flex justify-center items-center w-full px-24 py-8 text-xl border-b border-gray-200 bg-white bg-opacity-80 font-semibold text-zinc-800 backdrop-blur-[10px] max-md:px-5"
+  class="max-sm:w-full {{
+    this.sticky ? 'sticky' : 'none'
+  }} flex justify-center items-center w-full px-24 py-8 text-xl border-b border-gray-200 bg-white bg-opacity-80 font-semibold text-zinc-800 backdrop-blur-[10px] max-md:px-5"
 >
-  <nav
-    class="flex gap-5 justify-between w-full max-w-[1700px] items-center max-md:flex-wrap"
-  >
+  <nav class="flex gap-5 justify-between w-full max-w-[1700px] items-center max-md:flex-wrap">
     <h1 class="flex text-primary text-3xl font-bold font-['Arial_Black']">
-      <img
-        loading="lazy"
-        src="assets/logo/furrcrew.svg"
-        alt="FurrCrew Logo"
-        class="max-w-full"
-      />
+      <img loading="lazy" src="assets/logo/furrcrew.svg" alt="FurrCrew Logo" class="max-w-full" />
     </h1>
     <div class="flex gap-5 items-center">
       <button
-        class="px-6 py-2 bg-gray-200 rounded-[30px] text-zinc-800 focus:outline-none focus:ring-2 focus:ring-zinc-300 focus:ring-offset-2 max-md:px-5"
+        class="max-sm:hidden px-6 py-2 bg-gray-200 rounded-[30px] text-zinc-800 focus:outline-none focus:ring-2 focus:ring-zinc-300 focus:ring-offset-2 max-md:px-5"
         tabindex="0"
       >
         Get App!
@@ -25,24 +19,13 @@
     </div>
   </nav>
 </header>
-<hr />
-<section class="flex flex-col items-center font-sfpro bg-white">
-  <h1
-    class="mt-32 mb-5 text-8xl font-bold text-center text-zinc-800 max-md:mt-10 max-md:max-w-full max-md:text-4xl"
-  >
+<section class="flex flex-col items-center bg-white">
+  <h1 class="max-sm:text-7xl mt-32 mb-5 text-8xl font-bold text-center text-zinc-800 max-md:mt-10 max-md:max-w-full max-md:text-7xl">
     for every being
   </h1>
-  <p
-    class="text-5xl text-center font-bold text-zinc-800 max-md:max-w-full max-md:text-4xl"
-  >
-    — human and animal alike.
-  </p>
-  <p
-    class="mt-6 mb-20 text-3xl w-[1050px] text-center text-zinc-800 max-md:max-w-full"
-  >
-    We're here for the everyday experiences, stories, and the simple <br />
-    beauty of shared moments. Together, we learn and evolve on this <br />
-    journey towards better. In coexistence, possibilities are
-    <br />boundless, driving our collective growth.
+  <p class="max-sm:text-3xl text-5xl text-center font-bold text-zinc-800 max-md:max-w-full max-md:text-4xl">— human and animal alike.</p>
+  <p class="max-sm:text-2xl max-sm: mt-6 mb-20 text-3xl w-[1050px] text-center text-zinc-800 max-md:max-w-full">
+    We're here for the everyday experiences, stories, and the simple beauty of shared moments. Together, we learn and evolve on this journey
+    towards better. In coexistence, possibilities are boundless, driving our collective growth.
   </p>
 </section>

@@ -1,0 +1,41 @@
+@media (max-width: 768px) {
+  .max-md:mt-10 {
+    margin-top: 2.5rem;
+  }
+
+  .max-md:max-w-full {
+    width: 100%;
+  }
+
+  .max-md:text-4xl {
+    font-size: 1.25rem;
+  }
+  h1 {
+    font-size: 2rem; /* Adjusting font size for responsiveness */
+  }
+}
+/* ::ng-deep .flex::-webkit-scrollbar { */
+/* display: none; */
+/* } */
+
+ul::-webkit-scrollbar-thumb {
+  display: none;
+  background-color: #ededf6;
+  border: 4px solid transparent;
+  border-radius: 8px;
+  background-clip: padding-box;
+}
+
+ul::-webkit-scrollbar {
+  width: 16px;
+}
+
+ul:hover::-webkit-scrollbar-thumb {
+  display: block;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+::ng-deep .flex {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

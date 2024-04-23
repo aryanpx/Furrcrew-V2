@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.phone {
+  width: 50%; /* Initially half size */
+}
+
+.paragraph {
+  opacity: 1; /* Initially visible */
+  transition: opacity 1s ease;
+}
+
+.rotate {
+  transform: rotate(-90deg);
+}
+
+.fade-out {
+  opacity: 0;
+}

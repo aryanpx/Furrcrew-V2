@@ -1,0 +1,32 @@
+<img />
+
+<main class="flex items-center justify-center mt-64 text-center">
+  <h1 class="text-6xl mb-20 font-bold text-zinc-800 w-[1025px] max-md:mt-10 max-md:max-w-full max-md:text-4xl">
+    culture of innovation and shared purpose to leave an enduring impact.
+  </h1>
+</main>
+
+<ul class="flex overflow-x-auto py-5 px-32">
+  @for (item of items;track item){
+  <li class="min-w-[300px] flex-shrink-0 m-5">
+    <div class="flex flex-col text-zinc-800 w-80">
+      <img [src]="item.imgSrc" [alt]="item.title" class="rounded-3xl h-80 w-80" />
+      <h2 class="mt-6 text-2xl leading-9">{{ item.title }}</h2>
+      <div class="flex gap-3 items-center mt-6">
+        <a href="#" class="text-2xl leading-9">READ MORE</a>
+        <img src="assets/icons/arrowright.svg" alt="Read more" class="w-[23px] h-[23px]" />
+      </div>
+    </div>
+  </li>
+  }
+</ul>
+
+<main class="flex justify-center items-center mt-16 min-h-[70vh]">
+  <section class="text-center mt-10 gap-28">
+    <p class="text-center font-SFPro font-[550] text-[32px] leading-9">
+      Because when it comes to coexistence, there are no limits – <br />only endless possibilities. Because a collective evolution<br />
+      takes us all
+    </p>
+    <h1 class="text-[150px] font-bold text-gray-800 mt-10">for you, furrcrew</h1>
+  </section>
+</main>

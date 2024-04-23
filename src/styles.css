@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "SF Pro";
+    /* font-style: normal; */
+    /* font-weight: 400; */
+    /* font-display: swap; */
+    src: url(/fonts/SF-Pro.ttf) format("ttf");
+  }
+}
