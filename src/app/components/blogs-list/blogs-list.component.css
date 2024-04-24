@@ -35,7 +35,7 @@ ul:hover::-webkit-scrollbar-thumb {
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
-::ng-deep .flex {
+/* ::ng-deep .flex {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
+} */

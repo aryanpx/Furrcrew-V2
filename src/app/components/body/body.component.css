@@ -9,7 +9,6 @@
 
 .paragraph {
   opacity: 1; /* Initially visible */
-  transition: opacity 1s ease;
 }
 
 .rotate {

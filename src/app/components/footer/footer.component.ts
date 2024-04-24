@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit, Renderer2 } from '@angular/core';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-footer',
@@ -10,22 +11,21 @@ import { Component, ElementRef, HostListener, OnInit, Renderer2 } from '@angular
 export class FooterComponent implements OnInit {
   footer!: HTMLElement;
 
-  constructor(private renderer: Renderer2, private elementRef: ElementRef) {}
+  constructor(private renderer: Renderer2, private elementRef: ElementRef, public themeService: ThemeService) {}
   ngOnInit(): void {
     this.footer = this.elementRef.nativeElement.querySelector('#stickyFooter');
   }
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const footerElement = this.elementRef.nativeElement.querySelector('#stickyFooter');
-    const windowHeight = window.innerHeight;
-    const documentHeight = document.body.scrollHeight;
-    const footerHeight = footerElement.offsetHeight;
-    const scrollPosition = window.scrollY;
+  sticky: boolean = false;
+  @HostListener('window:scroll', ['$event'])
+  handleScroll() {
+    const stickyOffset = this.footer.offsetTop;
+    console.log('🚀 ~ FooterComponent ~ handleScroll ~ stickyOffset:', stickyOffset);
+    console.log('🚀 ~ FooterComponent ~ handleScroll ~ window.scrollY:', window.scrollY);
 
-    if (windowHeight + scrollPosition <= documentHeight - footerHeight) {
-      this.renderer.addClass(footerElement, 'sticky');
+    if (window.scrollY < stickyOffset) {
+      this.sticky = true;
     } else {
-      this.renderer.removeClass(footerElement, 'sticky');
+      this.sticky = false;
     }
   }
 }

@@ -1,25 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { Component } from '@angular/core';
 import { ServiceTabsComponent } from '../service-tabs/service-tabs.component';
 import { VerticalEventsComponent } from '../vertical-events/vertical-events.component';
 import { BlogsListComponent } from '../blogs-list/blogs-list.component';
-import { ScrollAnimationService } from '../../services/scroll-animation.service';
+import { ScrollableDivComponent } from '../scrollable-div/scrollable-div.component';
+import { PetVideoComponentComponent } from '../pet-video-component/pet-video-component.component';
 @Component({
   selector: 'app-body',
   standalone: true,
-  imports: [ServiceTabsComponent, VerticalEventsComponent, BlogsListComponent],
+  imports: [ServiceTabsComponent, VerticalEventsComponent, BlogsListComponent, ScrollableDivComponent, PetVideoComponentComponent],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
 })
-export class BodyComponent implements OnInit {
-  imageSrc!: SafeResourceUrl;
-
-  constructor(private sanitizer: DomSanitizer, private scrollAnimationService: ScrollAnimationService) {}
-
-  ngOnInit(): void {
-    // Assuming your SVG file is located in the assets folder
-    const svgPath = 'assets/images/phoneImage.svg';
-    this.imageSrc = this.sanitizer.bypassSecurityTrustResourceUrl(svgPath);
-    this.scrollAnimationService.initScrollAnimation();
-  }
-}
+export class BodyComponent {}

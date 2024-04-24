@@ -1,0 +1,32 @@
+:root {
+  --neutrals-1000: rgba(13, 14, 20, 1);
+  --neutrals-500: rgba(120, 120, 151, 1);
+  --alertserror-500: rgba(217, 0, 52, 1);
+  --neutrals-300: rgba(188, 188, 208, 1);
+  --neutrals-100: rgba(237, 237, 246, 1);
+  --neutrals-700: rgba(68, 68, 93, 1);
+  --neutrals-800: rgba(55, 55, 74, 1);
+  --neutrals-900: rgba(25, 25, 33, 1);
+  --primary500-main: rgba(27, 47, 228, 1);
+  --neutrals-200: rgba(217, 217, 235, 1);
+  --neutrals-00: rgba(255, 255, 255, 1);
+  --neutral-colorsblack: rgba(29, 28, 43, 1);
+  --body-b2-m-med-font-family: "Plus Jakarta Sans", Helvetica;
+  --body-b2-m-med-font-weight: 500;
+  --body-b2-m-med-font-size: 16px;
+  --body-b2-m-med-letter-spacing: 0px;
+  --body-b2-m-med-line-height: 139.9999976158142%;
+  --body-b2-m-med-font-style: normal;
+  --body-b3-s-med-font-family: "Plus Jakarta Sans", Helvetica;
+  --body-b3-s-med-font-weight: 500;
+  --body-b3-s-med-font-size: 14px;
+  --body-b3-s-med-letter-spacing: 0px;
+  --body-b3-s-med-line-height: 139.9999976158142%;
+  --body-b3-s-med-font-style: normal;
+  --text-single-400-regular-font-family: "Inter", Helvetica;
+  --text-single-400-regular-font-weight: 400;
+  --text-single-400-regular-font-size: 18px;
+  --text-single-400-regular-letter-spacing: 0px;
+  --text-single-400-regular-line-height: 20px;
+  --text-single-400-regular-font-style: normal;
+}

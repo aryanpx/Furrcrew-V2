@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-header',
@@ -8,17 +9,14 @@ import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent implements OnInit {
-  isDarkMode: boolean = false;
   header!: HTMLElement;
   // iconSrc: string = 'path/to/default/icon'; // Add this line
-  constructor(private elementRef: ElementRef) {}
+  constructor(private elementRef: ElementRef, public themeService: ThemeService) {}
   ngOnInit() {
     this.header = this.elementRef.nativeElement.querySelector('#myHeader');
   }
   // Define toggleTheme function to toggle between light and dark mode
-  toggleTheme() {
-    this.isDarkMode = !this.isDarkMode;
-  }
+
   sticky: boolean = false;
 
   @HostListener('window:scroll', ['$event'])
