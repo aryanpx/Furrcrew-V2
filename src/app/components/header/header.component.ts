@@ -1,15 +1,24 @@
 import { Component, ElementRef, HostListener, Inject } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
 import { DOCUMENT } from '@angular/common';
+import { SideBarComponent } from '../side-bar/side-bar.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [SideBarComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
+  sidebarOpen: boolean = false;
+  toggleSidebar(): void {
+    this.sidebarOpen = !this.sidebarOpen;
+  }
+  closeSidebar(): void {
+    console.log('close sidebar called');
+    this.sidebarOpen = false;
+  }
   theme: 'light' | 'dark' = 'light';
   dropdownOpen: boolean = false;
   header!: HTMLElement;
@@ -28,6 +37,7 @@ export class HeaderComponent {
     this.theme = this.theme === 'light' ? 'dark' : 'light';
     document.body.classList.toggle('dark', this.theme === 'dark');
     localStorage.setItem('theme', this.theme);
+    this.themeService.isDarkTheme = this.theme === 'dark';
   }
   toggleDropdown(): void {
     this.dropdownOpen = !this.dropdownOpen;

@@ -12,9 +12,9 @@ import { BlogsComponent } from '../blogs/blogs.component';
 })
 export class FooterComponent implements OnInit {
   footer!: HTMLElement;
+  theme!: string | null;
 
   constructor(private renderer: Renderer2, private elementRef: ElementRef, public themeService: ThemeService, private router: Router) {}
-
   goToBlogs() {
     this.router.navigate(['/blogs']);
   }
@@ -25,8 +25,6 @@ export class FooterComponent implements OnInit {
   @HostListener('window:scroll', ['$event'])
   handleScroll() {
     const stickyOffset = this.footer.offsetTop;
-    console.log('🚀 ~ FooterComponent ~ handleScroll ~ stickyOffset:', stickyOffset);
-    console.log('🚀 ~ FooterComponent ~ handleScroll ~ window.scrollY:', window.scrollY);
 
     if (window.scrollY < stickyOffset) {
       this.sticky = true;

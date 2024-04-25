@@ -5,7 +5,7 @@
   <nav class="flex gap-5 justify-between w-full max-w-[1700px] items-center max-md:flex-wrap">
     <img
       loading="lazy"
-      [src]="themeService.isDarkTheme ? 'assets/images/furrcrewDark.svg' : 'assets/logo/furrcrew.svg'"
+      [src]="theme === 'dark' ? 'assets/images/furrcrewDark.svg' : 'assets/logo/furrcrew.svg'"
       alt="FurrCrew Logo"
       class="max-w-full"
     />
@@ -13,11 +13,11 @@
       <button (click)="toggleTheme()" class="justify-center px-6 py-3.5 bg-gray-200 dark:bg-gray-700 rounded-[29.333px] md:px-5">
         {{ theme === "dark" ? "Light Theme" : "Dark Theme" }}
       </button>
-      <img class="invert-0" src="assets/icons/hamburger.svg" />
-      <div class="dropdown-content" [class]="{ hidden: !dropdownOpen }">
-        <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600">About</a>
-        <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600">Contact Us</a>
-        <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600">Blogs</a>
+      <button (click)="toggleSidebar()">
+        <img [src]="theme === 'dark' ? 'assets/icons/hamburgerDark.svg' : 'assets/icons/hamburger.svg'" />
+      </button>
+      <div class="sidebar clickOutside" [class.active]="sidebarOpen" (clickOutside)="closeSidebar()">
+        <app-side-bar [sidebarOpen]="sidebarOpen" [closeSidebar]="closeSidebar"></app-side-bar>
       </div>
     </div>
   </nav>
