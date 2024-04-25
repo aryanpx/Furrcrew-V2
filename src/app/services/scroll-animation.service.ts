@@ -15,18 +15,25 @@ export class ScrollAnimationService {
       var phoneWidth = $('.phone')?.width();
       // Check if phone image is in viewport
       if (phoneOffsetTop && scrollTop && windowHeight && phoneWidth) {
-        let rotationAngle = Math.max(0, Math.min((scrollTop - phoneOffsetTop) * 0.1, 90)) * -1;
-        console.log('🚀 ~ ScrollAnimationService ~ $ ~ rotationAngle:', rotationAngle);
+        const rotationAngle = Math.max(0, Math.min((scrollTop - phoneOffsetTop) * 0.1, 90)) * -1;
+        const left = Math.min(20, Math.abs(rotationAngle) / 5);
+        const top = left > 7 ? (Math.max(150, Math.abs(rotationAngle))) : 30;
         if (rotationAngle > -90) {
-          let opacity = 1 - Math.max(0, Math.min((scrollTop - phoneOffsetTop) / windowHeight, 1)) * 6;
-          // console.log('🚀 ~ ScrollAnimationService ~ $ ~ opacity:', opacity);
-          let translateX = (rotationAngle / 90) * (window.innerWidth / 2 - phoneWidth / 2) * -1;
-          console.log('🚀 ~ ScrollAnimationService ~ $ ~ translateX:', translateX);
-          let translateY = Math.max(0, scrollTop - phoneOffsetTop);
-          // console.log('🚀 ~ ScrollAnimationService ~ $ ~ translateY:', translateY);
-          $('.phone').css('transform', `translate(${translateX}px, ${translateY}px) rotate(${rotationAngle}deg)`);
+          const opacity = 1 - Math.max(0, Math.min((scrollTop - phoneOffsetTop) / windowHeight, 1)) * 6;
+          $('.phone').css({
+            'transform': `rotate(${rotationAngle}deg)`,
+            'left': `${left}%`,
+            'top': `${top}px`,
+            'position': Math.abs(rotationAngle) > 0 ? 'fixed' : 'static'
+          });
           $('.paragraph').css('opacity', opacity);
         } else {
+          $('.phone').css({ 
+            'transform': `rotate(${rotationAngle}deg)`,
+            'position': 'sticky',
+            'left': `${left}%`,
+            'top': `${top}px`
+          });
           if (scrollTop > this.lastScrollTop) {
             if (phoneOffsetTop < scrollTop) {
               console.log('scroll up');

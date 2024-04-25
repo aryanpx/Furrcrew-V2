@@ -2,5 +2,12 @@
   height: 2500px; /* set a fixed height for the div */
   overflow-y: scroll; /* enable vertical scrollbar */
 }
+.frame1 {
+  position: relative;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
 .phone {
+  max-width: 500px;
+  transition: all 0.5s linear;
 }
