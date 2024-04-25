@@ -1,5 +1,6 @@
-import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, Inject } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +9,29 @@ import { ThemeService } from '../../services/theme.service';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
+  theme: 'light' | 'dark' = 'light';
+  dropdownOpen: boolean = false;
   header!: HTMLElement;
   // iconSrc: string = 'path/to/default/icon'; // Add this line
-  constructor(private elementRef: ElementRef, public themeService: ThemeService) {}
+  constructor(private elementRef: ElementRef, public themeService: ThemeService, @Inject(DOCUMENT) private document: Document) {
+    const localStorage = document.defaultView?.localStorage;
+    if (localStorage !== undefined) {
+      const preferredTheme = localStorage.getItem('theme');
+      if (preferredTheme) {
+        this.theme = preferredTheme as 'light' | 'dark';
+        document.body.classList.add(this.theme);
+      }
+    }
+  }
+  toggleTheme(): void {
+    this.theme = this.theme === 'light' ? 'dark' : 'light';
+    document.body.classList.toggle('dark', this.theme === 'dark');
+    localStorage.setItem('theme', this.theme);
+  }
+  toggleDropdown(): void {
+    this.dropdownOpen = !this.dropdownOpen;
+  }
   ngOnInit() {
     this.header = this.elementRef.nativeElement.querySelector('#myHeader');
   }

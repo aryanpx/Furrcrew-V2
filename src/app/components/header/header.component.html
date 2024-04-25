@@ -1,6 +1,6 @@
 <header
   id="myHeader"
-  class="sticky flex justify-center items-center w-full px-24 py-5 bg-[#29292BCC] text-xl border-b border-grayish bg-opacity-60 font-semibold backdrop-blur-md max-md:px-5"
+  class="sticky flex justify-center items-center w-full px-24 py-5 bg-white dark:bg-[#29292BCC] text-xl border-b border-darkbg border-opacity-10 bg-opacity-60 font-semibold backdrop-blur-md max-md:px-5"
 >
   <nav class="flex gap-5 justify-between w-full max-w-[1700px] items-center max-md:flex-wrap">
     <img
@@ -10,13 +10,15 @@
       class="max-w-full"
     />
     <div class="flex gap-5 items-center">
-      <button
-        class="max-sm:hidden px-6 py-2 bg-gray-200 rounded-[30px] text-zinc-800 focus:outline-none focus:ring-2 focus:ring-zinc-300 focus:ring-offset-2 max-md:px-5"
-        tabindex="0"
-      >
-        Get App!
+      <button (click)="toggleTheme()" class="justify-center px-6 py-3.5 bg-gray-200 dark:bg-gray-700 rounded-[29.333px] md:px-5">
+        {{ theme === "dark" ? "Light Theme" : "Dark Theme" }}
       </button>
-      <button><img src="assets/icons/hamburger.svg" /></button>
+      <img class="invert-0" src="assets/icons/hamburger.svg" />
+      <div class="dropdown-content" [class]="{ hidden: !dropdownOpen }">
+        <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600">About</a>
+        <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600">Contact Us</a>
+        <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600">Blogs</a>
+      </div>
     </div>
   </nav>
 </header>
