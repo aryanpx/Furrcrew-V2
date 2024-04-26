@@ -8,6 +8,5 @@
   justify-content: space-between;
 }
 .phone {
-  max-width: 500px;
   transition: all 0.5s linear;
 }
