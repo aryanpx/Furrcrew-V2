@@ -24,20 +24,15 @@ export class HeaderComponent {
   header!: HTMLElement;
   // iconSrc: string = 'path/to/default/icon'; // Add this line
   constructor(private elementRef: ElementRef, public themeService: ThemeService, @Inject(DOCUMENT) private document: Document) {
-    console.log('🚀 ~ HeaderComponent ~  this.themeService.isDarkTheme :', this.themeService.isDarkTheme);
     const localStorage = document.defaultView?.localStorage;
-    console.log('🚀 ~ HeaderComponent ~ constructor ~ localStorage:', localStorage);
     if (localStorage !== undefined) {
       const preferredTheme = localStorage.getItem('theme');
-      console.log('🚀 ~ HeaderComponent ~ constructor ~ preferredTheme:', preferredTheme);
       if (preferredTheme) {
         this.theme = preferredTheme as 'dark' | 'light';
         console.log('if condition', this.theme);
         document.body.classList.add(this.theme);
       }
     } else {
-      console.log('else condition');
-
       this.theme = this.themeService.isDarkTheme ? 'dark' : 'light';
       document.body.classList.add(this.theme);
     }

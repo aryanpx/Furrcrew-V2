@@ -12,9 +12,6 @@ export class ThemeService {
     if (typeof window !== 'undefined') {
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
       this.isDarkTheme = prefersDark.matches;
-      // browser code
-
-      // Listen for changes in system theme
       prefersDark.addListener((mediaQuery) => {
         this.isDarkTheme = mediaQuery.matches;
       });
