@@ -20,7 +20,7 @@
         <h2 class="mt-6 text-2xl leading-6">ADOPTION</h2>
       </div>
     </nav>
-    <article *ngIf="activeTab === 0" class="px-0.5 mt-14 max-md:mt-10">
+    <article *ngIf="activeTab === 0" class="px-0.5 mt-14 max-md:mt-10 fadeInOut">
       <div class="flex gap-5 max-md:flex-col">
         <div class="flex flex-col w-6/12 max-md:w-full">
           <div class="flex flex-col text-2xl leading-6">
@@ -31,6 +31,153 @@
             <p class="mt-6">
               Our objective is simple yet profound, to seamlessly integrate education, employment, and empowerment to elevate the quality of
               services offered in the industry.
+            </p>
+            <div class="flex gap-5 justify-between self-start mt-7">
+              <img loading="lazy" src="assets/icons/thumbsup.svg" alt="Easy booking flow icon" class="shrink-0 w-10 aspect-square" />
+              <span>Easy booking flow</span>
+            </div>
+            <div class="flex gap-5 justify-between self-start mt-6">
+              <img loading="lazy" src="assets/icons/webuser.svg" alt="Online, offline bookings icon" class="shrink-0 w-10 aspect-square" />
+              <span>Online, offline bookings</span>
+            </div>
+            <div class="flex gap-5 justify-between self-start mt-6">
+              <img
+                loading="lazy"
+                src="assets/icons/injection.svg"
+                alt="Home visits and vaccinations icon"
+                class="shrink-0 w-10 aspect-square"
+              />
+              <span>Home visits and vaccinations</span>
+            </div>
+            <div class="flex gap-5 justify-between self-start mt-6">
+              <img
+                loading="lazy"
+                src="assets/icons/cardarrow.svg"
+                alt="Easy refunds and rebooking of appointments icon"
+                class="shrink-0 w-10 aspect-square"
+              />
+              <span>Easy refunds and rebooking of appointments</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+          <div class="flex overflow-hidden relative flex-col py-px min-h-[575px]">
+            <img loading="lazy" [src]="vetImg" alt="Featured vet care service" class="w-full h-full" />
+          </div>
+        </div>
+      </div>
+    </article>
+    <article *ngIf="activeTab === 1" class="px-0.5 mt-14 max-md:mt-10 fadeInOut">
+      <div class="flex gap-5 max-md:flex-col">
+        <div class="flex flex-col w-6/12 max-md:w-full">
+          <div class="flex flex-col text-2xl leading-6">
+            <h1 class="text-6xl font-[590] leading-[53px] max-md:text-4xl max-md:leading-9">
+              GROOMING at<br />
+              your fingertips
+            </h1>
+            <p class="mt-6">
+              Dignissim sodales ut eu sem integer vitae justo eget magna. Quis enim lobortis scelerisque fermentum. Vel quam elementum
+              pulvinar etiam non. Facilisi nullam vehicula ipsum a arcu cursus vitae congue. Posuere sollicitudin aliquam ultrices sagittis
+              orci a scelerisque purus semper. Turpis egestas integer eget aliquet nibh praesent tristique magna.
+            </p>
+            <div class="flex gap-5 justify-between self-start mt-7">
+              <img loading="lazy" src="assets/icons/thumbsup.svg" alt="Easy booking flow icon" class="shrink-0 w-10 aspect-square" />
+              <span>Easy booking flow</span>
+            </div>
+            <div class="flex gap-5 justify-between self-start mt-6">
+              <img loading="lazy" src="assets/icons/webuser.svg" alt="Online, offline bookings icon" class="shrink-0 w-10 aspect-square" />
+              <span>Online, offline bookings</span>
+            </div>
+            <div class="flex gap-5 justify-between self-start mt-6">
+              <img
+                loading="lazy"
+                src="assets/icons/injection.svg"
+                alt="Home visits and vaccinations icon"
+                class="shrink-0 w-10 aspect-square"
+              />
+              <span>Home visits and vaccinations</span>
+            </div>
+            <div class="flex gap-5 justify-between self-start mt-6">
+              <img
+                loading="lazy"
+                src="assets/icons/cardarrow.svg"
+                alt="Easy refunds and rebooking of appointments icon"
+                class="shrink-0 w-10 aspect-square"
+              />
+              <span>Easy refunds and rebooking of appointments</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+          <div class="flex overflow-hidden relative flex-col py-px min-h-[575px]">
+            <img loading="lazy" [src]="vetImg" alt="Featured vet care service" class="w-full h-full" />
+          </div>
+        </div>
+      </div>
+    </article>
+    <article *ngIf="activeTab === 2" class="px-0.5 mt-14 max-md:mt-10 fadeInOut">
+      <div class="flex gap-5 max-md:flex-col">
+        <div class="flex flex-col w-6/12 max-md:w-full">
+          <div class="flex flex-col text-2xl leading-6">
+            <h1 class="text-6xl font-[590] leading-[53px] max-md:text-4xl max-md:leading-9">
+              NGO at <br />
+              your fingertips
+            </h1>
+            <p class="mt-6">
+              Tellus elementum sagittis vitae et leo duis ut diam. Urna condimentum mattis pellentesque id nibh tortor id aliquet. Auctor eu
+              augue ut lectus arcu bibendum. Ornare suspendisse sed nisi lacus sed viverra tellus in. Maecenas accumsan lacus vel facilisis.
+              Augue neque gravida in fermentum et sollicitudin ac. Dignissim sodales ut eu sem integer vitae justo eget magna. Quis enim
+              lobortis scelerisque fermentum. Vel quam elementum pulvinar etiam non. Facilisi nullam vehicula ipsum a arcu cursus vitae
+              congue. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper. Turpis egestas integer eget aliquet
+              nibh praesent tristique magna.
+            </p>
+            <div class="flex gap-5 justify-between self-start mt-7">
+              <img loading="lazy" src="assets/icons/thumbsup.svg" alt="Easy booking flow icon" class="shrink-0 w-10 aspect-square" />
+              <span>Easy booking flow</span>
+            </div>
+            <div class="flex gap-5 justify-between self-start mt-6">
+              <img loading="lazy" src="assets/icons/webuser.svg" alt="Online, offline bookings icon" class="shrink-0 w-10 aspect-square" />
+              <span>Online, offline bookings</span>
+            </div>
+            <div class="flex gap-5 justify-between self-start mt-6">
+              <img
+                loading="lazy"
+                src="assets/icons/injection.svg"
+                alt="Home visits and vaccinations icon"
+                class="shrink-0 w-10 aspect-square"
+              />
+              <span>Home visits and vaccinations</span>
+            </div>
+            <div class="flex gap-5 justify-between self-start mt-6">
+              <img
+                loading="lazy"
+                src="assets/icons/cardarrow.svg"
+                alt="Easy refunds and rebooking of appointments icon"
+                class="shrink-0 w-10 aspect-square"
+              />
+              <span>Easy refunds and rebooking of appointments</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+          <div class="flex overflow-hidden relative flex-col py-px min-h-[575px]">
+            <img loading="lazy" [src]="vetImg" alt="Featured vet care service" class="w-full h-full" />
+          </div>
+        </div>
+      </div>
+    </article>
+    <article *ngIf="activeTab === 3" class="px-0.5 mt-14 max-md:mt-10 fadeInOut">
+      <div class="flex gap-5 max-md:flex-col">
+        <div class="flex flex-col w-6/12 max-md:w-full">
+          <div class="flex flex-col text-2xl leading-6">
+            <h1 class="text-6xl font-[590] leading-[53px] max-md:text-4xl max-md:leading-9">
+              Adoption at <br />
+              your fingertips
+            </h1>
+            <p class="mt-6">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Dis parturient montes nascetur ridiculus. At elementum eu facilisis sed odio morbi quis. Enim lobortis scelerisque fermentum
+              dui faucibus in ornare. Hendrerit dolor magna eget est lorem ipsum dolor. Nulla malesuada pellentesque elit eget gravida cum.
             </p>
             <div class="flex gap-5 justify-between self-start mt-7">
               <img loading="lazy" src="assets/icons/thumbsup.svg" alt="Easy booking flow icon" class="shrink-0 w-10 aspect-square" />

@@ -1,0 +1,39 @@
+.updown-animate1 {
+  animation: up-down 1s ease-in-out infinite alternate-reverse both;
+}
+@keyframes up-down {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(
+      -5px
+    ); /* Adjust this value as needed for the desired distance */
+  }
+}
+.updown-animate2 {
+  animation: up-down 1.25s ease-in-out infinite alternate-reverse both;
+}
+@keyframes up-down {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(
+      -5px
+    ); /* Adjust this value as needed for the desired distance */
+  }
+}
+.updown-animate3 {
+  animation: up-down 1.5s ease-in-out infinite alternate-reverse both;
+}
+@keyframes up-down {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(
+      -5px
+    ); /* Adjust this value as needed for the desired distance */
+  }
+}
