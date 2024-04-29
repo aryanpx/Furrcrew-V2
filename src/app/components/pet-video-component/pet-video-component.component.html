@@ -1,3 +1,8 @@
-<div class="flex flex-col items-center m-32 mt-52 max-sm:max-w-[21rem] max-sm:max-h-[37rem]">
-  <img class="rounded-xl" src="assets/images/pet_video_image.png" />
+<div class="flex flex-col items-center px-4 mt-52 w-full">
+  <video autoplay class="rounded-3xl" *ngIf="isMobile; else desktopVideo" [src]="mobileVideoPath">
+    Your browser does not support video tag
+  </video>
+  <ng-template #desktopVideo>
+    <video autoplay [src]="desktopVideoPath" class="w-[75rem] rounded-3xl">Your browser does not support video tag</video>
+  </ng-template>
 </div>
