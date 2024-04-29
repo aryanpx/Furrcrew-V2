@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -14,5 +13,6 @@ export class SideBarComponent {
   sidebarOpen!: boolean;
   @Input()
   closeSidebar!: () => void;
-  constructor(public themeService: ThemeService) {}
+  @Input() theme!: 'light' | 'dark';
+  constructor() {}
 }

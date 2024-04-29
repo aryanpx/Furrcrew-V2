@@ -19,8 +19,9 @@
         <img [src]="theme === 'dark' ? 'assets/icons/hamburgerDark.svg' : 'assets/icons/hamburger.svg'" />
       </button>
       <div class="sidebar clickOutside" [class.active]="sidebarOpen" (clickOutside)="closeSidebar()">
-        <app-side-bar [sidebarOpen]="sidebarOpen" [closeSidebar]="closeSidebar"></app-side-bar>
+        <app-side-bar [sidebarOpen]="sidebarOpen" [closeSidebar]="closeSidebar" [theme]="theme"></app-side-bar>
       </div>
     </div>
   </nav>
 </header>
+<div class="h-14"></div>
