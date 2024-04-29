@@ -17,7 +17,7 @@ export class ScrollAnimationService {
         if (phoneOffsetTop && scrollTop && windowHeight && phoneWidth && phoneHeight) {
           const rotationAngle = Math.max(0, Math.min((scrollTop - phoneOffsetTop) * 0.1, 90)) * -1;
           const scaleFactor = Math.max(0.67, Math.min(1, (windowHeight - scrollTop + phoneOffsetTop) / windowHeight));
-          const left = -10 + Math.min(20, Math.abs(rotationAngle) / 5);
+          const left = Math.min(20, Math.abs(rotationAngle) / 5);
           const top = Math.abs(rotationAngle);
           if (rotationAngle > -90) {
             const opacity = 1 - Math.max(0, Math.min((scrollTop - phoneOffsetTop) / windowHeight, 1)) * 6;

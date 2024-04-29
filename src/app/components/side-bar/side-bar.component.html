@@ -1,6 +1,10 @@
 <div class="sidebar" [class]="sidebarOpen ? 'active' : 'inactive'">
   <main class="flex flex-col justify-center mx-auto w-full max-w-[480px]">
-    <header class="flex flex-col items-center px-20 w-full bg-gray-200 backdrop-blur-sm max-md:px-5 max-md:max-w-full h-[100vh]">
+    <header
+      class="{{
+        themeService.isDarkTheme ? 'bg-gray-700 text-darkfont' : 'bg-gray-200'
+      }}  flex flex-col items-center px-20 w-full  backdrop-blur-sm max-md:px-5 max-md:max-w-full h-[100vh]"
+    >
       <img
         loading="lazy"
         src="assets/icons/closeIcon.svg"
@@ -23,8 +27,12 @@
       <section class="flex flex-col w-60 max-w-full mt-10">
         <img loading="lazy" src="assets/logo/furrcrewsmall.svg" class="w-20 self-end" />
         <div class="flex flex-col items-center mt-6">
-          <img loading="lazy" src="assets/icons/downloadgoogle.svg" alt="" class="w-full aspect-[3.33]" />
-          <img loading="lazy" src="assets/icons/downloadapple.svg" alt="" class="w-full mt-4 aspect-[3.33]" />
+          <a href="https://play.google.com/store/apps/details?id=com.furrcrew.app">
+            <img loading="lazy" src="assets/icons/downloadgoogle.svg" alt="" class="w-full aspect-[3.33]" />
+          </a>
+          <a href="https://apps.apple.com/in/app/furrcrew/id6451879293">
+            <img loading="lazy" src="assets/icons/downloadapple.svg" alt="" class="w-full mt-4 aspect-[3.33]" />
+          </a>
         </div>
       </section>
     </header>

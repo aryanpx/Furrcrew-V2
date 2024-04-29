@@ -13,6 +13,7 @@ export class ThemeService {
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
       this.isDarkTheme = prefersDark.matches;
       prefersDark.addListener((mediaQuery) => {
+        console.log('🚀 ~ ThemeService ~ prefersDark.addListener ~ mediaQuery:', mediaQuery);
         this.isDarkTheme = mediaQuery.matches;
       });
     }

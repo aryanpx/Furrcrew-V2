@@ -1,105 +1,96 @@
-<footer id="myFooter" class="flex flex-col justify-center items-center border-t border-solid border-darkfont border-opacity-30">
-  <div class="flex w-full justify-center items-center">
-    <nav class="flex justify-center gap-20 w-full">
-      <ul class="flex flex-col">
-        <li><a href="#" class="block text-2xl">Home</a></li>
-        <li>
-          <a href="#" class="block text-2xl mt-8">About Us</a>
-        </li>
-        <li>
-          <a routerLink="blogs" class="block text-2xl mt-8 cursor-pointer">Blogs</a>
-        </li>
-        <li>
-          <a href="#" class="block text-2xl mt-8">Events</a>
-        </li>
-      </ul>
-      <ul class="flex flex-col">
-        <li>
-          <a href="#" class="block text-2xl">Privacy Policy</a>
-        </li>
-        <li>
-          <a href="#" class="block text-2xl mt-8">Support</a>
-        </li>
-        <li><a href="#" class="block text-2xl mt-8">Terms</a></li>
+<div class="md:flex border-t gap-20">
+  <div class="flex justify-center items-center px-5 py-5 border-solid border-darkfont border-opacity-40 md:flex-col md:w-1/3">
+    <nav class="w-full flex-col flex md:flex-row md:gap-20 justify-center">
+      <ul class="flex items-center gap-5 mt-4 md:flex-col flex-wrap md:h-48">
+        <li><a href="#" class="block md:text-2xl">Home</a></li>
+        <li><a href="#" class="block md:text-2xl">About Us</a></li>
+        <li><a href="#" class="block md:text-2xl">Blogs</a></li>
+        <li><a href="#" class="block md:text-2xl">Events</a></li>
+        <li><a href="#" class="block md:text-2xl">Privacy Policy</a></li>
+        <li><a href="#" class="block md:text-2xl">Support</a></li>
+        <li><a href="#" class="block md:text-2xl">Terms</a></li>
       </ul>
     </nav>
-    <span class="shrink-0 m-20 w-0.5 bg-zinc-800 dark:bg-darkfont h-[173px]"></span>
-    <div class="flex flex-col text-xl w-full mr-40">
-      <div class="flex gap-5 leading-9">
-        <img
-          loading="lazy"
-          [src]="themeService.isDarkTheme ? 'assets/icons/darkLocation.svg' : 'assets/icons/location.svg'"
-          alt="Location
-        icon"
-          class="shrink-0 w-8 aspect-square"
-        />
-        <address class="not-italic">
-          Office No- 503,504, 5th floor, Majestique Cityview, opposite Apsara Theatre, Gultekadi, Pune, Maharashtra 411037
-        </address>
+  </div>
+  <div
+    class="flex max-sm:flex-col max-sm:justify-center max-sm:border-t md:border-l-2 md:border-l-black md:dark:border-l-darkfont items-center md:pl-20 md:h-48 md:mt-10"
+  >
+    <section class="gap-5 mt-5 max-sm:text-sm text-xl leading-4">
+      <div class="flex flex-col gap-3">
+        <div class="flex gap-4 leading-5 md:leading-9">
+          <img
+            loading="lazy"
+            [src]="themeService.isDarkTheme ? 'assets/icons/darkLocation.svg' : 'assets/icons/location.svg'"
+            alt="Location icon"
+            class="shrink-0 aspect-square ml-3 w-[1rem]"
+          />
+          <p class="w-80 md:w-full md:pr-60">
+            Office No- 503,504, 5th floor, Majestique Cityview, opposite Apsara Theatre, Gultekadi, Pune, Maharashtra – 411037
+          </p>
+        </div>
+        <div class="flex gap-4">
+          <img
+            loading="lazy"
+            [src]="themeService.isDarkTheme ? 'assets/icons/darkMail.svg' : 'assets/icons/mail.svg'"
+            alt="Email icon"
+            class="shrink-0 aspect-square ml-3 w-[1rem]"
+          />
+          <a href="mailto:support@furrcrew.com">support&#64;furrcrew.com</a>
+        </div>
+        <div class="flex gap-4">
+          <img
+            loading="lazy"
+            [src]="themeService.isDarkTheme ? 'assets/icons/darkPhone.svg' : 'assets/icons/phone.svg'"
+            alt="Phone icon"
+            class="shrink-0 aspect-square ml-3 w-[1rem]"
+          />
+          <a href="tel:02029805658">020 2980 5658</a>
+        </div>
       </div>
-      <div class="flex gap-5 mt-3">
-        <img
-          loading="lazy"
-          [src]="themeService.isDarkTheme ? 'assets/icons/darkMail.svg' : 'assets/icons/mail.svg'"
-          alt="Email icon"
-          class="shrink-0 w-8 aspect-square"
-        />
-        <a href="mailto:support@furrcrew.com" class="not-italic">support&#64;furrcrew.com</a>
-      </div>
-      <div class="flex gap-5 mt-2.5">
-        <img
-          loading="lazy"
-          [src]="themeService.isDarkTheme ? 'assets/icons/darkPhone.svg' : 'assets/icons/phone.svg'"
-          alt="Phone icon"
-          class="shrink-0 w-8 aspect-square"
-        />
-        <a href="tel:02029805658" class="not-italic">020 2980 5658</a>
-      </div>
-      <div class="flex flex-row gap-8">
+      <div class="flex flex-row gap-8 w-[1.5rem] ml-3">
         <img
           loading="lazy"
           [src]="themeService.isDarkTheme ? 'assets/icons/darkInstagram.svg' : 'assets/icons/instagram.svg'"
           alt="instagram logo"
-          class="mt-6 w-[40px]"
+          class="mt-6"
         />
         <img
           loading="lazy"
           [src]="themeService.isDarkTheme ? 'assets/icons/darkFacebook.svg' : 'assets/icons/facebook.svg'"
           alt="facebook logo"
-          class="mt-6 w-[40px]"
+          class="mt-6"
         />
         <img
           loading="lazy"
           [src]="themeService.isDarkTheme ? 'assets/icons/darkTwitter.svg' : 'assets/icons/twitter.svg'"
           alt="twitter logo"
-          class="mt-6 w-[40px]"
+          class="mt-6"
         />
       </div>
-    </div>
+    </section>
   </div>
-  <div class="flex flex-col justify-center items-center p-10 text-2xl mb-20">© BVUR Innovations India Pvt. Ltd.</div>
-</footer>
+</div>
+<footer class="flex justify-center text-sm p-10 md:text-2xl">© BVUR Innovations India Pvt. Ltd.</footer>
+<div class="h-20"></div>
 <section
   id="stickyFooter"
   class="sticky flex justify-center items-center self-stretch dark:border-[#3f3f3f] border-t px-16 py-5 w-full bg-white dark:bg-[#29292BCC] backdrop-blur-md bg-opacity-60 max-md:px-5 max-md:max-w-full"
 >
-  <div class="flex gap-6 justify-between pl-14 max-w-full w-[1700px] max-md:flex-wrap max-md:pl-5">
-    <p class="text-[25px] mt-3 font-[550] dark:text-darkfont">Download The App:</p>
+  <div class="flex gap-6 justify-between max-w-full">
+    <p class="mt-3 font-[550] dark:text-darkfont w-full">Download The App:</p>
     <div class="flex gap-5">
-      <img
-        loading="lazy"
-        src="assets/icons/downloadgoogle.svg"
-        alt="Download from App Store"
-        class="shrink-0 max-w-full aspect-[3.33] w-[166px]"
-      />
-      <img
-        loading="lazy"
-        src="assets/icons/downloadapple.svg"
-        alt="Download from Google
-      Play"
-        class="shrink-0 max-w-full aspect-[3.33] w-[167px]"
-      />
+      <a href="https://play.google.com/store/apps/details?id=com.furrcrew.app">
+        <img loading="lazy" src="assets/icons/downloadgoogle.svg" alt="Download from App Store" class="w-[20rem]" />
+      </a>
+      <a href="https://apps.apple.com/in/app/furrcrew/id6451879293">
+        <img
+          loading="lazy"
+          src="assets/icons/downloadapple.svg"
+          alt="Download from Google
+          Play"
+          class="w-[20rem]"
+        />
+      </a>
     </div>
   </div>
 </section>
-<router-outlet></router-outlet>
