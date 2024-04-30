@@ -1,66 +1,96 @@
-<div class="self-center mt-24 w-full max-w-[1574px] max-md:mt-10 max-md:max-w-full">
-  <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+<div class="w-full md:p-24 md:px-32 max-md:mt-10 max-md:max-w-full">
+  <div class="flex gap-1 max-md:flex-col max-md:gap-0">
     <div class="flex flex-col w-[38%] max-md:ml-0 max-md:w-full">
-      <img
+      <!-- <img
         loading="lazy"
-        srcset="
-          https://cdn.builder.io/api/v1/image/assets/TEMP/54d898a9a288eeb4d5237794198c36f60d37d191cfdeef1f917f0967880e0c8c?apiKey=fd1b59619aab4d349f62eb05b8cf3d22&width=100   100w,
-          https://cdn.builder.io/api/v1/image/assets/TEMP/54d898a9a288eeb4d5237794198c36f60d37d191cfdeef1f917f0967880e0c8c?apiKey=fd1b59619aab4d349f62eb05b8cf3d22&width=200   200w,
-          https://cdn.builder.io/api/v1/image/assets/TEMP/54d898a9a288eeb4d5237794198c36f60d37d191cfdeef1f917f0967880e0c8c?apiKey=fd1b59619aab4d349f62eb05b8cf3d22&width=400   400w,
-          https://cdn.builder.io/api/v1/image/assets/TEMP/54d898a9a288eeb4d5237794198c36f60d37d191cfdeef1f917f0967880e0c8c?apiKey=fd1b59619aab4d349f62eb05b8cf3d22&width=800   800w,
-          https://cdn.builder.io/api/v1/image/assets/TEMP/54d898a9a288eeb4d5237794198c36f60d37d191cfdeef1f917f0967880e0c8c?apiKey=fd1b59619aab4d349f62eb05b8cf3d22&width=1200 1200w,
-          https://cdn.builder.io/api/v1/image/assets/TEMP/54d898a9a288eeb4d5237794198c36f60d37d191cfdeef1f917f0967880e0c8c?apiKey=fd1b59619aab4d349f62eb05b8cf3d22&width=1600 1600w,
-          https://cdn.builder.io/api/v1/image/assets/TEMP/54d898a9a288eeb4d5237794198c36f60d37d191cfdeef1f917f0967880e0c8c?apiKey=fd1b59619aab4d349f62eb05b8cf3d22&width=2000 2000w,
-          https://cdn.builder.io/api/v1/image/assets/TEMP/54d898a9a288eeb4d5237794198c36f60d37d191cfdeef1f917f0967880e0c8c?apiKey=fd1b59619aab4d349f62eb05b8cf3d22&
-        "
+        src="{{ event.imageUrl }}"
         class="w-full border-2 border-gray-200 border-solid aspect-square max-md:mt-1 max-md:max-w-full"
-      />
-    </div>
-    <div class="flex flex-col ml-5 w-[62%] max-md:ml-0 max-md:w-full">
+      /> -->
       <div
-        class="flex flex-col grow justify-center px-16 py-16 w-full bg-white border-2 border-gray-200 border-solid rounded-[32px] max-md:px-5 max-md:mt-1 max-md:max-w-full"
+        class="flex flex-col gap-0 justify-center w-full border-2 border-gray-200 border-solid max-md:flex-wrap rounded-[32px] max-md:max-w-full"
+      >
+        <div class="flex flex-col gap-0 justify-center px-11 py-14 w-full max-md:flex-wrap max-md:px-5 max-md:max-w-full">
+          <div class="flex flex-col gap-5 max-md:flex-wrap max-md:max-w-full">
+            <div class="gap-0 self-center text-center text-black font-[510] text-3xl">Select An Option To Book</div>
+            <div class="flex flex-col gap-3 justify-center mt-10 font-bold text-white max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
+              <div class="flex gap-5 px-6 py-4 bg-blue-700 rounded-2xl tracking-[2.56px] max-md:flex-wrap max-md:px-5">
+                <img loading="lazy" src="assets/icons/furrcrew-w-light.png" class="shrink-0 gap-0 aspect-[1.43] w-[60px]" />
+                <div class="flex-1 gap-0 my-auto text-2xl">FurrCrew App</div>
+                <img loading="lazy" src="assets/icons/arrowupright.svg" class="shrink-0 gap-0 self-start w-10 aspect-square" />
+              </div>
+              <div class="flex gap-2 w-1/2 justify-center items-center self-center text-xl text-center text-gray-500 whitespace-nowrap">
+                <div class="flex-1 shrink-0 gap-0 self-stretch my-auto h-px bg-gray-500 border border-gray-500 border-solid"></div>
+                <div class="gap-0 self-stretch">or</div>
+                <div class="flex-1 shrink-0 gap-0 self-stretch my-auto h-px bg-gray-500 border border-gray-500 border-solid"></div>
+              </div>
+              <div
+                class="flex gap-0 justify-center items-center mt-3 bg-orange-600 rounded-2xl tracking-[2.56px] max-md:flex-wrap max-md:max-w-full"
+              >
+                <div
+                  class="flex overflow-hidden relative flex-col gap-0 justify-center items-center w-full fill-[radial-gradient(92.18%_99.11%_at_26.56%_107.7%,#FD5_0%,#FD5_10%,#FF543E_50%,#C837AB_100%)] min-h-[92px] max-md:flex-wrap max-md:max-w-full"
+                >
+                  <img loading="lazy" src="assets/logo/insta-background.png" class="object-cover absolute inset-0 size-full rounded-2xl" />
+                  <div
+                    class="flex overflow-hidden relative flex-col gap-5 justify-between px-6 py-4 w-full fill-[radial-gradient(182.61%_44.3%_at_-16.75%_7.2%,#3771C8_0%,#3771C8_12.8%,rgba(102,0,255,0.00)_100%)] min-h-[92px] max-md:flex-wrap max-md:px-5 max-md:max-w-full"
+                  >
+                    <img loading="lazy" src="assets/icons/unknown.svg" class="object-cover absolute inset-0 size-full" />
+                    <div class="flex relative gap-5">
+                      <img loading="lazy" src="assets/icons/instagram-light.svg" class="shrink-0 gap-0 aspect-square w-[60px]" />
+                      <div class="flex-auto gap-0 my-auto text-2xl">Instagram DM</div>
+                      <img loading="lazy" src="assets/icons/arrowupright.svg" class="shrink-0 gap-0 my-auto w-10 aspect-square" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex gap-2 w-1/2 justify-center items-center self-center text-xl text-center text-gray-500 whitespace-nowrap">
+                <div class="flex-1 shrink-0 gap-0 self-stretch my-auto h-px bg-gray-500 border border-gray-500 border-solid"></div>
+                <div class="gap-0 self-stretch">or</div>
+                <div class="flex-1 shrink-0 gap-0 self-stretch my-auto h-px bg-gray-500 border border-gray-500 border-solid"></div>
+              </div>
+              <div
+                class="flex gap-5 items-center px-6 py-4 mt-3 whitespace-nowrap bg-teal-700 rounded-2xl tracking-[2.56px] max-md:flex-wrap max-md:px-5"
+              >
+                <img loading="lazy" src="assets/icons/callChatBold.svg" class="shrink-0 gap-0 self-stretch aspect-square w-[60px]" />
+                <div class="flex-1 gap-0 self-stretch my-auto">+91-20-29805658</div>
+                <img loading="lazy" src="assets/icons/arrowupright.svg" class="shrink-0 gap-0 self-stretch my-auto w-10 aspect-square" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col w-[62%] max-md:ml-0 max-md:w-full">
+      <div
+        class="flex flex-col grow justify-center px-16 py-16 w-full border-2 border-gray-200 border-solid rounded-[32px] max-md:px-5 max-md:mt-1 max-md:max-w-full"
       >
         <div class="flex flex-col max-md:max-w-full">
           <div class="flex flex-col text-black max-md:max-w-full">
             <div class="flex flex-col max-md:max-w-full">
-              <div class="text-5xl font-bold tracking-normal max-md:max-w-full max-md:text-4xl">Summer Social, FurrFiesta</div>
+              <div class="text-5xl font-bold tracking-normal max-md:max-w-full max-md:text-4xl">{{ event.title }}</div>
               <div class="mt-6 text-2xl tracking-normal leading-10 max-md:max-w-full">
-                FurrFiesta is coming to Hinjewadi with our signature Fun & Games, Pet Trivia, Pet Painting, and much more. Drop by for a fun
-                summer time with your furry buddies!
+                {{ event.about }}
               </div>
             </div>
             <div class="flex flex-col mt-9 text-2xl tracking-normal leading-10 font-[590] max-md:max-w-full">
               <div class="flex gap-3 max-md:flex-wrap">
-                <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/cf7b5b4046e39e9c9d223fb045f3c4a1138ab1328778cd77b49323efc8f49e21?apiKey=fd1b59619aab4d349f62eb05b8cf3d22&"
-                  class="shrink-0 w-9 aspect-square"
-                />
-                <div class="flex-1 my-auto max-md:max-w-full">The Community Table, Hinjewadi, Pune</div>
+                <img loading="lazy" src="assets/icons/location.svg" class="shrink-0 w-9 aspect-square" />
+                <div class="flex-1 my-auto max-md:max-w-full">{{ event.location }}</div>
               </div>
               <div class="flex gap-3 mt-6 max-md:flex-wrap">
-                <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/cd5d043e3c35bfc8c5ea1aa3ab21dd0914b7fa1778f4e1c25ef021a71abbd599?apiKey=fd1b59619aab4d349f62eb05b8cf3d22&"
-                  class="shrink-0 w-9 aspect-square"
-                />
-                <div class="flex-1 my-auto max-md:max-w-full">Sunday, 14 Apr 2024 | 4pm – 8pm</div>
+                <img loading="lazy" src="assets/icons/time.svg" class="shrink-0 w-9 aspect-square" />
+                <div class="flex-1 my-auto max-md:max-w-full">{{ event.time }}</div>
               </div>
               <div class="flex gap-3 mt-6 leading-10 text-zinc-500 max-md:flex-wrap">
-                <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/7fb8de3a7ddda3b4d2c0b0093cfd081047435e9c7d747a4319bc6a422461e46c?apiKey=fd1b59619aab4d349f62eb05b8cf3d22&"
-                  class="shrink-0 w-9 aspect-square"
-                />
+                <img loading="lazy" src="assets/icons/money.svg" class="shrink-0 w-9 aspect-square" />
                 <div class="flex-1 my-auto max-md:max-w-full">
-                  ₹299
+                  ₹{{ event.price }}
                   <span class="text-xl font-[510] text-zinc-500"> onwards </span>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="justify-center items-center px-16 py-6 mt-24 max-w-full text-3xl tracking-normal leading-10 text-white bg-blue-500 rounded-xl font-[510] w-[360px] max-md:px-5 max-md:mt-10"
+            class="flex justify-center items-center px-16 py-6 mt-24 max-w-full text-3xl tracking-normal leading-10 text-white bg-blue-500 rounded-xl font-[510] w-[360px] max-md:px-5 max-md:mt-10"
           >
             Book Tickets
           </div>
@@ -69,3 +99,43 @@
     </div>
   </div>
 </div>
+<div
+  class="flex gap-0 justify-center items-center px-16 py-20 text-black border-2 border-gray-200 border-solid rounded-[32px] max-md:flex-wrap max-md:px-5"
+>
+  <div class="flex flex-col gap-5 w-full max-w-[1400px] max-md:flex-wrap max-md:max-w-full">
+    <div class="flex flex-col gap-5 max-md:flex-wrap max-md:max-w-full">
+      <div class="flex flex-col gap-4 text-4xl whitespace-nowrap font-[590] max-md:flex-wrap max-md:max-w-full">
+        <div class="flex gap-5 justify-between max-md:flex-wrap max-md:max-w-full">
+          <div class="gap-0 my-auto">Description</div>
+          <img loading="lazy" src="assets/icons/minus.svg" class="shrink-0 gap-0 w-12 aspect-square" />
+        </div>
+        <div class="shrink-0 gap-0 mt-4 h-px bg-black border border-black border-solid max-md:flex-wrap max-md:max-w-full"></div>
+      </div>
+      <div class="gap-0 mt-9 mr-5 text-2xl tracking-normal leading-10 max-md:flex-wrap max-md:mr-2.5 max-md:max-w-full">
+        {{ event.description }}
+      </div>
+    </div>
+    <div class="flex flex-col gap-4 mt-12 text-4xl whitespace-nowrap font-[590] max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
+      <div class="flex gap-5 justify-between pr-7 max-md:flex-wrap max-md:pr-5 max-md:max-w-full">
+        <div class="gap-0 my-auto">Guidelines</div>
+        <img loading="lazy" src="assets/icons/plusIcon.svg" class="shrink-0 gap-0 w-12 aspect-square" />
+      </div>
+      <div class="shrink-0 gap-0 mt-4 h-px bg-black border border-black border-solid max-md:flex-wrap max-md:max-w-full"></div>
+    </div>
+    <div class="flex flex-col gap-4 mt-12 text-4xl whitespace-nowrap font-[590] max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
+      <div class="flex gap-5 justify-between pr-7 max-md:flex-wrap max-md:pr-5 max-md:max-w-full">
+        <div class="gap-0 my-auto">Location</div>
+        <img loading="lazy" src="assets/icons/plusIcon.svg" class="shrink-0 gap-0 w-12 aspect-square" />
+      </div>
+      <div class="shrink-0 gap-0 mt-4 h-px bg-black border border-black border-solid max-md:flex-wrap max-md:max-w-full"></div>
+    </div>
+    <div class="flex flex-col gap-4 mt-12 text-4xl font-[590] max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
+      <div class="flex gap-5 justify-between pr-7 max-md:flex-wrap max-md:pr-5 max-md:max-w-full">
+        <div class="gap-0 my-auto">Terms & Conditions</div>
+        <img loading="lazy" src="assets/icons/plusIcon.svg" class="shrink-0 gap-0 w-12 aspect-square" />
+      </div>
+      <div class="shrink-0 gap-0 mt-4 h-px bg-black border border-black border-solid max-md:flex-wrap max-md:max-w-full"></div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

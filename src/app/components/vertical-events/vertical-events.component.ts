@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-vertical-events',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './vertical-events.component.html',
   styleUrl: './vertical-events.component.css',
 })
