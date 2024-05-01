@@ -1,0 +1,56 @@
+<div class="w-full md:p-24 md:px-32 max-md:mt-10 max-md:max-w-full">
+  <div class="flex gap-1 max-md:flex-col max-md:gap-0">
+    <div class="flex flex-col w-[38%] max-md:ml-0 max-md:w-full">
+      <img
+        loading="lazy"
+        src="{{ event.imageUrl }}"
+        class="w-full border-2 border-gray-200 border-solid aspect-square max-md:mt-1 max-md:max-w-full"
+      />
+    </div>
+    <div class="flex flex-col w-[62%] max-md:ml-0 max-md:w-full">
+      <div
+        class="flex flex-col grow justify-center px-16 py-16 w-full border-2 border-gray-200 border-solid rounded-[32px] max-md:px-5 max-md:mt-1 max-md:max-w-full"
+      >
+        <div class="flex flex-col max-md:max-w-full">
+          <div class="flex flex-col text-black max-md:max-w-full">
+            <div class="flex flex-col max-md:max-w-full">
+              <div class="text-5xl font-bold tracking-normal max-md:max-w-full max-md:text-4xl">{{ event.title }}</div>
+              <div class="mt-6 text-2xl tracking-normal leading-10 max-md:max-w-full">
+                {{ event.about }}
+              </div>
+            </div>
+            <div class="flex flex-col mt-9 text-2xl tracking-normal leading-10 font-[590] max-md:max-w-full">
+              <div class="flex gap-3 max-md:flex-wrap">
+                <img loading="lazy" src="assets/icons/location.svg" class="shrink-0 w-9 aspect-square" />
+                <div class="flex-1 my-auto max-md:max-w-full">{{ event.location }}</div>
+              </div>
+              <div class="flex gap-3 mt-6 max-md:flex-wrap">
+                <img loading="lazy" src="assets/icons/time.svg" class="shrink-0 w-9 aspect-square" />
+                <div class="flex-1 my-auto max-md:max-w-full">{{ event.time }}</div>
+              </div>
+              <div class="flex gap-3 mt-6 leading-10 text-zinc-500 max-md:flex-wrap">
+                <img loading="lazy" src="assets/icons/money.svg" class="shrink-0 w-9 aspect-square" />
+                <div class="flex-1 my-auto max-md:max-w-full">
+                  ₹{{ event.price }}
+                  <span class="text-xl font-[510] text-zinc-500"> onwards </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex gap-5 justify-between self-start px-8 py-4 mt-24 border border-black border-solid rounded-[38px] max-md:px-5 max-md:mt-10"
+          >
+            <img loading="lazy" src="assets/icons/instagram-color.svg" class="shrink-0 gap-0 w-8 aspect-square" />
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/a57a1bdd64bca1849e039ef84032ac40aa310a92346a218e3a12e94d34c4883d?apiKey=fd1b59619aab4d349f62eb05b8cf3d22&"
+              class="shrink-0 gap-0 self-start max-w-full aspect-[4.35] w-[126px]"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>Gallery</div>
+<app-footer></app-footer>
