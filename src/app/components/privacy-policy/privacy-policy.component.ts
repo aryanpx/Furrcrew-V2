@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 
 @Component({
-  selector: 'app-tand-c',
+  selector: 'app-privacy-policy',
   standalone: true,
   imports: [FooterComponent],
-  templateUrl: './tand-c.component.html',
-  styleUrl: './tand-c.component.css',
+  templateUrl: './privacy-policy.component.html',
+  styleUrl: './privacy-policy.component.css',
 })
-export class TAndCComponent {}
+export class PrivacyPolicyComponent {}
