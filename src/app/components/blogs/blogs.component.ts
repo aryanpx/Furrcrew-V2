@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { BlogsService } from '../../services/blogs.service';
 
 @Component({
   selector: 'app-blogs',
@@ -12,34 +14,8 @@ export class BlogsComponent {
   searchIconUrl = 'assets/icons/searchIcon.svg';
   readMoreIconUrl = 'assets/icons/arrowright.svg';
   blogImageUrl = 'assets/images/dogimage1.jpg';
-  items: { imgSrc: string; title: string }[] = [
-    {
-      imgSrc: 'assets/images/dogimage1.jpg',
-      title: 'How to encourage good behaviour in dogs?',
-    },
-    {
-      imgSrc: 'assets/images/dogimage2.png',
-      title: 'Teach your pets how to swim this summer',
-    },
-    {
-      imgSrc: 'assets/images/dogimage3.png',
-      title: 'Make your pet friendlier with other pets',
-    },
-    {
-      imgSrc: 'assets/images/dogimage4.png',
-      title: 'Teach your pets how to swim this summer',
-    },
-    {
-      imgSrc: 'assets/images/dogimage1.jpg',
-      title: 'How to encourage good behaviour in dogs?',
-    },
-    {
-      imgSrc: 'assets/images/dogimage2.png',
-      title: 'Teach your pets how to swim this summer',
-    },
-    {
-      imgSrc: 'assets/images/dogimage3.png',
-      title: 'Make your pet friendlier with other pets',
-    },
-  ];
+  constructor(private router: Router, public blogsService: BlogsService) {}
+  goToBlogsDetails(blogId: number) {
+    this.router.navigate(['/blogs/details'], { queryParams: { blogId: blogId } });
+  }
 }

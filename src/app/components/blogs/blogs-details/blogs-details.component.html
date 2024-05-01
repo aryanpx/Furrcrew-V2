@@ -1,0 +1,87 @@
+<div class="flex flex-col items-center">
+  <div class="w-2/3">
+    <div class="flex flex-col flex-1 gap-5 max-md:flex-wrap max-md:max-w-full">
+      <div class="flex text-6xl text-ellipsis max-md:flex-wrap max-md:max-w-full max-md:text-4xl mt-10">Tick fever – take it seriously</div>
+      <div class="flex gap-5">
+        <div class="flex text-gray-600">5 mins</div>
+        <div class="flex">Read By author_name</div>
+      </div>
+    </div>
+    <img loading="lazy" src="assets/images/blogs1.png" class="max-sm:w-full aspect-[1.79] max-md:flex-wrap max-md:max-w-full" />
+    <div class="gap-0 mb-20 mt-16 mr-20 max-md:flex-wrap max-md:mt-10 max-md:mr-2.5 max-md:max-w-full">
+      <span class="text-gray-700">
+        Ticks- those tiny arachnids that latch onto the skin of animals, can pose a significant threat to their health. One of the most
+        serious consequences of tick infestations is tick fever, a condition that demands immediate attention. In this blog, we'll delve
+        into the seriousness of tick fever, its symptoms, and why it's crucial to take this ailment seriously.
+      </span>
+      <br />
+
+      <span class="text-3xl font-bold">Understanding Tick Fever:</span>
+
+      <span class="text-gray-700">
+        1. The Culprit: Tick fever, also known as tick-borne diseases, is caused by various bacteria and parasites transmitted through the
+        bites of infected ticks. These blood-sucking parasites can transmit pathogens that lead to severe health issues.2. Common Culprits:
+        Different types of ticks can carry various infectious agents. The most common culprits include the brown dog tick, American dog
+        tick, and the deer tick. Regions with a higher prevalence of these ticks often see more cases of tick fever.
+      </span>
+      <br />
+
+      <span class="text-3xl font-bold">Symptoms of Tick Fever:</span>
+
+      <span class="text-gray-700">
+        1. Fever and Lethargy: The presence of fever, accompanied by lethargy or a lack of energy, is a common symptom of tick fever. If
+        your pet seems unusually tired or sluggish, it's a cause for concern.2. Loss of Appetite: Tick fever can lead to a decreased
+        appetite in affected animals. If your pet suddenly loses interest in food, it might be a sign of an underlying issue.3. Joint Pain
+        and Swelling: Pain and swelling in the joints are often observed in pets with tick fever. If you notice limping or reluctance to
+        move, it could be indicative of an infection.4. Anaemia: Tick-borne diseases can cause anaemia in pets due to the destruction of red
+        blood cells. Pale gums and mucous membranes are signs of anaemia and should be addressed promptly.
+      </span>
+
+      <br />
+
+      <span class="text-3xl font-bold"> Why Tick Fever Requires Serious Attention: </span>
+
+      <span class="text-gray-700">
+        1. Rapid Progression: Tick fever can progress rapidly, leading to severe complications if not addressed promptly. Early detection
+        and intervention are crucial for effective treatment.2. Organ Damage: Tick-borne diseases can target various organs, including the
+        kidneys, liver, and nervous system. Untreated tick fever can result in irreversible organ damage and pose a serious threat to your
+        pet's life.3. Transmission to Humans: Some tick-borne diseases, such as Lyme disease, can also affect humans. Taking tick fever
+        seriously not only safeguards your pet but also prevents the potential transmission of diseases to your family.
+      </span>
+      <br />
+
+      <span class="text-3xl font-bold">Preventive Measures:</span>
+
+      <span class="text-gray-700">
+        1. Regular Tick Checks: Perform regular tick checks on your pets, especially after outdoor activities. Promptly remove any ticks you
+        find to reduce the risk of infection.2. Use Tick Preventatives: Consult with your veterinarian to choose and apply tick
+        preventatives suitable for your pet. These preventive measures can significantly reduce the likelihood of tick infestations.3.
+        Vaccination: In regions with a high prevalence of tick-borne diseases, consider vaccinating your pet against specific pathogens.
+        Discuss vaccination options with your veterinarian to tailor a plan to your pet's needs.
+      </span>
+      <br />
+      <span class="text-gray-700">
+        In conclusion, tick fever is not a matter to be taken lightly. Stay vigilant, know the signs, and seek immediate veterinary
+        attention if you suspect your pet has been affected. By understanding the seriousness of tick fever and taking proactive measures,
+        you can protect your beloved pets from this potentially life-threatening condition.
+      </span>
+    </div>
+    <hr />
+    <div class="gap-0 mt-16 text-3xl leading-8 text-black font-[510] max-md:flex-wrap max-md:mt-10 max-md:max-w-full">Other blogs</div>
+    <ul class="flex overflow-x-auto md:py-5">
+      @for (blog of blogsService.blogs;track blog){
+      <li class="min-w-[300px] flex-shrink-0 m-5">
+        <div class="flex flex-col w-80">
+          <img [src]="blog.imgSrc" [alt]="blog.title" class="h-70 w-70" />
+          <h2 class="mt-6 text-2xl leading-9">{{ blog.title }}</h2>
+          <div class="flex gap-3 items-center mt-6">
+            <a routerLink="blogs" class="text-2xl leading-9">READ MORE</a>
+            <img src="assets/icons/arrowright.svg" alt="Read more" class="w-[23px] h-[23px]" />
+          </div>
+        </div>
+      </li>
+      }
+    </ul>
+  </div>
+</div>
+<app-footer></app-footer>
