@@ -1,0 +1,8 @@
+h2 {
+  font-weight: 700;
+  font-size: x-large;
+}
+::ng-deep * {
+  -ms-overflow-style: auto;
+  scrollbar-width: auto;
+}

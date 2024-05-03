@@ -1,38 +1,38 @@
-<main class="flex flex-col items-center w-full max-md:mt-32 md:max-w-full">
+<main class="flex flex-col items-center w-full mb-32 md:max-w-full">
   <header class="flex flex-col items-center px-5 font-[500] md:max-w-full">
-    <h1 class="tracking-normal leading-[166%] text-2xl mt-28">OUR BLOGS</h1>
+    <h1 class="tracking-normal leading-[166%] text-2xl md:mt-28">OUR BLOGS</h1>
     <h2 class="mt-8 text-center font-[550] text-5xl">knowledge up with furrcrew’s petcare tips</h2>
-    <p class="mt-8 leading-10 text-center text-[#71788A] text-2xl w-[45vw]">
+    <p class="mt-8 leading-10 text-center text-[#71788A] text-2xl md:w-[45vw]">
       essential tips and insights about what’s new in pet care world ensuring health and happiness of your furry friends
     </p>
   </header>
-  <section class="mt-20 px-5 md:mt-10">
-    <form class="flex justify-center bg-white border-gray-600 border rounded-[30px] overflow-hidden">
+  <section class="p-5 flex justify-center min-w-14">
+    <form class="flex bg-white border-gray-600 border rounded-full">
       <button type="submit" class="py-3.5 pr-4 pl-5">
         <img src="{{ searchIconUrl }}" alt="Search" class="aspect-square w-6" />
       </button>
-      <input class="flex flex-grow p-3 text-xl leading-8 outline-none" type="search" placeholder="Search" aria-label="Search" />
+      <input class="flex p-3 text-xl leading-8 outline-none rounded-full" type="search" placeholder="Search" aria-label="Search" />
     </form>
-    <nav class="flex gap-5 justify-center px-5 mt-3 text-slate-500 md:flex-wrap">
-      <span class="my-auto text-xl leading-8">Tags:</span>
-      <div class="flex gap-4 font-medium md:flex-wrap">
-        <a href="#" class="px-7 py-2 bg-[#EDEDF6] rounded-xl">#Tag1</a>
-        <a href="#" class="px-7 py-2 bg-[#EDEDF6] rounded-xl">#Tag2</a>
-        <a href="#" class="px-7 py-2 bg-[#EDEDF6] rounded-xl">#Tag3</a>
-        <a href="#" class="px-7 py-2 bg-[#EDEDF6] rounded-xl">#Tag4</a>
-        <a href="#" class="px-7 py-2 bg-[#EDEDF6] rounded-xl">#Tag5</a>
-        <a href="#" class="px-7 py-2 bg-[#EDEDF6] rounded-xl">#Tag6</a>
-        <a href="#" class="px-7 py-2 bg-[#EDEDF6] rounded-xl">#Tag7</a>
-      </div>
-    </nav>
   </section>
-  <section class="flex flex-wrap gap-20 justify-center content-center items-center md:px-40 md:mt-10">
+  <div class="flex max-w-full max-sm:overflow-x-auto gap-5 px-5 mt-3 text-slate-500 pb-5">
+    <span class="text-xl leading-8">Tags:</span>
+    <div class="flex gap-4 font-medium">
+      <a href="#" class="px-7 py-2 bg-[#EDEDF6] rounded-xl">#Tag1</a>
+      <a href="#" class="px-7 py-2 bg-[#EDEDF6] rounded-xl">#Tag2</a>
+      <a href="#" class="px-7 py-2 bg-[#EDEDF6] rounded-xl">#Tag3</a>
+      <a href="#" class="px-7 py-2 bg-[#EDEDF6] rounded-xl">#Tag4</a>
+      <a href="#" class="px-7 py-2 bg-[#EDEDF6] rounded-xl">#Tag5</a>
+      <a href="#" class="px-7 py-2 bg-[#EDEDF6] rounded-xl">#Tag6</a>
+      <a href="#" class="px-7 py-2 bg-[#EDEDF6] rounded-xl">#Tag7</a>
+    </div>
+  </div>
+  <section class="flex flex-wrap gap-2 md:gap-20 justify-center content-center items-center md:px-40 md:mt-10">
     @for (blog of blogsService.blogs;track blog){
-    <article class="flex flex-col w-full max-w-xs md:mt-10 cursor-pointer" (click)="goToBlogsDetails(blog.id)">
+    <article class="flex flex-col p-3 max-sm:max-w-52 md:max-w-xs md:mt-10 cursor-pointer" (click)="goToBlogsDetails(blog.id)">
       <img src="{{ blog.imgSrc }}" alt="blog image description" class="w-full aspect-square" />
-      <h3 class="mt-8 text-3xl font-medium truncate">{{ blog.title }}</h3>
-      <div class="flex justify-between self-start mt-8">
-        <a href="#" class="text-2xl leading-10">READ MORE</a>
+      <h3 class="mt-4 h-auto flex-wrap md:mt-8 md:text-3xl font-medium">{{ blog.title }}</h3>
+      <div class="flex justify-between self-start md:mt-8">
+        <a href="#" class="md:text-2xl leading-10">READ MORE</a>
         <img src="{{ readMoreIconUrl }}" alt="Read more" class="aspect-square w-8" />
       </div>
     </article>
@@ -40,3 +40,4 @@
     <!-- Repeat the article structure for each blog post as needed -->
   </section>
 </main>
+<app-footer></app-footer>

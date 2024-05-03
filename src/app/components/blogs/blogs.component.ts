@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { BlogsService } from '../../services/blogs.service';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-blogs',
   standalone: true,
-  imports: [],
+  imports: [FooterComponent],
   templateUrl: './blogs.component.html',
   styleUrl: './blogs.component.css',
 })

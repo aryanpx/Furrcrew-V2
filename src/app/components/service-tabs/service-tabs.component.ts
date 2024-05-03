@@ -1,6 +1,7 @@
 import { CommonModule, DOCUMENT } from '@angular/common';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import $ from 'jquery';
 @Component({
   selector: 'app-service-tabs',
   standalone: true,
@@ -11,48 +12,67 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class ServiceTabsComponent implements OnInit {
   vetImg!: SafeResourceUrl;
   activeTab: number = 0;
-
+  progressWidth: number = 0;
+  progressInterval: any;
+  @ViewChild('tabContainer') tabContainerRef!: ElementRef;
   constructor(private sanitizer: DomSanitizer, @Inject(DOCUMENT) public document: Document) {}
 
-  ngOnInit(): void {
-    setTimeout(() => {
-      const tabs = this.document.querySelectorAll('.flex.flex-col.flex-1.cursor-pointer');
-      const slider = this.document.createElement('div');
-      slider.classList.add('tab-slider');
-      tabs[0].appendChild(slider);
-
-      let activeTabIndex = 0;
-
-      function setActiveTab(index: any) {
-        if (index === activeTabIndex) return;
-
-        const prevTab = tabs[activeTabIndex];
-        const nextTab = tabs[index];
-        const sliderWidth = nextTab.getBoundingClientRect().width;
-        const nextTabOffsetLeft = Array.from(tabs)
-          .slice(0, index)
-          .reduce((acc, tab) => acc + tab.getBoundingClientRect().width, 0);
-
-        slider.style.width = sliderWidth + 'px';
-        slider.style.transform = `translateX(${nextTabOffsetLeft}px)`;
-
-        prevTab.classList.remove('active-tab');
-        nextTab.classList.add('active-tab');
-
-        activeTabIndex = index;
-      }
-
-      tabs.forEach((tab, index) => {
-        tab.addEventListener('click', () => {
-          setActiveTab(index);
-        });
+  initSliderAnimation(): void {
+    if (typeof window !== 'undefined') {
+      $(window).scroll(() => {
+        const tabContainer = $('.tab-container');
+        const tabContainerHeight = tabContainer?.outerHeight();
+        console.log('🚀 ~ ServiceTabsComponent ~ $ ~ tabContainerHeight:', tabContainerHeight);
+        const tabContainerOffset = tabContainer?.offset();
+        console.log('🚀 ~ ServiceTabsComponent ~ $ ~ tabContainerOffset:', tabContainerOffset);
+        const windowHeight = window.innerHeight;
+        console.log('🚀 ~ ServiceTabsComponent ~ $ ~ windowHeight:', windowHeight);
+        if (tabContainerOffset && tabContainerHeight) {
+          if (tabContainerOffset.top >= 0 && tabContainerOffset.top + tabContainerHeight <= windowHeight) {
+            console.log('starting the progress', tabContainerOffset.top, tabContainerHeight);
+            if (!this.progressInterval) {
+              this.startProgress();
+            }
+          } else {
+            clearInterval(this.progressInterval);
+            this.progressInterval = null;
+          }
+        }
       });
-    }, 100); // Adjust the delay if necessary
+    }
+  }
 
+  ngOnInit(): void {
     // Assuming your SVG file is located in the assets folder
     this.vetImg = this.sanitizer.bypassSecurityTrustResourceUrl('assets/images/vetImg.png');
   }
+  ngAfterViewInit(): void {
+    // this.initSliderAnimation();
+    // this.startProgress();
+  }
   setActiveTab(tabIndex: number): void {
     this.activeTab = tabIndex;
+    // clearInterval(this.progressInterval); // Stop the progress bar animation on manual tab selection
+    this.progressWidth = 0; // Reset the progress bar width
+    clearInterval(this.progressInterval); // Stop the progress bar animation on manual tab selection
+    this.startProgress();
+  }
+  autoSwitchTabs(): void {
+    if (this.activeTab === 3) {
+      this.setActiveTab(0);
+    } else {
+      this.setActiveTab(this.activeTab + 1);
+    }
+  }
+  startProgress(): void {
+    this.progressInterval = setInterval(() => {
+      if (this.progressWidth < 100) {
+        this.progressWidth++;
+      } else {
+        clearInterval(this.progressInterval);
+        this.autoSwitchTabs();
+      }
+      console.log('🚀 ~ ServiceTabsComponent ~ this.progressInterval=setInterval ~ (this.progressWidth:', this.progressWidth);
+    }, 110); // Adjust the interval for the progress bar animation
   }
 }

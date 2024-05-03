@@ -21,5 +21,16 @@
 }
 
 .active-tab {
-  color: black; /* Change color of active tab */
+  background-color: black;
+}
+.tab {
+}
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px; /* Same height as tab-slider */
+  background-color: black; /* Color of the progress bar */
+  z-index: 999; /* Ensure it's above the tabs */
+  transition: width 1s ease; /* Adjust the duration of the progress animation */
 }
