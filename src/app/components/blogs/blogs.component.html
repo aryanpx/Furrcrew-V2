@@ -6,17 +6,17 @@
       essential tips and insights about what’s new in pet care world ensuring health and happiness of your furry friends
     </p>
   </header>
-  <section class="p-5 flex justify-center min-w-14">
-    <form class="flex bg-white border-gray-600 border rounded-full">
+  <div class="p-5 flex justify-center w-full">
+    <form class="flex bg-white border-gray-600 border rounded-full overflow-hidden w-full md:w-[55%]">
       <button type="submit" class="py-3.5 pr-4 pl-5">
         <img src="{{ searchIconUrl }}" alt="Search" class="aspect-square w-6" />
       </button>
       <input class="flex p-3 text-xl leading-8 outline-none rounded-full" type="search" placeholder="Search" aria-label="Search" />
     </form>
-  </section>
-  <div class="flex max-w-full max-sm:overflow-x-auto gap-5 px-5 mt-3 text-slate-500 pb-5">
+  </div>
+  <div class="flex max-w-full gap-5 px-5 mt-3 text-slate-500 pb-5">
     <span class="text-xl leading-8">Tags:</span>
-    <div class="flex gap-4 font-medium">
+    <div class="flex gap-4 font-medium max-sm:overflow-x-auto">
       <a href="#" class="px-7 py-2 bg-[#EDEDF6] rounded-xl">#Tag1</a>
       <a href="#" class="px-7 py-2 bg-[#EDEDF6] rounded-xl">#Tag2</a>
       <a href="#" class="px-7 py-2 bg-[#EDEDF6] rounded-xl">#Tag3</a>
@@ -30,7 +30,7 @@
     @for (blog of blogsService.blogs;track blog){
     <article class="flex flex-col p-3 max-sm:max-w-52 md:max-w-xs md:mt-10 cursor-pointer" (click)="goToBlogsDetails(blog.id)">
       <img src="{{ blog.imgSrc }}" alt="blog image description" class="w-full aspect-square" />
-      <h3 class="mt-4 h-auto flex-wrap md:mt-8 md:text-3xl font-medium">{{ blog.title }}</h3>
+      <h3 class="mt-4 h-auto flex-wrap md:mt-8 md:text-3xl font-medium line-clamp-2">{{ blog.title }}</h3>
       <div class="flex justify-between self-start md:mt-8">
         <a href="#" class="md:text-2xl leading-10">READ MORE</a>
         <img src="{{ readMoreIconUrl }}" alt="Read more" class="aspect-square w-8" />
