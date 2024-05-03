@@ -1,7 +1,7 @@
 <div class="flex flex-col items-center">
-  <div class="w-2/3">
+  <div class="md:w-2/3 max-sm:w-11/12">
     <div class="flex flex-col flex-1 gap-5 max-md:flex-wrap max-md:max-w-full">
-      <div class="flex text-6xl text-ellipsis max-md:flex-wrap max-md:max-w-full max-md:text-4xl mt-10">Tick fever – take it seriously</div>
+      <div class="flex text-6xl text-ellipsis max-md:flex-wrap max-md:max-w-full max-md:text-4xl mt-10">{{ blog.title }}</div>
       <div class="flex gap-5">
         <div class="flex text-gray-600">5 mins</div>
         <div class="flex">Read By author_name</div>
@@ -68,15 +68,19 @@
     </div>
     <hr />
     <div class="gap-0 mt-16 text-3xl leading-8 text-black font-[510] max-md:flex-wrap max-md:mt-10 max-md:max-w-full">Other blogs</div>
-    <ul class="flex overflow-x-auto md:py-5">
+    <ul class="flex max-sm:flex-col md:overflow-x-auto md:py-5 md:gap-10">
       @for (blog of blogsService.blogs;track blog){
-      <li class="min-w-[300px] flex-shrink-0 m-5">
-        <div class="flex flex-col w-80">
-          <img [src]="blog.imgSrc" [alt]="blog.title" class="h-70 w-70" />
-          <h2 class="mt-6 text-2xl leading-9">{{ blog.title }}</h2>
-          <div class="flex gap-3 items-center mt-6">
-            <a routerLink="blogs" class="text-2xl leading-9">READ MORE</a>
-            <img src="assets/icons/arrowright.svg" alt="Read more" class="w-[23px] h-[23px]" />
+      <li class="max-sm:max-w-full md:min-w-[300px] flex-shrink-0 mt-6">
+        <div class="flex md:flex-col md:w-80 w-full">
+          <div class="flex">
+            <img [src]="blog.imgSrc" [alt]="blog.title" class="h-70 w-70" />
+          </div>
+          <div class="flex flex-col max-sm:pl-5 w-full max-sm:justify-between">
+            <h2 class="text-xl md:text-2xl leading-9 w-full">{{ blog.title }}</h2>
+            <div class="flex md:mt-6 gap-3">
+              <a routerLink="blogs" class="text-xl md:text-2xl leading-9">READ MORE</a>
+              <img src="assets/icons/arrowright.svg" alt="Read more" />
+            </div>
           </div>
         </div>
       </li>

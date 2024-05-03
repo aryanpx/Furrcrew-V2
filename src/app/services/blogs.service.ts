@@ -23,12 +23,12 @@ export class BlogsService {
     {
       id: 4,
       imgSrc: 'assets/images/dogimage4.png',
-      title: 'Teach your pets how to swim this summer',
+      title: 'Is eye shade getting dark in cats natural?',
     },
     {
       id: 5,
       imgSrc: 'assets/images/dogimage1.jpg',
-      title: 'How to encourage good behaviour in dogs?',
+      title: '3 commands to teach your new furry member',
     },
     {
       id: 6,
