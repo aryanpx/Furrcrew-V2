@@ -7,7 +7,7 @@ import { ScrollAnimationService } from '../../services/scroll-animation.service'
   standalone: true,
   imports: [],
   templateUrl: './scrollable-div.component.html',
-  styleUrl: './scrollable-div.component.css',
+  styleUrls: ['./scrollable-div.component.css'],
 })
 export class ScrollableDivComponent implements OnInit {
   imageSrc!: SafeResourceUrl;
