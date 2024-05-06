@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ElementRef, HostListener, Output, EventEmitter } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -9,10 +10,18 @@ import { RouterLink } from '@angular/router';
   styleUrl: './side-bar.component.css',
 })
 export class SideBarComponent {
-  @Input()
-  sidebarOpen!: boolean;
-  @Input()
-  closeSidebar!: () => void;
+  @Output() closeSidebar = new EventEmitter<void>();
+  @Input() sidebarOpen!: boolean;
   @Input() theme!: 'light' | 'dark';
-  constructor() {}
+  constructor(private commonService: CommonService, private elementRef: ElementRef) {}
+
+  toggleSidebar(): void {
+    this.commonService.setSidebar(!this.sidebarOpen);
+  }
+  @HostListener('document:click', ['$event'])
+  onClick(event: MouseEvent) {
+    if (!this.elementRef.nativeElement.contains(event.target)) {
+      this.closeSidebar.emit();
+    }
+  }
 }

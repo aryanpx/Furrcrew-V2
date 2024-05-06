@@ -1,29 +1,28 @@
 import { Component, ElementRef, HostListener, Inject } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
-import { DOCUMENT } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { SideBarComponent } from '../side-bar/side-bar.component';
+import { ClickOutsideDirective } from './clickOutside';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [SideBarComponent],
+  imports: [SideBarComponent, CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
   sidebarOpen: boolean = false;
-  toggleSidebar(): void {
-    this.sidebarOpen = !this.sidebarOpen;
-  }
-  closeSidebar(): void {
-    console.log('close sidebar called');
-    this.sidebarOpen = false;
-  }
   theme: 'light' | 'dark' = this.themeService.isDarkTheme ? 'dark' : 'light';
-  dropdownOpen: boolean = false;
   header!: HTMLElement;
   // iconSrc: string = 'path/to/default/icon'; // Add this line
-  constructor(private elementRef: ElementRef, public themeService: ThemeService, @Inject(DOCUMENT) private document: Document) {
+  constructor(
+    private elementRef: ElementRef,
+    public themeService: ThemeService,
+    @Inject(DOCUMENT) private document: Document,
+    private commonService: CommonService
+  ) {
     const localStorage = document.defaultView?.localStorage;
     if (localStorage !== undefined) {
       const preferredTheme = localStorage.getItem('theme');
@@ -43,11 +42,17 @@ export class HeaderComponent {
     localStorage.setItem('theme', this.theme);
     this.themeService.isDarkTheme = this.theme === 'dark';
   }
-  toggleDropdown(): void {
-    this.dropdownOpen = !this.dropdownOpen;
-  }
   ngOnInit() {
     this.header = this.elementRef.nativeElement.querySelector('#myHeader');
+    this.commonService._sidebarOpen.subscribe((isOpen: boolean) => {
+      this.sidebarOpen = isOpen;
+    });
+  }
+  toggleSidebar(): void {
+    this.commonService.setSidebar(!this.sidebarOpen); // Toggle the sidebar state
+  }
+  closeSidebar() {
+    this.commonService.setSidebar(false);
   }
   // Define toggleTheme function to toggle between light and dark mode
 
@@ -56,7 +61,6 @@ export class HeaderComponent {
   @HostListener('window:scroll', ['$event'])
   handleScroll() {
     const stickyOffset = this.header.offsetTop;
-
     if (window.scrollY > stickyOffset) {
       this.sticky = true;
     } else {
