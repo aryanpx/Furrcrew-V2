@@ -1,0 +1,25 @@
+.card {
+  perspective: 1000px; /* Adds 3D effect */
+  position: relative;
+  cursor: pointer;
+}
+
+.card > div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden; /* Hides the back side of the div */
+  transition: transform 0.6s;
+}
+
+.back-content {
+  transform: rotateY(180deg);
+}
+
+.card.flipped .front-content {
+  transform: rotateY(180deg);
+}
+
+.card.flipped .back-content {
+  transform: rotateY(0deg);
+}
