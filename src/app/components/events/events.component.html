@@ -7,15 +7,23 @@
   <video src="assets/videos/pet_video.mp4" [ngStyle]="{ width: imageWidth }">Your browser does not support video tag</video>
 </div>
 
-<div class="self-center mt-48 w-full max-w-[1675px] max-md:mt-10 max-md:max-w-full">
+<div class="self-center mt-48 w-full max-md:mt-10 max-md:max-w-full">
   <div class="flex gap-5 max-md:flex-col max-md:gap-0">
-    <div class="flex flex-col md:w-[80%]">
-      <div class="flex flex-col grow px-5 text-xl md:text-4xl font-[590] max-md:mt-10 max-md:max-w-full">
-        <div class="max-md:max-w-full text-center px-6">
+    <div class="max-sm:hidden flex flex-col justify-center px-5">
+      <img src="assets/images/events0.png" class="min-w-[248px]" />
+    </div>
+    <div class="flex flex-col">
+      <div class="flex flex-col justify-center grow px-5 text-xl md:text-4xl font-[590] max-md:mt-10 max-md:max-w-full">
+        <div class="flex justify-center max-md:max-w-full text-center p-5">
           we are here for the everyday experiences, the stories, for the simple beauty of shared companionship, for moments that define them
           – learning alongside with you on this journey, in the constant pursuit of better.
         </div>
-        <img loading="lazy" src="assets/images/events1.png" class="max-sm:hidden w-full aspect-[1.79] max-md:max-w-full" />
+        <div class="relative">
+          <img loading="lazy" src="assets/images/events1.png" class="max-sm:hidden w-full aspect-[1.79] max-md:max-w-full" />
+          <div class="max-sm:hidden absolute -bottom-20 -left-20">
+            <img src="assets/images/events1 (1).png" />
+          </div>
+        </div>
       </div>
     </div>
     <div class="md:hidden px-5 gap-3">
@@ -24,7 +32,7 @@
         <img loading="lazy" src="assets/images/events2.png" class="shrink-0 my-auto max-w-full aspect-square w-[165px]" />
       </div>
       <div class="py-5">
-        <img src="assets/images/events1 (2).png" />
+        <img src="assets/images/events1.png" />
       </div>
       <div class="flex">
         <img src="assets/images/events1 (1).png" />
@@ -33,7 +41,7 @@
     </div>
     <div class="max-sm:hidden flex flex-col ml-5 w-[18%]">
       <div class="flex flex-col mt-14 max-md:mt-10">
-        <img loading="lazy" src="assets/images/events2.png" class="w-[289px] aspect-square" />
+        <img loading="lazy" src="assets/images/events2.png" class="min-w-[289px] aspect-square" />
         <img
           loading="lazy"
           src="assets/images/events3.png"
@@ -56,7 +64,7 @@
           class="border-solid border-black dark:border-darkfont border rounded-full px-5 h-10 md:h-20 flex items-center justify-center text-2xl md:text-3xl"
         >
           <a routerLink="past-events"> past events </a>
-          <img src="assets/icons/arrowupright.svg" class="invert dark:invert-0 w-5" />
+          <img src="assets/icons/arrowupright.svg" class="invert dark:invert-0 max-sm:w-5" />
         </button>
       </div>
     </div>
@@ -99,20 +107,20 @@
   </section>
 </div>
 
-<main class="flex flex-col justify-center items-start w-full text-zinc-800 max-md:pr-5 max-md:max-w-full p-10">
+<main class="flex items-start w-full max-md:pr-5 max-md:max-w-full p-10">
   <section class="flex flex-col max-w-full md:w-2/3">
     <article class="flex flex-col max-md:max-w-full">
-      <h1 class="text-8xl leading-[88px] max-md:max-w-full max-md:text-4xl max-md:leading-10">Nurturing authentic connections unplugged</h1>
+      <h1 class="text-8xl max-md:max-w-full max-md:text-4xl max-md:leading-10">Nurturing authentic connections unplugged</h1>
       <p class="mt-6 text-xl md:text-3xl md:leading-9 max-md:max-w-full">
         Facilitating opportunities to come together, learn and grow - where communities are built.
       </p>
     </article>
     <div class="flex gap-5">
       <footer class="justify-center mt-9 text-xl md:text-3xl leading-9 underline whitespace-nowrap max-md:max-w-full">
-        &#64;furrcrewofficial
+        <a href="https://www.instagram.com/furrcrewofficial/"> &#64;furrcrewofficial </a>
       </footer>
       <footer class="justify-center mt-9 text-xl md:text-3xl leading-9 underline whitespace-nowrap max-md:max-w-full">
-        &#64;furrfiestaofficial
+        <a href="https://www.instagram.com/furrfiestaofficial/"> &#64;furrfiestaofficial </a>
       </footer>
     </div>
   </section>
@@ -122,7 +130,7 @@
   <img loading="lazy" src="assets/images/event-gallery1.png" class="shrink-0 max-w-full aspect-square" />
   <img loading="lazy" src="assets/images/event-gallery2.png" class="shrink-0 max-w-full aspect-square" />
   <img loading="lazy" src="assets/images/event-gallery3.png" class="shrink-0 max-w-full aspect-square" />
-  <video src="assets/videos/events_1.mov" class="row-span-2 h-full w-full aspect-auto -rotate-90"></video>
+  <video src="assets/videos/events_2.mov" class="row-span-2 h-full w-full aspect-auto"></video>
   <video src="assets/videos/events_2.mov" class="row-span-2 h-full"></video>
   <img loading="lazy" src="assets/images/event-gallery5.png" class="shrink-0 max-w-full aspect-square" />
   <img loading="lazy" src="assets/images/event-gallery6.png" class="shrink-0 max-w-full aspect-square" />
@@ -138,7 +146,7 @@
   <img loading="lazy" src="assets/images/event-gallery1.png" class="w-full aspect-square max-md:mt-7" />
   <img loading="lazy" src="assets/images/event-gallery2.png" class="w-full aspect-square max-md:mt-7" />
   <img loading="lazy" src="assets/images/event-gallery3.png" class="w-full aspect-square max-md:mt-7" />
-  <video src="assets/videos/events_1.mov" class="row-span-2 w-full aspect-auto -rotate-90"></video>
+  <video src="assets/videos/events_2.mov" class="row-span-2 w-full aspect-auto"></video>
   <video src="assets/videos/events_2.mov" class="row-span-2 h-full"></video>
   <img loading="lazy" src="assets/images/event-gallery4.png" class="w-full aspect-square max-md:mt-7" />
   <img loading="lazy" src="assets/images/event-gallery5.png" class="w-full aspect-square max-md:mt-7" />
@@ -150,69 +158,5 @@
   <img loading="lazy" src="assets/images/event-gallery11.png" class="w-full aspect-square max-md:mt-7" />
   <img loading="lazy" src="assets/images/event-gallery12.png" class="w-full aspect-square max-md:mt-7" />
 </div>
-
-<!-- <div class="flex p-5">
-  <div class="">
-    <div class="flex gap-5 max-md:flex-col max-md:gap-0 p-5">
-      <div class="flex flex-col basis-1/4 max-md:ml-0 max-md:w-full">
-        <img loading="lazy" src="assets/images/event-gallery1.png" class="w-full aspect-square max-md:mt-7" />
-      </div>
-      <div class="flex flex-col ml-5 basis-1/4 max-md:ml-0 max-md:w-full">
-        <img loading="lazy" src="assets/images/event-gallery2.png" class="w-full aspect-square max-md:mt-7" />
-      </div>
-      <div class="flex flex-col ml-5 basis-1/4 max-md:ml-0 max-md:w-full">
-        <img loading="lazy" src="assets/images/event-gallery3.png" class="w-full aspect-square max-md:mt-7" />
-      </div>
-    </div>
-
-    <div class="flex gap-5 max-md:flex-col max-md:gap-0">
-      <div class="flex flex-col max-sm:basis-1/6 md:basis-1/4 max-md:ml-0 max-md:w-full">
-        <img loading="lazy" src="assets/images/event-gallery4.png" class="w-full aspect-square max-md:mt-7" />
-      </div>
-      <div class="flex flex-col ml-5 max-sm:basis-1/6 md:basis-1/4 max-md:ml-0 max-md:w-full">
-        <img loading="lazy" src="assets/images/event-gallery5.png" class="w-full aspect-square max-md:mt-7" />
-      </div>
-      <div class="flex flex-col ml-5 max-sm:basis-1/6 md:basis-1/4 max-md:ml-0 max-md:w-full">
-        <img loading="lazy" src="assets/images/event-gallery6.png" class="w-full aspect-square max-md:mt-7" />
-      </div>
-    </div>
-  </div>
-
-  <div class="flex">
-    <video autoplay loop src="assets/videos/events_1.mov" class="w-full basis-1/2 -rotate-90"></video>
-  </div>
-</div>
-
-<div class="flex p-5">
-  <div class="flex ml-5">
-    <video autoplay loop src="assets/videos/events_2.mov" class="w-full basis-1/2 aspect-square"></video>
-  </div>
-
-  <div class="">
-    <div class="flex gap-5 max-md:flex-col max-md:gap-0 p-5">
-      <div class="flex flex-col md:basis-1/4 max-md:ml-0 max-md:w-full">
-        <img loading="lazy" src="assets/images/event-gallery7.png" class="w-full aspect-square max-md:mt-7" />
-      </div>
-      <div class="flex flex-col ml-5 md:basis-1/4 max-md:ml-0 max-md:w-full">
-        <img loading="lazy" src="assets/images/event-gallery8.png" class="w-full aspect-square max-md:mt-7" />
-      </div>
-      <div class="flex flex-col ml-5 md:basis-1/4 max-md:ml-0 max-md:w-full">
-        <img loading="lazy" src="assets/images/event-gallery9.png" class="w-full aspect-square max-md:mt-7" />
-      </div>
-    </div>
-
-    <div class="flex gap-5 max-md:flex-col">
-      <div class="flex flex-col md:basis-1/4 max-md:ml-0 max-md:w-full">
-        <img loading="lazy" src="assets/images/event-gallery10.png" class="w-full aspect-square max-md:mt-7" />
-      </div>
-      <div class="flex flex-col ml-5 md:basis-1/4 max-md:ml-0 max-md:w-full">
-        <img loading="lazy" src="assets/images/event-gallery11.png" class="w-full aspect-square max-md:mt-7" />
-      </div>
-      <div class="flex flex-col ml-5 md:basis-1/4 max-md:ml-0 max-md:w-full">
-        <img loading="lazy" src="assets/images/event-gallery12.png" class="w-full aspect-square max-md:mt-7" />
-      </div>
-    </div>
-  </div>
-</div> -->
 
 <app-footer></app-footer>
