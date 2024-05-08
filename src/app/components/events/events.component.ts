@@ -3,6 +3,7 @@ import { FooterComponent } from '../footer/footer.component';
 import { Router, RouterLink } from '@angular/router';
 import { EventsService } from '../../services/events.service';
 import { CommonModule, DOCUMENT } from '@angular/common';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-events',
@@ -12,12 +13,22 @@ import { CommonModule, DOCUMENT } from '@angular/common';
   styleUrl: './events.component.css',
 })
 export class EventsComponent {
+  events: any = [];
   imageWidth: string = '66.666667%';
   isMobile: boolean = false;
-  constructor(private router: Router, public eventsService: EventsService, @Inject(DOCUMENT) private document: Document) {
+  formatDate(unixTimestamp: number): string {
+    const date = new Date(unixTimestamp * 1000);
+    return date.toUTCString(); // Adjust format as per your requirement
+  }
+  constructor(private router: Router, private apiService: ApiService, @Inject(DOCUMENT) private document: Document) {
     if (typeof window !== 'undefined') {
       this.isMobile = window.innerWidth < 769;
     }
+  }
+  ngOnInit() {
+    this.apiService.getAllEvents().subscribe((data) => {
+      this.events = data;
+    });
   }
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
@@ -32,5 +43,8 @@ export class EventsComponent {
 
   goToEventDetails(eventId: number) {
     this.router.navigate(['/events/upcoming-events'], { queryParams: { eventId: eventId } });
+  }
+  gotoEvent(event: any) {
+    this.router.navigate(['/events/upcoming-events'], { state: { event } });
   }
 }

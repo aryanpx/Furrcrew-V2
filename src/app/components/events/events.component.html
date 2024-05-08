@@ -69,20 +69,19 @@
       </div>
     </div>
     <div class="flex max-sm:flex-col md:flex-wrap justify-center items-start gap-5 mt-16 w-full">
-      @for (event of eventsService.events; track $index) {
+      @for (event of events; track $index) {
       <article class="flex flex-col items-center w-full md:max-w-[25%] md:px-5">
         <img src="assets/icons/drawing-pin.png" alt="Dog event" class="max-w-full aspect-[1.56] w-[150px] z-10" />
         <div class="p-5 bg-white dark:bg-black shadow-md mt-[-60px] cursor-pointer" (click)="goToEventDetails(event.id)">
-          <img src="{{ event.imageUrl }}" alt="Event venue" class="w-full aspect-square" />
+          <img src="{{ event.images[0].value }}" alt="Event venue" class="w-full aspect-square object-cover" />
           <h2 class="mt-3 text-2xl font-bold">{{ event.title }}</h2>
           <div class="mt-3">
-            <p>{{ event.location }}</p>
-            <time datetime="2024-04-14">{{ event.time }}</time>
+            <p>{{ event.address.address }}</p>
+            <time datetime="2024-04-14">{{ formatDate(event.scheduledDate) }}</time>
           </div>
         </div>
       </article>
       }
-      <!-- Repeat for each event -->
     </div>
   </section>
   <section class="mt-16 md:mt-32 mb-4 flex flex-col items-center w-full px-5">
