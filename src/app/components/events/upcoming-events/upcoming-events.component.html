@@ -4,7 +4,7 @@
       <div class="flex flex-col w-[38%] max-md:ml-0 max-md:w-full">
         <div class="card rounded-full max-sm:fixed" [class.flipped]="isFlipped" (click)="flipCard()">
           <div class="front-content">
-            <img loading="lazy" src="{{ event.images[0].value }}" class="md:max-w-[530px] aspect-square rounded-3xl" />
+            <img loading="lazy" src="{{ event.images[0].value }}" class="md:max-w-[530px] aspect-square rounded-3xl object-contain" />
           </div>
           <div class="back-content">
             <div

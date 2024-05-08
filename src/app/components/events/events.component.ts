@@ -26,7 +26,7 @@ export class EventsComponent {
     }
   }
   ngOnInit() {
-    this.apiService.getAllEvents().subscribe((data) => {
+    this.apiService.getActiveEvents().subscribe((data) => {
       this.events = data;
     });
   }

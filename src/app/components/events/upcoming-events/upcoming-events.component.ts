@@ -33,7 +33,7 @@ export class UpcomingEventsComponent implements OnInit {
     }
   }
   getEvents(eventId: string) {
-    this.apiService.getAllEvents().subscribe((res) => {
+    this.apiService.getActiveEvents().subscribe((res) => {
       this.events = Object.values(res);
       this.event = this.events.find((event) => event.id === eventId);
     });
