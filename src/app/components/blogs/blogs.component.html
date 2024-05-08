@@ -11,7 +11,14 @@
       <button type="submit" class="py-3.5 pr-4 pl-5">
         <img src="{{ searchIconUrl }}" alt="Search" class="aspect-square w-6" />
       </button>
-      <input class="flex p-3 text-xl leading-8 outline-none rounded-full" type="search" placeholder="Search" aria-label="Search" />
+      <input
+        [(ngModel)]="searchQuery"
+        (input)="filterBlogs()"
+        class="flex p-3 text-xl leading-8 outline-none rounded-full"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
     </form>
   </div>
   <div class="flex max-w-full gap-5 px-5 mt-3 text-slate-500 pb-5">
@@ -27,17 +34,16 @@
     </div>
   </div>
   <section class="flex flex-wrap gap-2 md:gap-20 justify-center content-center items-center md:px-40 md:mt-10">
-    @for (blog of blogsService.blogs;track blog){
+    @for (blog of filteredBlogs;track blog){
     <article class="flex flex-col p-3 max-sm:max-w-52 md:max-w-xs md:mt-10 cursor-pointer" (click)="goToBlogsDetails(blog.id)">
-      <img src="{{ blog.imgSrc }}" alt="blog image description" class="w-full aspect-square" />
-      <h3 class="mt-4 h-auto flex-wrap md:mt-8 md:text-3xl font-medium line-clamp-2">{{ blog.title }}</h3>
+      <img src="{{ blog.images[0].value }}" alt="blog image description" class="w-[290px] aspect-square object-cover" />
+      <h3 class="mt-4 md:h-16 flex-wrap md:mt-8 md:text-3xl font-medium line-clamp-2">{{ blog.title }}</h3>
       <div class="flex justify-between self-start md:mt-8">
         <a href="#" class="md:text-2xl leading-10">READ MORE</a>
         <img src="{{ readMoreIconUrl }}" alt="Read more" class="aspect-square w-8" />
       </div>
     </article>
     }
-    <!-- Repeat the article structure for each blog post as needed -->
   </section>
 </main>
 <app-footer></app-footer>

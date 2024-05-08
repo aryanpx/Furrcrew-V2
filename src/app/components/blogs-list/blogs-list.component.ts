@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-blogs-list',
@@ -9,34 +10,14 @@ import { RouterLink } from '@angular/router';
   styleUrl: './blogs-list.component.css',
 })
 export class BlogsListComponent {
-  items: { imgSrc: string; title: string }[] = [
-    {
-      imgSrc: 'assets/images/dogimage1.jpg',
-      title: 'How to encourage good behaviour in dogs?',
-    },
-    {
-      imgSrc: 'assets/images/dogimage2.png',
-      title: 'Teach your pets how to swim this summer',
-    },
-    {
-      imgSrc: 'assets/images/dogimage3.png',
-      title: 'Make your pet friendlier with other pets',
-    },
-    {
-      imgSrc: 'assets/images/dogimage4.png',
-      title: 'Teach your pets how to swim this summer',
-    },
-    {
-      imgSrc: 'assets/images/dogimage1.jpg',
-      title: 'How to encourage good behaviour in dogs?',
-    },
-    {
-      imgSrc: 'assets/images/dogimage2.png',
-      title: 'Teach your pets how to swim this summer',
-    },
-    {
-      imgSrc: 'assets/images/dogimage3.png',
-      title: 'Make your pet friendlier with other pets',
-    },
-  ];
+  items: any[] = [];
+  goToBlogsDetails(blogId: number) {
+    this.router.navigate(['/blogs/details'], { queryParams: { blogId: blogId } });
+  }
+  constructor(private router: Router, private apiService: ApiService) {
+    console.log('Blogs is running');
+    this.apiService.getAllBlogs().subscribe((res) => {
+      this.items = Object.values(res);
+    });
+  }
 }
