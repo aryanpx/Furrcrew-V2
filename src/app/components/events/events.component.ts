@@ -40,11 +40,7 @@ export class EventsComponent {
       this.imageWidth = '100%'; // Once the scroll is past the screen height, ensure image is full width
     }
   }
-
   goToEventDetails(eventId: number) {
     this.router.navigate(['/events/upcoming-events'], { queryParams: { eventId: eventId } });
-  }
-  gotoEvent(event: any) {
-    this.router.navigate(['/events/upcoming-events'], { state: { event } });
   }
 }
