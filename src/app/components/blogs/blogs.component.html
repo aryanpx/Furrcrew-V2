@@ -7,12 +7,12 @@
     </p>
   </header>
   <div class="p-5 flex justify-center w-full">
-    <form class="flex bg-white border-gray-600 border rounded-full overflow-hidden w-full md:w-[55%]">
+    <form class="flex bg-white border-gray-600 border rounded-full overflow-hidden w-full md:w-[55%]" [formGroup]="formGroup">
       <button type="submit" class="py-3.5 pr-4 pl-5">
         <img src="{{ searchIconUrl }}" alt="Search" class="aspect-square w-6" />
       </button>
       <input
-        [(ngModel)]="searchQuery"
+        formControlName="search"
         (input)="filterBlogs()"
         class="flex p-3 text-xl leading-8 outline-none rounded-full"
         type="search"
@@ -33,10 +33,12 @@
       <a href="#" class="px-7 py-2 bg-[#EDEDF6] rounded-xl">#Tag7</a>
     </div>
   </div>
-  <section class="flex flex-wrap gap-2 md:gap-20 justify-center content-center items-center md:px-40 md:mt-10">
+  <section
+    class="grid max-sm:grid-cols-2 md:grid-cols-3 flex-wrap gap-2 md:gap-20 justify-center content-center items-center md:px-40 md:mt-10"
+  >
     @for (blog of filteredBlogs;track blog){
     <article class="flex flex-col p-3 max-sm:max-w-52 md:max-w-xs md:mt-10 cursor-pointer" (click)="goToBlogsDetails(blog.id)">
-      <img src="{{ blog.images[0].value }}" alt="blog image description" class="w-[290px] aspect-square object-cover" />
+      <img src="{{ blog.images[0].value }}" alt="blog image description" class="w-[280px] aspect-square object-cover" />
       <h3 class="mt-4 md:h-16 flex-wrap md:mt-8 md:text-3xl font-medium line-clamp-2">{{ blog.title }}</h3>
       <div class="flex justify-between self-start md:mt-8">
         <a href="#" class="md:text-2xl leading-10">READ MORE</a>
