@@ -1,13 +1,31 @@
-import { Component, ElementRef, HostListener, Inject } from '@angular/core';
+import { Component, ElementRef, HostBinding, HostListener, Inject } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { SideBarComponent } from '../side-bar/side-bar.component';
-import { ClickOutsideDirective } from './clickOutside';
+// import { ClickOutsideDirective } from './clickOutside';
 import { CommonService } from '../../services/common.service';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-header',
   standalone: true,
+  animations: [
+    trigger('changeState', [
+      state(
+        'light',
+        style({
+          transform: 'rotate(0)',
+        })
+      ),
+      state(
+        'dark',
+        style({
+          transform: 'rotate(-180deg)',
+        })
+      ),
+      transition('light <=> dark', animate('100ms ease-in-out')),
+    ]),
+  ],
   imports: [SideBarComponent, CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
@@ -15,6 +33,7 @@ import { CommonService } from '../../services/common.service';
 export class HeaderComponent {
   sidebarOpen: boolean = false;
   theme: 'light' | 'dark' = this.themeService.isDarkTheme ? 'dark' : 'light';
+  @HostBinding('@changeState') currentState = this.theme;
   header!: HTMLElement;
   // iconSrc: string = 'path/to/default/icon'; // Add this line
   constructor(
@@ -28,7 +47,6 @@ export class HeaderComponent {
       const preferredTheme = localStorage.getItem('theme');
       if (preferredTheme) {
         this.theme = preferredTheme as 'dark' | 'light';
-        console.log('if condition', this.theme);
         document.body.classList.add(this.theme);
       }
     } else {
@@ -41,6 +59,7 @@ export class HeaderComponent {
     document.body.classList.toggle('dark', this.theme === 'dark');
     localStorage.setItem('theme', this.theme);
     this.themeService.isDarkTheme = this.theme === 'dark';
+    this.currentState = this.theme;
   }
   ngOnInit() {
     this.header = this.elementRef.nativeElement.querySelector('#myHeader');
