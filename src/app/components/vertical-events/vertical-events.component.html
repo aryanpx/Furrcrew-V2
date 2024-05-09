@@ -1,56 +1,66 @@
-<main class="flex justify-center items-center px-5 mt-32 max-w-full max-md:mt-10 max-md:max-w-full">
-  <section class="flex items-center justify-center gap-5 max-md:flex-col max-md:gap-0">
+<main class="flex justify-center items-center max-sm:flex-col px-5 mt-32 max-w-full max-md:mt-10 max-md:max-w-full">
+  <section class="flex items-center justify-center gap-5 max-md:flex-col max-md:gap-0 max-w-full">
     <aside class="flex flex-col w-[16%] max-md:ml-0 max-md:w-full">
       <article class="updown-animate1 flex flex-col max-md:mt-10">
         <div class="flex flex-col p-3 bg-white shadow-3xl">
-          <img src="{{ imgSrc1 }}" alt="" class="w-full aspect-[1.08]" />
-          <h3 class="text-black text-2xl mt-3 mb-3 font-medium w-52 leading-5">cat parenting crash course</h3>
+          <img src="{{ events[0].coverImage }}" alt="" class="w-full object-cover aspect-[1.08]" />
+          <div class="h-12 flex items-center">
+            <h3 class="text-black text-xl font-medium w-full leading-5 line-clamp-2">{{ events[0].title }}</h3>
+          </div>
           <p class="w-52 text-xs text-black">
-            05 APRIL 2024<br />
-            VENTIVE, KOREGOAN PARK, PUNE
+            {{ formatUnixTimestamp(events[0].scheduledDate) }}<br />
+            {{ events[0].address.address || "To be announce" }}
           </p>
         </div>
         <div class="flex flex-col p-3 mt-16 bg-white shadow-3xl max-md:mt-10">
-          <img src="{{ imgSrc2 }}" alt="" class="w-full aspect-[1.08]" />
-          <h3 class="text-black text-2xl mt-3 mb-3 font-medium w-52 leading-5">cat parenting crash course</h3>
+          <img src="{{ events[1].coverImage }}" alt="" class="w-full aspect-[1.08]" />
+          <div class="h-12 flex items-center">
+            <h3 class="text-black text-xl font-medium w-full leading-5 line-clamp-2">{{ events[1].title }}</h3>
+          </div>
           <p class="w-52 text-xs text-black">
-            05 APRIL 2024<br />
-            VENTIVE, KOREGOAN PARK, PUNE
+            {{ formatUnixTimestamp(events[1].scheduledDate) }}<br />
+            {{ events[1].address.address || "To be announce" }}
           </p>
         </div>
       </article>
     </aside>
-    <section class="flex flex-col ml-5 w-[64%] max-md:ml-0 max-md:w-full">
+    <section class="flex flex-col w-[64%] max-md:w-full">
       <section class="flex flex-col grow mt-9 max-md:mt-10 max-md:max-w-full">
         <div class="max-md:max-w-full">
-          <div class="flex justify-between max-md:flex-col max-md:gap-0">
-            <aside class="flex flex-col w-[26%] max-md:ml-0 max-md:w-full">
+          <div class="flex gap-20 justify-center max-w-full max-sm:flex-col">
+            <aside class="flex flex-col w-[26%] max-md:w-full">
               <article class="updown-animate2 flex flex-col grow p-3.5 mt-32 w-full bg-white shadow-3xl max-md:mt-10">
-                <img src="{{ imgSrc3 }}" alt="" class="w-full aspect-[1.08]" />
-                <h3 class="text-black text-2xl mt-3 mb-3 font-medium w-52 leading-5">cat parenting crash course</h3>
+                <img src="{{ events[2].coverImage }}" alt="" class="w-full aspect-[1.08]" />
+                <div class="h-12 flex items-center">
+                  <h3 class="text-black text-xl font-medium w-full leading-5 line-clamp-2">{{ events[2].title }}</h3>
+                </div>
                 <p class="w-52 text-xs text-black">
-                  05 APRIL 2024<br />
-                  VENTIVE, KOREGOAN PARK, PUNE
+                  {{ formatUnixTimestamp(events[2].scheduledDate) }}<br />
+                  {{ events[2].address.address || "To be announce" }}
                 </p>
               </article>
             </aside>
-            <aside class="flex flex-col ml-5 w-[26%] max-md:ml-0 max-md:w-full">
+            <aside class="flex flex-col w-[26%] max-md:w-full">
               <article class="updown-animate3 flex flex-col p-3 w-full bg-white shadow-3xl max-md:mt-10">
-                <img src="{{ imgSrc4 }}" alt="" class="w-full aspect-[1.08]" />
-                <h3 class="text-black text-2xl mt-3 mb-3 font-medium w-52 leading-5">cat parenting crash course</h3>
+                <img src="{{ events[3].coverImage }}" alt="" class="w-full aspect-[1.08]" />
+                <div class="h-12 flex items-center">
+                  <h3 class="text-black text-xl font-medium w-full leading-5 line-clamp-2">{{ events[3].title }}</h3>
+                </div>
                 <p class="w-52 text-xs text-black">
-                  05 APRIL 2024<br />
-                  VENTIVE, KOREGOAN PARK, PUNE
+                  {{ formatUnixTimestamp(events[3].scheduledDate) }}<br />
+                  {{ events[3].address.address || "To be announce" }}
                 </p>
               </article>
             </aside>
-            <aside class="flex flex-col ml-5 w-[26%] max-md:ml-0 max-md:w-full">
+            <aside class="flex flex-col w-[26%] max-md:w-full">
               <article class="updown-animate1 flex flex-col p-3.5 mt-28 w-full bg-white shadow-3xl max-md:mt-10">
-                <img src="{{ imgSrc5 }}" alt="" class="w-full aspect-[1.08]" />
-                <h3 class="text-black text-2xl mt-3 mb-3 font-medium w-52 leading-5">cat parenting crash course</h3>
+                <img src="{{ events[4].coverImage }}" alt="" class="w-full aspect-[1.08]" />
+                <div class="h-12 flex items-center">
+                  <h3 class="text-black text-xl font-medium w-full leading-5 line-clamp-2">{{ events[4].title }}</h3>
+                </div>
                 <p class="w-52 text-xs text-black">
-                  05 APRIL 2024<br />
-                  VENTIVE, KOREGOAN PARK, PUNE
+                  {{ formatUnixTimestamp(events[4].scheduledDate) }}<br />
+                  {{ events[4].address.address || "To be announce" }}
                 </p>
               </article>
             </aside>
@@ -63,26 +73,30 @@
         <div
           class="justify-center self-center px-8 py-4 mt-6 text-2xl leading-6 border border-solid rounded-[40px] max-md:px-5 cursor-pointer"
         >
-          <a routerLink="events"> VIEW ALL EVENTS </a>
+          <a routerLink="/events"> VIEW ALL EVENTS </a>
         </div>
       </section>
     </section>
-    <aside class="flex flex-col ml-5 w-[16%] max-md:ml-0 max-md:w-full">
+    <aside class="flex flex-col w-[16%] max-md:w-full">
       <article class="updown-animate2 flex flex-col max-md:mt-10">
         <div class="flex flex-col p-3 bg-white shadow-3xl">
-          <img src="{{ imgSrc6 }}" alt="" class="mb-5 w-full aspect-[1.08]" />
-          <h3 class="text-black text-2xl mt-3 mb-3 font-medium w-52 leading-5">cat parenting crash course</h3>
+          <img src="{{ events[5].coverImage }}" alt="" class="w-full aspect-[1.08]" />
+          <div class="h-12 flex items-center">
+            <h3 class="text-black text-xl font-medium w-full leading-5 line-clamp-2">{{ events[5].title }}</h3>
+          </div>
           <p class="w-52 text-xs text-black">
-            05 APRIL 2024<br />
-            VENTIVE, KOREGOAN PARK, PUNE
+            {{ formatUnixTimestamp(events[5].scheduledDate) }}<br />
+            {{ events[5].address.address || "To be announce" }}
           </p>
         </div>
         <div class="flex flex-col p-3 mt-14 bg-white shadow-3xl max-md:mt-10">
-          <img src="{{ imgSrc7 }}" alt="" class="w-full aspect-[1.08]" />
-          <h3 class="text-black text-2xl mt-3 mb-3 font-medium w-52 leading-5">cat parenting crash course</h3>
+          <img src="{{ events[6].coverImage }}" alt="" class="w-full aspect-[1.08]" />
+          <div class="h-12 flex items-center">
+            <h3 class="text-black text-xl font-medium w-full leading-5 line-clamp-2">{{ events[6].title }}</h3>
+          </div>
           <p class="w-52 text-xs text-black">
-            05 APRIL 2024<br />
-            VENTIVE, KOREGOAN PARK, PUNE
+            {{ formatUnixTimestamp(events[6].scheduledDate) }}<br />
+            {{ events[6].address.address || "To be announce" }}
           </p>
         </div>
       </article>

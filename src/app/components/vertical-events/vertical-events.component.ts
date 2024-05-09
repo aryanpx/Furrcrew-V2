@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-vertical-events',
@@ -9,11 +10,37 @@ import { RouterLink } from '@angular/router';
   styleUrl: './vertical-events.component.css',
 })
 export class VerticalEventsComponent {
-  imgSrc1 = 'assets/images/eventpet2.png';
-  imgSrc2 = 'assets/images/eventpet1.png';
-  imgSrc3 = 'assets/images/eventpet3.png';
-  imgSrc4 = 'assets/images/eventpet4.png';
-  imgSrc5 = 'assets/images/eventpet5.png';
-  imgSrc6 = 'assets/images/eventpet6.png';
-  imgSrc7 = 'assets/images/eventpet7.png';
+  events: any[] = [];
+  constructor(private apiService: ApiService) {
+    this.apiService.getActiveEvents().subscribe((data: any) => {
+      this.events = Object.values(data);
+    });
+  }
+  formatUnixTimestamp(timestamp: number): string {
+    const date = new Date(timestamp * 1000);
+    const formattedDate = `${this.addZero(date.getDate())} ${this.getMonthName(date.getMonth())} ${date.getFullYear()}`;
+    return formattedDate.toUpperCase();
+  }
+
+  addZero(n: number): string {
+    return n < 10 ? '0' + n : '' + n;
+  }
+
+  getMonthName(monthIndex: number): string {
+    const months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+    return months[monthIndex];
+  }
 }
