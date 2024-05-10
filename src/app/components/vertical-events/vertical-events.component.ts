@@ -17,15 +17,13 @@ export class VerticalEventsComponent {
     });
   }
   formatUnixTimestamp(timestamp: number): string {
-    const date = new Date(timestamp * 1000);
+    const date = new Date(timestamp);
     const formattedDate = `${this.addZero(date.getDate())} ${this.getMonthName(date.getMonth())} ${date.getFullYear()}`;
     return formattedDate.toUpperCase();
   }
-
   addZero(n: number): string {
     return n < 10 ? '0' + n : '' + n;
   }
-
   getMonthName(monthIndex: number): string {
     const months = [
       'January',
