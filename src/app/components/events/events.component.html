@@ -4,7 +4,15 @@
 </section>
 
 <div class="flex justify-center items-center p-5">
-  <video src="assets/videos/pet_video.mp4" [ngStyle]="{ width: imageWidth }">Your browser does not support video tag</video>
+  <video
+    autoplay
+    loop
+    src="assets/videos/pet_video.mp4"
+    class="max-sm:aspect-[9/16] object-cover"
+    [ngStyle]="{ width: !isMobile ? imageWidth : '100%' }"
+  >
+    Your browser does not support video tag
+  </video>
 </div>
 
 <div class="self-center mt-48 w-full max-md:mt-10 max-md:max-w-full">
@@ -14,7 +22,7 @@
     </div>
     <div class="flex flex-col">
       <div class="flex flex-col justify-center grow px-5 text-xl md:text-4xl font-[590] max-md:mt-10 max-md:max-w-full">
-        <div class="flex justify-center max-md:max-w-full text-center p-5">
+        <div class="flex justify-center max-md:max-w-full text-center md:p-5">
           we are here for the everyday experiences, the stories, for the simple beauty of shared companionship, for moments that define them
           – learning alongside with you on this journey, in the constant pursuit of better.
         </div>
@@ -52,7 +60,9 @@
   </div>
 </div>
 
-<div class="rounded-t-3xl md:rounded-[80px_80px_0px_0px] py-20 mt-44 flex flex-col w-full bg-[#ECECEC] dark:bg-[#323232] max-md:mt-10">
+<div
+  class="rounded-t-3xl md:rounded-[80px_80px_0px_0px] pt-10 md:py-20 mt-44 flex flex-col w-full bg-[#ECECEC] dark:bg-[#323232] max-md:mt-10"
+>
   <section class="md:mt-10 flex flex-col w-full max-w-[1680px] px-5">
     <div class="flex max-sm:flex-col md:justify-between md:p-5 items-start md:px-20">
       <div class="flex flex-col">
@@ -63,7 +73,7 @@
         <button
           class="border-solid border-black dark:border-darkfont border rounded-full px-5 h-10 md:h-20 flex items-center justify-center text-2xl md:text-3xl"
         >
-          <a routerLink="past-events"> past events </a>
+          <a routerLink="past-events">past events</a>
           <img src="assets/icons/arrowupright.svg" class="invert dark:invert-0 max-sm:w-5" />
         </button>
       </div>
@@ -71,10 +81,14 @@
     <div class="flex max-sm:flex-col md:flex-wrap justify-center items-start gap-5 mt-16 w-full">
       @for (event of events; track $index) {
       <article class="flex flex-col items-center w-full md:max-w-[25%] md:px-5">
-        <img src="assets/icons/drawing-pin.png" alt="Dog event" class="max-w-full aspect-[1.56] w-[150px] z-10" />
+        <div class="w-full flex z-10 justify-center pl-32 pb-4">
+          <img src="assets/icons/drawing-pin.png" alt="Dog event" class="max-w-full aspect-[1.56] w-[150px]" />
+        </div>
         <div class="p-5 bg-white dark:bg-black shadow-md mt-[-60px] cursor-pointer" (click)="goToEventDetails(event.id)">
           <img src="{{ event.coverImage || event.images[0].value }}" alt="Event venue" class="w-full aspect-square object-cover" />
-          <h2 class="mt-3 text-2xl font-bold">{{ event.title }}</h2>
+          <div class="flex items-center h-16 ">
+            <h2 class=" text-2xl font-bold  line-clamp-2">{{ event.title }}</h2>
+          </div>
           <div class="mt-3">
             <p>{{ event.address.address }}</p>
             <time datetime="2024-04-14">{{ formatDate(event.scheduledDate) }}</time>
@@ -86,7 +100,7 @@
   </section>
   <section class="mt-16 md:mt-32 mb-4 flex flex-col items-center w-full px-5">
     <h2 class="text-2xl font-[550] md:text-4xl">Creating Memories Across</h2>
-    <div class="mt-10 md:mt-16 flex flex-wrap justify-center gap-5 w-full max-w-full">
+    <div class="mt-10 md:mt-16 flex justify-center gap-5 w-full max-w-full">
       <div class="flex flex-col items-center w-1/4">
         <p class="text-4xl md:text-8xl font-extrabold">20 +</p>
         <p class="text-xl md:text-4xl font-medium mt-2">EVENTS</p>
@@ -96,7 +110,7 @@
         <p class="text-xl md:text-4xl font-medium mt-2">CITIES</p>
       </div>
       <div class="flex flex-col items-center w-1/4">
-        <p class="text-4xl md:text-8xl font-extrabold">15k +</p>
+        <p class="text-4xl md:text-8xl font-extrabold">15k+</p>
         <p class="text-xl md:text-4xl font-medium mt-2">ATTENDEES</p>
       </div>
     </div>

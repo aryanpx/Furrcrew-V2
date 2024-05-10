@@ -16,9 +16,30 @@ export class EventsComponent {
   events: any = [];
   imageWidth: string = '66.666667%';
   isMobile: boolean = false;
-  formatDate(unixTimestamp: number): string {
-    const date = new Date(unixTimestamp * 1000);
-    return date.toUTCString(); // Adjust format as per your requirement
+  formatDate(timestamp: number): string {
+    const date = new Date(timestamp);
+    const formattedDate = `${this.addZero(date.getDate())} ${this.getMonthName(date.getMonth())} ${date.getFullYear()}`;
+    return formattedDate.toUpperCase();
+  }
+  addZero(n: number): string {
+    return n < 10 ? '0' + n : '' + n;
+  }
+  getMonthName(monthIndex: number): string {
+    const months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+    return months[monthIndex];
   }
   constructor(private router: Router, private apiService: ApiService, @Inject(DOCUMENT) private document: Document) {
     if (typeof window !== 'undefined') {
