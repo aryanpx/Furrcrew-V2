@@ -15,7 +15,7 @@
       <button
         (click)="toggleTheme()"
         [@changeState]="currentState"
-        class="flex w-[104px] h-[52px] items-center bg-gray-200 dark:bg-gray-700 justify-between p-2 rounded-full border-2 border-transparent transition-colors duration-200"
+        class="flex md:w-[104px] md:h-[50px] items-center bg-gray-200 dark:bg-gray-700 justify-between p-2 rounded-full border-2 border-transparent transition-colors duration-200"
       >
         <img *ngIf="theme === 'dark'" src="assets/icons/moonIcon.svg" class="flex bg-[#29292B] rounded-full p-2" />
         <img *ngIf="theme === 'light'" src="assets/icons/sunIcon.svg" class="flex bg-[#FFFFFF] rounded-full p-2" />

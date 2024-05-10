@@ -23,7 +23,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
           transform: 'rotate(-180deg)',
         })
       ),
-      transition('light <=> dark', animate('100ms ease-in-out')),
+      transition('light <=> dark', animate('50ms ease-in-out')),
     ]),
   ],
   imports: [SideBarComponent, CommonModule],
@@ -56,10 +56,10 @@ export class HeaderComponent {
   }
   toggleTheme(): void {
     this.theme = this.theme === 'light' ? 'dark' : 'light';
+    this.currentState = this.theme;
     document.body.classList.toggle('dark', this.theme === 'dark');
     localStorage.setItem('theme', this.theme);
     this.themeService.isDarkTheme = this.theme === 'dark';
-    this.currentState = this.theme;
   }
   ngOnInit() {
     this.header = this.elementRef.nativeElement.querySelector('#myHeader');
