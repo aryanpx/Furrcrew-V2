@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FooterComponent } from '../../footer/footer.component';
 import { ApiService } from '../../../services/api.service';
 import { CommonModule } from '@angular/common';
@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-blogs-details',
   standalone: true,
-  imports: [FooterComponent, CommonModule],
+  imports: [FooterComponent, CommonModule, RouterLink],
   templateUrl: './blogs-details.component.html',
   styleUrl: './blogs-details.component.css',
 })
@@ -30,5 +30,8 @@ export class BlogsDetailsComponent implements OnInit {
   }
   goToBlogsDetails(blogId: number) {
     this.router.navigate(['/blogs/details'], { queryParams: { blogId: blogId } });
+  }
+  filterBlogById(blogs: any[], idToExclude: number): any[] {
+    return blogs.filter((blog) => blog.id !== idToExclude);
   }
 }

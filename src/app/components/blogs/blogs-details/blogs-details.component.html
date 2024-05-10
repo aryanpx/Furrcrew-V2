@@ -1,5 +1,15 @@
 <div class="flex flex-col items-center">
   <div class="md:w-2/3 max-sm:w-11/12">
+    <div class="flex flex-row">
+      <div class="items-center">
+        <a routerLink="/blogs" class="text-xl flex items-center">
+          <button>
+            <img src="assets/icons/backArrow.svg" />
+          </button>
+          Back
+        </a>
+      </div>
+    </div>
     <div *ngIf="blog" class="flex flex-col flex-1 gap-5 max-md:flex-wrap max-md:max-w-full">
       <div class="flex text-6xl text-ellipsis max-md:flex-wrap max-md:max-w-full max-md:text-4xl mt-10">{{ blog.title }}</div>
       <div class="flex gap-5">
@@ -15,7 +25,7 @@
     <hr />
     <div class="gap-0 mt-16 text-3xl leading-8 text-black font-[510] max-md:flex-wrap max-md:mt-10 max-md:max-w-full">Other blogs</div>
     <ul class="snap-x flex max-sm:flex-col md:overflow-x-auto md:py-5 md:gap-10">
-      @for (blog of blogs;track blog){
+      @for (blog of filterBlogById(blogs,blog.id).slice(0,6);track blog){
       <li
         class="scroll-ml-6 snap-start max-sm:max-w-full md:min-w-[300px] flex-shrink-0 mt-6 cursor-pointer"
         (click)="goToBlogsDetails(blog.id)"
