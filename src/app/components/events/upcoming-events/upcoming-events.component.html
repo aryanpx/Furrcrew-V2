@@ -1,10 +1,18 @@
 <div class="md:p-24 md:px-32 flex flex-col gap-5">
+  <div class="items-center">
+    <a routerLink="/events" class="text-xl flex items-center">
+      <button>
+        <img src="assets/icons/backArrow.svg" />
+      </button>
+      Back
+    </a>
+  </div>
   <div class="w-full max-md:mt-10 max-md:max-w-full">
     <div class="flex h-full gap-1 max-md:flex-col max-md:gap-0">
       <div class="flex flex-col w-[38%] max-md:ml-0 max-md:w-full">
         <div class="card rounded-full max-sm:fixed" [class.flipped]="isFlipped" (click)="flipCard()">
           <div class="front-content">
-            <img loading="lazy" src="{{ event.images[0].value }}" class="md:max-w-[530px] aspect-square rounded-3xl object-contain" />
+            <img loading="lazy" src="{{ event.images[0].value }}" class="md:max-w-[530px] aspect-square rounded-3xl object-fill" />
           </div>
           <div class="back-content">
             <div
@@ -165,7 +173,6 @@
             </div>
           </div>
         </div>
-
         <div
           class="flex flex-col grow justify-center p-14 w-full border-2 border-gray-200 dark:border-[#545454] border-solid rounded-[32px] max-md:px-5 max-md:mt-1 max-md:max-w-full"
         >
@@ -173,7 +180,7 @@
             <div class="flex flex-col max-md:max-w-full">
               <div class="flex flex-col max-md:max-w-full">
                 <div class="text-5xl font-bold tracking-normal max-md:max-w-full max-md:text-4xl">{{ event.title }}</div>
-                <div class="text-2xl tracking-normal leading-10 max-md:max-w-full" [innerHTML]="event.description"></div>
+                <div class="text-2xl tracking-normal leading-10 max-md:max-w-full line-clamp-2" [innerHTML]="event.description"></div>
               </div>
               <div class="flex flex-col mt-9 text-2xl tracking-normal leading-10 font-[590] max-md:max-w-full">
                 <div class="flex gap-3 max-md:flex-wrap">
@@ -197,7 +204,7 @@
               class="flex cursor-pointer justify-center items-center p-6 max-w-full text-3xl tracking-normal leading-10 text-white bg-blue-500 rounded-xl font-[510] w-[360px] max-md:px-5 max-md:mt-10"
               (click)="!isMobileView ? flipCard() : toggleModal()"
             >
-              Book Tickets
+              {{ !isFlipped ? "Book Tickets" : "Show Poster" }}
             </div>
           </div>
         </div>
@@ -210,41 +217,52 @@
     <div class="flex flex-col gap-5 w-full max-w-[1400px] max-md:flex-wrap max-md:max-w-full">
       <div class="flex flex-col gap-5 max-md:flex-wrap max-md:max-w-full">
         <div class="flex flex-col gap-4 max-sm:text-2xl md:text-4xl whitespace-nowrap font-[590] max-md:flex-wrap max-md:max-w-full">
-          <div class="flex gap-5 justify-between max-md:flex-wrap max-md:max-w-full border-b pb-7 border-black">
+          <div
+            class="flex gap-5 justify-between max-md:flex-wrap max-md:max-w-full border-b pb-7 border-black cursor-pointer"
+            (click)="toggleDescription()"
+          >
             <div class="gap-0 my-auto">Description</div>
-            <img loading="lazy" src="assets/icons/minus.svg" class="shrink-0 gap-0 w-12 aspect-square dark:invert" />
+            <img
+              loading="lazy"
+              src="assets/icons/minus.svg"
+              *ngIf="showDescription"
+              class="shrink-0 gap-0 w-12 aspect-square dark:invert"
+            />
+            <img loading="lazy" src="assets/icons/plusIcon.svg" *ngIf="!showDescription" class="shrink-0 gap-0 w-12 aspect-square" />
           </div>
           <!-- <div class="shrink-0 gap-0 mt-4 h-px bg-black border border-black border-solid max-md:flex-wrap max-md:max-w-full"></div> -->
         </div>
         <div
           class="gap-0 mt-9 mr-5 text-2xl tracking-normal leading-10 max-md:flex-wrap max-md:mr-2.5 max-md:max-w-full"
+          [hidden]="!showDescription"
           [innerHTML]="event.description"
         ></div>
       </div>
       <div
         class="flex flex-col gap-4 mt-12 max-sm:text-2xl md:text-4xl whitespace-nowrap font-[590] max-md:flex-wrap max-md:mt-10 max-md:max-w-full"
       >
-        <div class="flex gap-5 justify-between pr-7 max-md:flex-wrap max-md:pr-5 max-md:max-w-full">
-          <div class="gap-0 my-auto">Guidelines</div>
-          <img loading="lazy" src="assets/icons/plusIcon.svg" class="shrink-0 gap-0 w-12 aspect-square" />
-        </div>
-        <div class="shrink-0 gap-0 mt-4 h-px bg-black border border-black border-solid max-md:flex-wrap max-md:max-w-full"></div>
-      </div>
-      <div
-        class="flex flex-col gap-4 mt-12 max-sm:text-2xl md:text-4xl whitespace-nowrap font-[590] max-md:flex-wrap max-md:mt-10 max-md:max-w-full"
-      >
-        <div class="flex gap-5 justify-between pr-7 max-md:flex-wrap max-md:pr-5 max-md:max-w-full">
+        <div
+          class="flex gap-5 justify-between pr-7 max-md:flex-wrap max-md:pr-5 max-md:max-w-full cursor-pointer"
+          (click)="toggleLocation()"
+        >
           <div class="gap-0 my-auto">Location</div>
-          <img loading="lazy" src="assets/icons/plusIcon.svg" class="shrink-0 gap-0 w-12 aspect-square" />
+          <img loading="lazy" src="assets/icons/minus.svg" *ngIf="showLocation" class="shrink-0 gap-0 w-12 aspect-square dark:invert" />
+          <img loading="lazy" src="assets/icons/plusIcon.svg" *ngIf="!showLocation" class="shrink-0 gap-0 w-12 aspect-square" />
         </div>
         <div class="shrink-0 gap-0 mt-4 h-px bg-black border border-black border-solid max-md:flex-wrap max-md:max-w-full"></div>
       </div>
       <div class="flex flex-col gap-4 mt-12 max-sm:text-2xl md:text-4xl font-[590] max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
-        <div class="flex gap-5 justify-between pr-7 max-md:flex-wrap max-md:pr-5 max-md:max-w-full">
+        <div class="flex gap-5 justify-between pr-7 max-md:flex-wrap max-md:pr-5 max-md:max-w-full cursor-pointer" (click)="toggleTerms()">
           <div class="gap-0 my-auto">Terms & Conditions</div>
-          <img loading="lazy" src="assets/icons/plusIcon.svg" class="shrink-0 gap-0 w-12 aspect-square" />
+          <img loading="lazy" src="assets/icons/minus.svg" *ngIf="showTerms" class="shrink-0 gap-0 w-12 aspect-square dark:invert" />
+          <img loading="lazy" src="assets/icons/plusIcon.svg" *ngIf="!showTerms" class="shrink-0 gap-0 w-12 aspect-square" />
         </div>
         <div class="shrink-0 gap-0 mt-4 h-px bg-black border border-black border-solid max-md:flex-wrap max-md:max-w-full"></div>
+        <div
+          class="gap-0 mt-9 mr-5 text-2xl tracking-normal leading-10 max-md:flex-wrap max-md:mr-2.5 max-md:max-w-full"
+          [hidden]="!showTerms"
+          [innerHTML]="event.terms"
+        ></div>
       </div>
     </div>
   </div>
