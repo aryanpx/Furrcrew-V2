@@ -1,8 +1,8 @@
-<main class="flex justify-center items-center px-16 py-20 mt-32 w-full max-md:px-5 max-md:mt-10 tab-container">
+<main class="flex justify-center items-center px-16 md:py-20 mt-32 w-full max-md:px-5 max-md:mt-10 tab-container">
   <section class="flex flex-col mt-12 mb-6 w-full max-w-[1430px] max-md:mt-10">
-    <nav class="flex gap-5 max-sm:overflow-x-scroll">
-      <div class="flex flex-col flex-1 cursor-pointer" (click)="setActiveTab(0)">
-        <div class="bg-slate-300">
+    <nav class="flex gap-5 max-sm:overflow-x-scroll snap-x">
+      <div class="flex flex-col flex-1 cursor-pointer scroll-ml-6 snap-start" (click)="setActiveTab(0)">
+        <div class="bg-slate-300 max-sm:w-[15rem]">
           <div
             class="{{ activeTab === 0 ? 'bg-black' : 'bg-slate-300' }} shrink-0 h-[13px]  md:w-[22rem] tab "
             [style.width.%]="activeTab === 0 ? progressWidth : '100'"
@@ -10,28 +10,28 @@
         </div>
         <h2 class="mt-6 text-2xl leading-6">VET CARE</h2>
       </div>
-      <div class="flex flex-col flex-1 cursor-pointer" (click)="setActiveTab(1)">
-        <div class="bg-slate-300">
+      <div class="flex flex-col flex-1 cursor-pointer scroll-ml-6 snap-start" (click)="setActiveTab(1)">
+        <div class="bg-slate-300 max-sm:w-[15rem]">
           <div
-            class=" {{ activeTab === 1 ? 'bg-black' : 'bg-slate-300' }} shrink-0 h-[13px] max-sm:w-[10rem] md:w-[22rem] tab "
+            class=" {{ activeTab === 1 ? 'bg-black' : 'bg-slate-300' }} shrink-0 h-[13px]  md:w-[22rem] tab "
             [style.width.%]="activeTab === 1 ? progressWidth : '100'"
           ></div>
         </div>
         <h2 class="mt-6 text-2xl leading-6">GROOMING</h2>
       </div>
-      <div class="flex flex-col flex-1 cursor-pointer" (click)="setActiveTab(2)">
-        <div class="bg-slate-300">
+      <div class="flex flex-col flex-1 cursor-pointer scroll-ml-6 snap-start" (click)="setActiveTab(2)">
+        <div class="bg-slate-300 max-sm:w-[15rem]">
           <div
-            class=" {{ activeTab === 2 ? 'bg-black' : 'bg-slate-300' }} shrink-0 h-[13px] max-sm:w-[10rem] md:w-[22rem] tab "
+            class=" {{ activeTab === 2 ? 'bg-black' : 'bg-slate-300' }} shrink-0 h-[13px]  md:w-[22rem] tab "
             [style.width.%]="activeTab === 2 ? progressWidth : '100'"
           ></div>
         </div>
         <h2 class="mt-6 text-2xl leading-6">NGO</h2>
       </div>
-      <div class="flex flex-col flex-1 cursor-pointer" (click)="setActiveTab(3)">
-        <div class="bg-slate-300">
+      <div class="flex flex-col flex-1 cursor-pointer scroll-ml-6 snap-start" (click)="setActiveTab(3)">
+        <div class="bg-slate-300 max-sm:w-[15rem]">
           <div
-            class=" {{ activeTab === 3 ? 'bg-black' : 'bg-slate-300' }} shrink-0 h-[13px] max-sm:w-[10rem] md:w-[22rem] tab "
+            class=" {{ activeTab === 3 ? 'bg-black' : 'bg-slate-300' }} shrink-0 h-[13px]  md:w-[22rem] tab "
             [style.width.%]="activeTab === 3 ? progressWidth : '100'"
           ></div>
         </div>
@@ -79,7 +79,7 @@
           </div>
         </div>
         <div class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
-          <div class="flex overflow-hidden relative flex-col py-px min-h-[575px]">
+          <div class="flex overflow-hidden relative flex-col py-px md:min-h-[575px]">
             <img loading="lazy" [src]="vetImg" alt="Featured vet care service" class="w-full h-full" />
           </div>
         </div>
@@ -127,7 +127,7 @@
           </div>
         </div>
         <div class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
-          <div class="flex overflow-hidden relative flex-col py-px min-h-[575px]">
+          <div class="flex overflow-hidden relative flex-col py-px md:min-h-[575px]">
             <img loading="lazy" [src]="vetImg" alt="Featured vet care service" class="w-full h-full" />
           </div>
         </div>
@@ -178,7 +178,7 @@
           </div>
         </div>
         <div class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
-          <div class="flex overflow-hidden relative flex-col py-px min-h-[575px]">
+          <div class="flex overflow-hidden relative flex-col py-px md:min-h-[575px]">
             <img loading="lazy" [src]="vetImg" alt="Featured vet care service" class="w-full h-full" />
           </div>
         </div>
@@ -226,7 +226,7 @@
           </div>
         </div>
         <div class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
-          <div class="flex overflow-hidden relative flex-col py-px min-h-[575px]">
+          <div class="flex overflow-hidden relative flex-col py-px md:min-h-[575px]">
             <img loading="lazy" [src]="vetImg" alt="Featured vet care service" class="w-full h-full" />
           </div>
         </div>
