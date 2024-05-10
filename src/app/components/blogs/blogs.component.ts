@@ -1,10 +1,11 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, ElementRef, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { BlogsService } from '../../services/blogs.service';
 import { FooterComponent } from '../footer/footer.component';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../../services/api.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import $ from 'jquery';
 
 @Component({
   selector: 'app-blogs',
@@ -24,7 +25,13 @@ export class BlogsComponent implements OnInit {
   searchQuery: string = ''; // Search query
   search: any;
 
-  constructor(private router: Router, public blogsService: BlogsService, private apiService: ApiService, private fb: FormBuilder) {
+  constructor(
+    private router: Router,
+    public blogsService: BlogsService,
+    private apiService: ApiService,
+    private fb: FormBuilder,
+    private elementRef: ElementRef
+  ) {
     this.formGroup = fb.group({ search: [''] });
   }
   ngOnInit(): void {
@@ -44,5 +51,17 @@ export class BlogsComponent implements OnInit {
   }
   goToBlogsDetails(blogId: number) {
     this.router.navigate(['/blogs/details'], { queryParams: { blogId: blogId } });
+  }
+  scrollToTop() {
+    console.log('click working');
+    // this.router.navigate([], { fragment: 'search' });
+    const searchTop = $('#pTop')?.offset()?.top;
+    $('html, body').animate(
+      {
+        scrollTop: searchTop,
+      },
+      500
+    );
+    // $('search').animatescroll();
   }
 }
