@@ -1,8 +1,0 @@
-.sidebar.active {
-  transform: translateX(0);
-}
-
-.sidebar.inactive {
-  transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
-}
