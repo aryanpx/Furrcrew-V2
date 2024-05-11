@@ -17,8 +17,15 @@
 /* ::ng-deep .flex::-webkit-scrollbar { */
 /* display: none; */
 /* } */
-
-ul::-webkit-scrollbar-thumb {
+/* .custom-scrollbar ::ng-deep * {
+  scrollbar-width: 10px;
+  scrollbar-color: gray transparent;
+} */
+:host-context(.custom-scrollbar) ::ng-deep * {
+  scrollbar-width: thin !important; /* Add !important to override global styles */
+  scrollbar-color: gray transparent !important; /* Add !important to override global styles */
+}
+/* ul::-webkit-scrollbar-thumb {
   display: none;
   background-color: #ededf6;
   border: 4px solid transparent;
@@ -32,10 +39,23 @@ ul::-webkit-scrollbar {
 
 ul:hover::-webkit-scrollbar-thumb {
   display: block;
-}
+} */
 
 /* Hide scrollbar for IE, Edge and Firefox */
 /* ::ng-deep .flex {
   -ms-overflow-style: none;
   scrollbar-width: none;
 } */
+.drag-cursor {
+  cursor: url("../../../assets/icons/dragIcon.png"), auto;
+}
+.draggable {
+  display: inline-block; /* Allows elements to be dragged horizontally */
+  cursor: pointer;
+}
+.scroll-container {
+  width: 300px; /* Adjust width as needed */
+  height: 200px; /* Adjust height as needed */
+  overflow-x: scroll;
+  white-space: nowrap; /* Ensures that items don't wrap to next line */
+}
