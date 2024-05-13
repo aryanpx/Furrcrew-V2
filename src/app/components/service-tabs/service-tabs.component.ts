@@ -1,5 +1,5 @@
-import { CommonModule, DOCUMENT } from '@angular/common';
-import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
+import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { Component, ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import $ from 'jquery';
 @Component({
@@ -13,9 +13,15 @@ export class ServiceTabsComponent implements OnInit {
   vetImg!: SafeResourceUrl;
   activeTab: number = 0;
   progressWidth: number = 0;
-  progressInterval: any;
+  progressInterval: any = null;
   @ViewChild('tabContainer') tabContainerRef!: ElementRef;
-  constructor(private sanitizer: DomSanitizer, @Inject(DOCUMENT) public document: Document) {}
+  constructor(
+    private sanitizer: DomSanitizer,
+    @Inject(DOCUMENT) public document: Document,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
+    // this.setActiveTab(0);
+  }
 
   initSliderAnimation(): void {
     if (typeof window !== 'undefined') {
@@ -43,8 +49,12 @@ export class ServiceTabsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Assuming your SVG file is located in the assets folder
     this.vetImg = this.sanitizer.bypassSecurityTrustResourceUrl('assets/images/vetImg.png');
+    if (isPlatformBrowser(this.platformId)) {
+      // Check if platform is browser
+      // this.initSliderAnimation();
+      this.setActiveTab(0);
+    }
   }
   ngAfterViewInit(): void {
     // this.initSliderAnimation();
