@@ -1,6 +1,6 @@
 <div class="md:p-24 md:px-32 flex flex-col gap-5">
   <div class="items-center">
-    <a routerLink="/events" class="text-xl flex items-center">
+    <a routerLink="/events" class="text-xl flex items-center max-sm:mt-10">
       <button>
         <img src="assets/icons/backArrow.svg" />
       </button>
@@ -10,16 +10,20 @@
   <div class="w-full max-md:mt-10 max-md:max-w-full">
     <div class="flex h-full gap-1 max-md:flex-col max-md:gap-0">
       <div class="flex flex-col w-[38%] max-md:ml-0 max-md:w-full">
-        <div class="card rounded-full max-sm:fixed" [class.flipped]="isFlipped" (click)="flipCard()">
-          <div class="front-content">
-            <img loading="lazy" src="{{ event.images[0].value }}" class="md:max-w-[530px] aspect-square rounded-3xl object-fill" />
+        <div class="card h-full rounded-full max-sm:fixed" [class.flipped]="isFlipped" (click)="flipCard()">
+          <div class="front-content md:absolute max-sm:px-5">
+            <img
+              loading="lazy"
+              src="{{ event.images[0].value }}"
+              class="max-sm:aspect-square md:max-w-[530px] h-full rounded-3xl object-fill"
+            />
           </div>
-          <div class="back-content">
+          <div class="back-content absolute max-sm:hidden">
             <div
-              class="flex flex-col gap-0 justify-center w-full border-2 border-gray-200 border-solid max-md:flex-wrap rounded-[32px] max-md:max-w-full"
+              class="flex flex-col gap-0 justify-center h-full w-full border-2 border-gray-200 border-solid max-md:flex-wrap rounded-[32px] max-md:max-w-full"
             >
               <div class="flex flex-col gap-0 justify-center px-11 py-14 w-full max-md:flex-wrap max-md:px-5 max-md:max-w-full">
-                <div class="flex flex-col gap-5 max-md:flex-wrap max-md:max-w-full">
+                <div class="flex flex-col max-md:flex-wrap max-md:max-w-full">
                   <div class="gap-0 self-center text-center font-[510] text-3xl">Select An Option To Book</div>
                   <div
                     class="flex flex-col gap-3 justify-center mt-10 font-bold text-white max-md:flex-wrap max-md:mt-10 max-md:max-w-full"
@@ -84,7 +88,7 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-col max-sm:mt-[432px] h-[50%] w-[62%] max-md:ml-0 max-md:w-full">
+      <div class="flex flex-col h-[50%] w-[62%] max-md:ml-0 max-md:w-full">
         <div *ngIf="showBookModal" class="fixed z-[1] inset-0 overflow-y-auto">
           <div class="flex items-center justify-center min-h-screen">
             <div class="fixed inset-0 bg-black opacity-50"></div>
@@ -174,7 +178,7 @@
           </div>
         </div>
         <div
-          class="flex flex-col grow justify-center p-14 w-full border-2 border-gray-200 dark:border-[#545454] border-solid rounded-[32px] max-md:px-5 max-md:mt-1 max-md:max-w-full"
+          class="flex flex-col grow justify-center p-14 max-sm:mx-2 border-2 border-gray-200 dark:border-[#545454] border-solid rounded-[32px] max-md:px-5 max-md:mt-1 max-md:max-w-full"
         >
           <div class="flex flex-col max-md:max-w-full">
             <div class="flex flex-col max-md:max-w-full">
@@ -212,9 +216,9 @@
     </div>
   </div>
   <div
-    class="flex gap-0 justify-center items-center px-16 py-20 border-2 border-gray-200 dark:border-[#545454] border-solid rounded-[32px] max-md:flex-wrap max-md:px-5"
+    class="flex gap-0 justify-center items-center px-5 py-20 border-2 border-gray-200 dark:border-[#545454] border-solid rounded-[32px] flex-wrap max-sm:mx-2"
   >
-    <div class="flex flex-col gap-5 w-full max-w-[1400px] max-md:flex-wrap max-md:max-w-full">
+    <div class="flex flex-col gap-5 w-full max-md:flex-wrap max-md:max-w-full">
       <div class="flex flex-col gap-5 max-md:flex-wrap max-md:max-w-full">
         <div class="flex flex-col gap-4 max-sm:text-2xl md:text-4xl whitespace-nowrap font-[590] max-md:flex-wrap max-md:max-w-full">
           <div
@@ -250,6 +254,32 @@
           <img loading="lazy" src="assets/icons/plusIcon.svg" *ngIf="!showLocation" class="shrink-0 gap-0 w-12 aspect-square" />
         </div>
         <div class="shrink-0 gap-0 mt-4 h-px bg-black border border-black border-solid max-md:flex-wrap max-md:max-w-full"></div>
+      </div>
+      <!-- <app-google-map></app-google-map> -->
+      <div id="map" class="h-[400px] w-full" [hidden]="!showLocation">
+        <a [href]="'https://maps.google.com/?q=' + event.address.latitude + ',' + event.address.longitude"> LINK TO DIRECTIONS </a>
+        <!-- <img
+          src="https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&zoom=12&size=400x400&maptype=roadmap&key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&signature=X09K5KhVrInfuT5bnfDnf5dKFUE="
+        /> -->
+        <!-- <div class="h-full w-full" [innerHTML]="generateMapIframe(event.address.latitude, event.address.longitude, 4)"></div> -->
+        <!-- src="https://maps.google.com/maps?&amp;q={{ encodeURIComponent(event.address.address) }} +&amp;output=embed" -->
+        <!-- <iframe
+          src="https://www.google.com/maps/embed/v1/place
+            ?key=AIzaSyBFMndFEnOAfaJZM-1VUAzZDqymaGEHdUw
+            ?q=Eiffel+Tower,Paris+France"
+          height="400px"
+          style="border: 0; width: 100%"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe> -->
+        <google-map
+          height="400px"
+          [center]="{ lat: parseCoordinate(event.address.latitude), lng: parseCoordinate(event.address.longitude) }"
+          [zoom]="16"
+        >
+        </google-map>
       </div>
       <div class="flex flex-col gap-4 mt-12 max-sm:text-2xl md:text-4xl font-[590] max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
         <div class="flex gap-5 justify-between pr-7 max-md:flex-wrap max-md:pr-5 max-md:max-w-full cursor-pointer" (click)="toggleTerms()">

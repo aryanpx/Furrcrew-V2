@@ -3,16 +3,17 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { FooterComponent } from '../../footer/footer.component';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ApiService } from '../../../services/api.service';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @Component({
   selector: 'app-upcoming-events',
   standalone: true,
-  imports: [FooterComponent, CommonModule, RouterLink],
+  imports: [FooterComponent, CommonModule, RouterLink, GoogleMapsModule],
   templateUrl: './upcoming-events.component.html',
   styleUrl: './upcoming-events.component.css',
 })
 export class UpcomingEventsComponent implements OnInit {
-  showDescription: boolean = false;
+  showDescription: boolean = true;
   showTerms: boolean = false;
   showLocation: boolean = false;
   showBookModal: boolean = false;
@@ -68,5 +69,10 @@ export class UpcomingEventsComponent implements OnInit {
   }
   toggleLocation() {
     this.showLocation = !this.showLocation;
+  }
+  display: any;
+  zoom = 4;
+  parseCoordinate(value: string): number {
+    return parseFloat(value);
   }
 }
