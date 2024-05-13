@@ -1,20 +1,21 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ApiService } from '../../services/api.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-vertical-events',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, CommonModule],
   templateUrl: './vertical-events.component.html',
   styleUrl: './vertical-events.component.css',
 })
 export class VerticalEventsComponent {
   events: any[] = [];
   constructor(private apiService: ApiService) {
-    this.apiService.getActiveEvents().subscribe((data: any) => {
-      this.events = Object.values(data);
-    });
+    // this.apiService.getActiveEvents().subscribe((data: any) => {
+    //   this.events = Object.values(data);
+    // });
   }
   formatUnixTimestamp(timestamp: number): string {
     const date = new Date(timestamp);
