@@ -13,9 +13,14 @@ export class ApiService {
     let url = this.configUrl + 'user/v1/user/3ddf367d-b88f-44fa-b5b2-97ba97924cff/blogs?deviceType=All';
     return this.http.get(url);
   }
-  getAllEvents() {
+  getPastEvents() {
     // let url = "https://api.furrcrew.com/events/v1/event?deviceType=All";
     let url = this.configUrl + 'events/v1/event?deviceType=All';
+    return this.http.get(url);
+  }
+  getActiveEvents() {
+    let url = 'https://api.furrcrew.com/events/v1/event/?status=Active&deviceType=All';
+    // let url = this.configUrl + 'events/v1/event/?status=active?deviceType=All';
     return this.http.get(url);
   }
 }
