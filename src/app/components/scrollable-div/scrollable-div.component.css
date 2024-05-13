@@ -9,3 +9,21 @@
 .phone {
   transition: all 0.5s linear;
 }
+.phone_side_containers {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+.left_component {
+  right: 166px;
+  top: -361px;
+}
+
+.right_component {
+  right: 160px;
+  top: 600px;
+}

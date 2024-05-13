@@ -1,6 +1,6 @@
 <section class="flex flex-col md:min-h-[80%] justify-center items-center max-sm:w-full">
   <h1
-    class="max-sm:mt-36 max-sm:text-6xl mb-5 text-8xl font-bold text-center dark:text-darkfont text-zinc-800 max-md:mt-10 max-md:max-w-full max-md:text-7xl mt-32"
+    class="max-sm:mt-24 max-sm:text-6xl mb-5 text-8xl font-bold text-center dark:text-darkfont text-zinc-800 max-md:mt-10 max-md:max-w-full max-md:text-7xl mt-32 w-full"
   >
     for every being
   </h1>
@@ -12,7 +12,7 @@
     towards better. In coexistence, possibilities are boundless, driving our collective growth.
   </p>
 </section>
-<div class="flex gap-5 max-md:gap-0 h-[280vh] items-start md:flex-row-reverse max-sm:flex-col-reverse frame1">
+<div class="flex gap-5 max-md:gap-0 h-[250vh] max-sm:[200vh] items-start md:flex-row-reverse max-sm:flex-col-reverse frame1">
   <div class="max-sm:p-5 max-lg:p-5 flex flex-col ml-28 mt-20 max-md:ml-0 paragraph">
     <div class="flex flex-col p-5 max-md:mt-10 md:max-w-full">
       <h2 class="mt-32 dark:text-darkfont text-[55px] font-bold leading-[60px] md:w-[35rem]">simple for you, good for your pet</h2>
@@ -24,7 +24,32 @@
       </p>
     </div>
   </div>
-  <div class="flex max-md:flex-col max-md:w-full phone">
-    <img id="phoneImage" loading="lazy" [src]="imageSrc" alt="Detailed description of the image" class="grow mt-52 max-md:max-w-full" />
+  <div class="flex flex-col max-md:flex-col max-md:w-full phone">
+    <!-- <img src="assets/images/Calendar.png" class="w-80 relative top-0 right-0" /> -->
+    <div class="phone_side_containers left_component flex rotate-90 gap-5">
+      <div class="flex flex-col gap-3">
+        <img src="assets/images/Calendar.png" />
+        <img src="assets/images/video-player.png" />
+      </div>
+      <div class="flex flex-col gap-3">
+        <img src="assets/images/grooming.png" />
+        <img src="assets/images/ngos.png" />
+        <img src="assets/images/adoption-centres.png" />
+      </div>
+    </div>
+    <div class="flex">
+      <img id="phoneImage" loading="lazy" [src]="imageSrc" alt="Detailed description of the image" class="grow md:mt-52 w-full" />
+    </div>
+    <div class="phone_side_containers right_component flex rotate-90 gap-3 w-full">
+      <div class="flex flex-col gap-3">
+        <div class="flex">
+          <img src="assets/images/pet-image.png" class="aspect-square" />
+          <img src="assets/images/veterinarian-services.png" class="aspect-square" />
+        </div>
+        <div class="flex">
+          <img src="assets/images/timeSlot.png" class="aspect-video" />
+        </div>
+      </div>
+    </div>
   </div>
 </div>
