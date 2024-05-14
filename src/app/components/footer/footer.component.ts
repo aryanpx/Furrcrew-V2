@@ -15,7 +15,7 @@ export class FooterComponent implements OnInit {
   theme!: string | null;
 
   constructor(private renderer: Renderer2, private elementRef: ElementRef, public themeService: ThemeService, private router: Router) {
-    console.log('🚀 ~ FooterComponent ~ themeService:', themeService.isDarkTheme);
+    // console.log('🚀 ~ FooterComponent ~ themeService:', themeService.isDarkTheme);
   }
   goToBlogs() {
     this.router.navigate(['/blogs']);

@@ -23,7 +23,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
           transform: 'rotate(-180deg)',
         })
       ),
-      transition('light <=> dark', animate('50ms ease-in-out')),
+      transition('light <=> dark', animate('100ms ease-in-out')),
     ]),
   ],
   imports: [SideBarComponent, CommonModule],
@@ -33,7 +33,6 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 export class HeaderComponent {
   sidebarOpen: boolean = false;
   theme: 'light' | 'dark' = this.themeService.isDarkTheme ? 'dark' : 'light';
-  @HostBinding('@changeState') currentState = this.theme;
   header!: HTMLElement;
   // iconSrc: string = 'path/to/default/icon'; // Add this line
   constructor(
@@ -42,6 +41,7 @@ export class HeaderComponent {
     @Inject(DOCUMENT) private document: Document,
     private commonService: CommonService
   ) {
+    console.log('🚀 ~ HeaderComponent ~ theme:', this.theme);
     const localStorage = document.defaultView?.localStorage;
     if (localStorage !== undefined) {
       const preferredTheme = localStorage.getItem('theme');
@@ -56,7 +56,6 @@ export class HeaderComponent {
   }
   toggleTheme(): void {
     this.theme = this.theme === 'light' ? 'dark' : 'light';
-    this.currentState = this.theme;
     document.body.classList.toggle('dark', this.theme === 'dark');
     localStorage.setItem('theme', this.theme);
     this.themeService.isDarkTheme = this.theme === 'dark';

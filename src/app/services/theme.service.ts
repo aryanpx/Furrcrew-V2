@@ -10,12 +10,17 @@ export class ThemeService {
   constructor(@Inject(DOCUMENT) private document: Document) {
     // Detect system theme
     if (typeof window !== 'undefined') {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-      this.isDarkTheme = prefersDark.matches;
-      prefersDark.addListener((mediaQuery) => {
-        console.log('🚀 ~ ThemeService ~ prefersDark.addListener ~ mediaQuery:', mediaQuery);
-        this.isDarkTheme = mediaQuery.matches;
-      });
+      if (localStorage.getItem('theme') === null) {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+        this.isDarkTheme = prefersDark.matches;
+        // console.log('🚀 ~ ThemeService ~ constructor ~ this.isDarkTheme:', this.isDarkTheme);  //! true on my device
+        document.body.classList.add(this.isDarkTheme ? 'dark' : 'light');
+        localStorage.setItem('theme', this.isDarkTheme ? 'dark' : 'light');
+        console.log('if condition running', this.isDarkTheme);
+      } else {
+        console.log("🚀 ~ ThemeService ~ constructor ~ localStorage.getItem('theme'):", localStorage.getItem('theme'));
+        console.log('elese condition');
+      }
     }
   }
 }
