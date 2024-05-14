@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 import { CommonModule } from '@angular/common';
 
@@ -12,10 +12,10 @@ import { CommonModule } from '@angular/common';
 })
 export class VerticalEventsComponent {
   events: any[] = [];
-  constructor(private apiService: ApiService) {
-    // this.apiService.getActiveEvents().subscribe((data: any) => {
-    //   this.events = Object.values(data);
-    // });
+  constructor(private apiService: ApiService, private router: Router) {
+    this.apiService.getActiveEvents().subscribe((data: any) => {
+      this.events = Object.values(data);
+    });
   }
   formatUnixTimestamp(timestamp: number): string {
     const date = new Date(timestamp);
@@ -41,5 +41,8 @@ export class VerticalEventsComponent {
       'December',
     ];
     return months[monthIndex];
+  }
+  goToEventDetails(eventId: number) {
+    this.router.navigate(['/events/upcoming-events'], { queryParams: { eventId: eventId } });
   }
 }

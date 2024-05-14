@@ -2,7 +2,7 @@
   <section *ngIf="events && events.length > 0" class="flex items-center justify-center gap-5 max-md:flex-col max-md:gap-0 max-w-full">
     <aside class="flex flex-col w-[16%] max-md:ml-0 max-md:w-full">
       <article class="updown-animate1 flex flex-col max-md:mt-10">
-        <div class="flex flex-col p-3 bg-white shadow-3xl">
+        <div *ngIf="events[0]" class="flex flex-col cursor-pointer p-3 bg-white shadow-3xl" (click)="goToEventDetails(events[0].id)">
           <img src="{{ events[0].coverImage }}" alt="" class="w-full object-cover aspect-[1.08]" />
           <div class="h-12 flex items-center">
             <h3 class="text-black text-xl font-medium w-full leading-5 line-clamp-2">{{ events[0].title }}</h3>
@@ -12,7 +12,11 @@
             {{ events[0].address.address || "To be announce" }}
           </p>
         </div>
-        <div class="flex flex-col p-3 mt-16 bg-white shadow-3xl max-md:mt-10">
+        <div
+          *ngIf="events[1]"
+          class="flex flex-col cursor-pointer p-3 mt-16 bg-white shadow-3xl max-md:mt-10"
+          (click)="goToEventDetails(events[1].id)"
+        >
           <img src="{{ events[1].coverImage }}" alt="" class="w-full aspect-[1.08]" />
           <div class="h-12 flex items-center">
             <h3 class="text-black text-xl font-medium w-full leading-5 line-clamp-2">{{ events[1].title }}</h3>
@@ -28,8 +32,8 @@
       <section class="flex flex-col grow mt-9 max-md:mt-10 max-md:max-w-full">
         <div class="max-md:max-w-full">
           <div class="flex gap-20 justify-center max-w-full max-sm:flex-col">
-            <aside class="flex flex-col w-[26%] max-md:w-full">
-              <article class="updown-animate2 flex flex-col grow p-3.5 mt-32 w-full bg-white shadow-3xl max-md:mt-10">
+            <aside class="flex flex-col w-[26%] max-md:w-full cursor-pointer" (click)="goToEventDetails(events[2].id)">
+              <article *ngIf="events[2]" class="updown-animate2 flex flex-col grow p-3.5 mt-32 w-full bg-white shadow-3xl max-md:mt-10">
                 <img src="{{ events[2].coverImage }}" alt="" class="w-full aspect-[1.08]" />
                 <div class="h-12 flex items-center">
                   <h3 class="text-black text-xl font-medium w-full leading-5 line-clamp-2">{{ events[2].title }}</h3>
@@ -40,8 +44,8 @@
                 </p>
               </article>
             </aside>
-            <aside class="flex flex-col w-[26%] max-md:w-full">
-              <article class="updown-animate3 flex flex-col p-3 w-full bg-white shadow-3xl max-md:mt-10">
+            <aside class="flex flex-col w-[26%] max-md:w-full cursor-pointer" (click)="goToEventDetails(events[3].id)">
+              <article *ngIf="events[3]" class="updown-animate3 flex flex-col p-3 w-full bg-white shadow-3xl max-md:mt-10">
                 <img src="{{ events[3].coverImage }}" alt="" class="w-full aspect-[1.08]" />
                 <div class="h-12 flex items-center">
                   <h3 class="text-black text-xl font-medium w-full leading-5 line-clamp-2">{{ events[3].title }}</h3>
@@ -52,8 +56,8 @@
                 </p>
               </article>
             </aside>
-            <aside class="flex flex-col w-[26%] max-md:w-full">
-              <article class="updown-animate1 flex flex-col p-3.5 mt-28 w-full bg-white shadow-3xl max-md:mt-10">
+            <aside class="flex flex-col w-[26%] max-md:w-full cursor-pointer" (click)="goToEventDetails(events[4].id)">
+              <article *ngIf="events[4]" class="updown-animate1 flex flex-col p-3.5 mt-28 w-full bg-white shadow-3xl max-md:mt-10">
                 <img src="{{ events[4].coverImage }}" alt="" class="w-full aspect-[1.08]" />
                 <div class="h-12 flex items-center">
                   <h3 class="text-black text-xl font-medium w-full leading-5 line-clamp-2">{{ events[4].title }}</h3>
@@ -79,7 +83,7 @@
     </section>
     <aside class="flex flex-col w-[16%] max-md:w-full">
       <article class="updown-animate2 flex flex-col max-md:mt-10">
-        <div class="flex flex-col p-3 bg-white shadow-3xl">
+        <div *ngIf="events[5]" class="flex flex-col cursor-pointer p-3 bg-white shadow-3xl" (click)="goToEventDetails(events[5].id)">
           <img src="{{ events[5].coverImage }}" alt="" class="w-full aspect-[1.08]" />
           <div class="h-12 flex items-center">
             <h3 class="text-black text-xl font-medium w-full leading-5 line-clamp-2">{{ events[5].title }}</h3>
@@ -89,7 +93,11 @@
             {{ events[5].address.address || "To be announce" }}
           </p>
         </div>
-        <div class="flex flex-col p-3 mt-14 bg-white shadow-3xl max-md:mt-10">
+        <div
+          *ngIf="events[6]"
+          class="flex flex-col cursor-pointer p-3 mt-14 bg-white shadow-3xl max-md:mt-10"
+          (click)="goToEventDetails(events[6].id)"
+        >
           <img src="{{ events[6].coverImage }}" alt="" class="w-full aspect-[1.08]" />
           <div class="h-12 flex items-center">
             <h3 class="text-black text-xl font-medium w-full leading-5 line-clamp-2">{{ events[6].title }}</h3>

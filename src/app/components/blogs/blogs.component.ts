@@ -47,7 +47,6 @@ export class BlogsComponent implements OnInit {
   filterBlogs() {
     console.log('filter is called');
     this.filteredBlogs = this.blogs.filter((blog: any) => blog.title.toLowerCase().includes(this.searchQuery.toLowerCase()));
-    console.log('🚀 ~ BlogsComponent ~ filterBlogs ~ ', this.searchQuery);
   }
   goToBlogsDetails(blogId: number) {
     this.router.navigate(['/blogs/details'], { queryParams: { blogId: blogId } });

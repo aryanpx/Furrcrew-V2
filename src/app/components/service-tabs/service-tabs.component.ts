@@ -82,7 +82,7 @@ export class ServiceTabsComponent implements OnInit {
         clearInterval(this.progressInterval);
         this.autoSwitchTabs();
       }
-      console.log('🚀 ~ ServiceTabsComponent ~ this.progressInterval=setInterval ~ (this.progressWidth:', this.progressWidth);
+      // console.log('🚀 ~ ServiceTabsComponent ~ this.progressInterval=setInterval ~ (this.progressWidth:', this.progressWidth);
     }, 110); // Adjust the interval for the progress bar animation
   }
 }

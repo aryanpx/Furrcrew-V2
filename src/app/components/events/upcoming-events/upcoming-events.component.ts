@@ -70,7 +70,6 @@ export class UpcomingEventsComponent implements OnInit {
   toggleLocation() {
     this.showLocation = !this.showLocation;
   }
-  display: any;
   zoom = 4;
   parseCoordinate(value: string): number {
     return parseFloat(value);

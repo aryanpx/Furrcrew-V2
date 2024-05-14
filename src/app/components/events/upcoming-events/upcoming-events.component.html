@@ -2,7 +2,7 @@
   <div class="items-center">
     <a routerLink="/events" class="text-xl flex items-center max-sm:mt-10">
       <button>
-        <img src="assets/icons/backArrow.svg" />
+        <img src="assets/icons/backArrow.svg" class="dark:invert" />
       </button>
       Back
     </a>
@@ -232,7 +232,12 @@
               *ngIf="showDescription"
               class="shrink-0 gap-0 w-12 aspect-square dark:invert"
             />
-            <img loading="lazy" src="assets/icons/plusIcon.svg" *ngIf="!showDescription" class="shrink-0 gap-0 w-12 aspect-square" />
+            <img
+              loading="lazy"
+              src="assets/icons/plusIcon.svg"
+              *ngIf="!showDescription"
+              class="shrink-0 dark:invert gap-0 w-12 aspect-square"
+            />
           </div>
           <!-- <div class="shrink-0 gap-0 mt-4 h-px bg-black border border-black border-solid max-md:flex-wrap max-md:max-w-full"></div> -->
         </div>
@@ -251,7 +256,7 @@
         >
           <div class="gap-0 my-auto">Location</div>
           <img loading="lazy" src="assets/icons/minus.svg" *ngIf="showLocation" class="shrink-0 gap-0 w-12 aspect-square dark:invert" />
-          <img loading="lazy" src="assets/icons/plusIcon.svg" *ngIf="!showLocation" class="shrink-0 gap-0 w-12 aspect-square" />
+          <img loading="lazy" src="assets/icons/plusIcon.svg" *ngIf="!showLocation" class="shrink-0 dark:invert gap-0 w-12 aspect-square" />
         </div>
         <div class="shrink-0 gap-0 mt-4 h-px bg-black border border-black border-solid max-md:flex-wrap max-md:max-w-full"></div>
       </div>
@@ -276,16 +281,18 @@
         </iframe> -->
         <google-map
           height="400px"
+          width="100%"
           [center]="{ lat: parseCoordinate(event.address.latitude), lng: parseCoordinate(event.address.longitude) }"
           [zoom]="16"
         >
+          <map-advanced-marker #markerElem="mapAdvancedMarker" [position]="{ lat: event.address.latitude, lng: event.address.longitude }" />
         </google-map>
       </div>
       <div class="flex flex-col gap-4 mt-12 max-sm:text-2xl md:text-4xl font-[590] max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
         <div class="flex gap-5 justify-between pr-7 max-md:flex-wrap max-md:pr-5 max-md:max-w-full cursor-pointer" (click)="toggleTerms()">
           <div class="gap-0 my-auto">Terms & Conditions</div>
           <img loading="lazy" src="assets/icons/minus.svg" *ngIf="showTerms" class="shrink-0 gap-0 w-12 aspect-square dark:invert" />
-          <img loading="lazy" src="assets/icons/plusIcon.svg" *ngIf="!showTerms" class="shrink-0 gap-0 w-12 aspect-square" />
+          <img loading="lazy" src="assets/icons/plusIcon.svg" *ngIf="!showTerms" class="shrink-0 dark:invert gap-0 w-12 aspect-square" />
         </div>
         <div class="shrink-0 gap-0 mt-4 h-px bg-black border border-black border-solid max-md:flex-wrap max-md:max-w-full"></div>
         <div
