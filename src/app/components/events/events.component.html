@@ -7,6 +7,7 @@
   <video
     autoplay
     loop
+    muted
     src="assets/videos/pet_video.mp4"
     class="max-sm:aspect-[9/16] object-cover"
     [ngStyle]="{ width: !isMobile ? imageWidth : '100%' }"
@@ -86,8 +87,8 @@
         </div>
         <div class="p-5 bg-white dark:bg-black shadow-md mt-[-60px] cursor-pointer" (click)="goToEventDetails(event.id)">
           <img src="{{ event.coverImage || event.images[0].value }}" alt="Event venue" class="w-full aspect-square object-cover" />
-          <div class="flex items-center h-16 ">
-            <h2 class=" text-2xl font-bold  line-clamp-2">{{ event.title }}</h2>
+          <div class="flex items-center h-16">
+            <h2 class="text-2xl font-bold line-clamp-2">{{ event.title }}</h2>
           </div>
           <div class="mt-3">
             <p>{{ event.address.address }}</p>
@@ -129,11 +130,15 @@
       </p>
     </article>
     <div class="flex gap-5">
-      <footer class="justify-center mt-9 text-xl md:text-3xl leading-9 underline whitespace-nowrap max-md:max-w-full">
-        <a href="https://www.instagram.com/furrcrewofficial/"> &#64;furrcrewofficial </a>
+      <footer class="flex justify-center mt-9 text-xl md:text-3xl leading-9 underline whitespace-nowrap max-md:max-w-full">
+        <a href="https://www.instagram.com/furrcrewofficial/" class="flex items-center"
+          ><img src="assets/icons/instagram-color.svg" /> &#64;furrcrewofficial
+        </a>
       </footer>
-      <footer class="justify-center mt-9 text-xl md:text-3xl leading-9 underline whitespace-nowrap max-md:max-w-full">
-        <a href="https://www.instagram.com/furrfiestaofficial/"> &#64;furrfiestaofficial </a>
+      <footer class="flex justify-center mt-9 text-xl md:text-3xl leading-9 underline whitespace-nowrap max-md:max-w-full">
+        <a href="https://www.instagram.com/furrfiestaofficial/" class="flex items-center"
+          ><img src="assets/icons/instagram-color.svg" /> &#64;furrfiestaofficial
+        </a>
       </footer>
     </div>
   </section>

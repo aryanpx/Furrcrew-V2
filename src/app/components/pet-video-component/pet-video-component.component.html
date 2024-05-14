@@ -1,8 +1,20 @@
 <div class="flex flex-col items-center px-4 mt-10 w-full">
-  <video loop autoplay class="rounded-3xl" *ngIf="isMobile; else desktopVideo" [src]="mobileVideoPath">
+  <video
+    #video
+    (canplay)="video.play()"
+    muted
+    loop
+    autoplay
+    class="rounded-3xl"
+    *ngIf="isMobile; else desktopVideo"
+    [src]="mobileVideoPath"
+  >
     Your browser does not support video tag
   </video>
   <ng-template #desktopVideo>
-    <video loop autoplay [src]="desktopVideoPath" class="w-[75rem] rounded-3xl">Your browser does not support video tag</video>
+    <video #video (canplay)="video.play()" muted loop autoplay class="w-[75rem] rounded-3xl">
+      <source src="assets/videos/pet_video.mp4" />
+      Your browser does not support video tag
+    </video>
   </ng-template>
 </div>
