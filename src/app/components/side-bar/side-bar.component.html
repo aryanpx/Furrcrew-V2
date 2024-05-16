@@ -1,6 +1,11 @@
-<div class="sidebar" [class]="sidebarOpen ? 'active' : 'inactive'" class="md:w-[20vw] bg-[#ECECEC] dark:bg-[#353535] backdrop-blur-md">
+<div
+  *ngIf="sidebarOpen"
+  class="sidebar"
+  [class]="sidebarOpen ? 'active' : 'inactive'"
+  class="md:w-[20vw] bg-[#ECECEC] dark:bg-[#353535] backdrop-blur-md"
+>
   <main class="flex flex-col">
-    <header class="flex flex-col items-center h-[100vh]">
+    <header class="flex flex-col items-center max-sm:w-[100vw] h-[100vh]">
       <img
         loading="lazy"
         src="assets/icons/closeIcon.svg"
@@ -8,27 +13,29 @@
         class="self-end stroke-[6px] stroke-zinc-800 max-md:mr-2 cursor-pointer py-24 px-20 dark:invert"
         (click)="toggleSidebar()"
       />
-      <nav class="flex flex-col text-3xl font-[400] w-2/3">
-        <h1 class="self-end text-right"><a routerLink="about" class="cursor-pointer">About Us</a></h1>
-        <div class="shrink-0 mt-6 h-px border border-solid bg-zinc-200 bg-opacity-10 border-zinc-800 border-opacity-20"></div>
-        <h2 class="self-end mt-6"><a routerLink="blogs" class="cursor-pointer">Blogs</a></h2>
-        <div class="shrink-0 mt-6 h-px border border-solid bg-zinc-200 bg-opacity-10 border-zinc-800 border-opacity-20"></div>
-        <h3 class="self-end mt-6"><a routerLink="events" class="cursor-pointer">Events</a></h3>
-        <div class="shrink-0 mt-6 h-px border border-solid bg-zinc-200 bg-opacity-10 border-zinc-800 border-opacity-20"></div>
-        <h3 class="self-end mt-6 text-right"><a routerLink="contact" class="cursor-pointer">Contact</a></h3>
-        <div class="shrink-0 mt-6 h-px border border-solid bg-zinc-200 bg-opacity-10 border-zinc-800 border-opacity-20"></div>
-      </nav>
-      <section class="flex flex-col w-60 max-w-full mt-10">
-        <img loading="lazy" src="assets/logo/furrcrewsmall.svg" class="w-20 self-end" />
-        <div class="flex flex-col items-center mt-6">
-          <a href="https://play.google.com/store/apps/details?id=com.furrcrew.app">
-            <img loading="lazy" src="assets/icons/downloadgoogle.svg" alt="" class="w-full aspect-[3.33]" />
-          </a>
-          <a href="https://apps.apple.com/in/app/furrcrew/id6451879293">
-            <img loading="lazy" src="assets/icons/downloadapple.svg" alt="" class="w-full mt-4 aspect-[3.33]" />
-          </a>
-        </div>
-      </section>
+      <div class="flex flex-col w-full items-end px-20">
+        <nav class="flex flex-col text-3xl font-[400] w-full">
+          <h1 class="self-end text-right"><a routerLink="about" class="cursor-pointer" (click)="toggleSidebar()">About Us</a></h1>
+          <div class="shrink-0 mt-6 h-px border border-solid bg-zinc-200 bg-opacity-10 border-zinc-800 border-opacity-20"></div>
+          <h2 class="self-end mt-6"><a routerLink="blogs" class="cursor-pointer" (click)="toggleSidebar()">Blogs</a></h2>
+          <div class="shrink-0 mt-6 h-px border border-solid bg-zinc-200 bg-opacity-10 border-zinc-800 border-opacity-20"></div>
+          <h3 class="self-end mt-6"><a routerLink="events" class="cursor-pointer" (click)="toggleSidebar()">Events</a></h3>
+          <div class="shrink-0 mt-6 h-px border border-solid bg-zinc-200 bg-opacity-10 border-zinc-800 border-opacity-20"></div>
+          <h3 class="self-end mt-6 text-right"><a routerLink="contact" class="cursor-pointer" (click)="toggleSidebar()">Contact</a></h3>
+          <div class="shrink-0 mt-6 h-px border border-solid bg-zinc-200 bg-opacity-10 border-zinc-800 border-opacity-20"></div>
+        </nav>
+        <section class="flex flex-col w-60 max-w-full mt-10">
+          <img loading="lazy" src="assets/logo/furrcrewsmall.svg" class="w-20 self-end" />
+          <div class="flex flex-col items-end mt-6">
+            <a href="https://play.google.com/store/apps/details?id=com.furrcrew.app">
+              <img loading="lazy" src="assets/icons/downloadgoogle.svg" alt="" class="w-full aspect-[3.33]" />
+            </a>
+            <a href="https://apps.apple.com/in/app/furrcrew/id6451879293">
+              <img loading="lazy" src="assets/icons/downloadapple.svg" alt="" class="w-full mt-4 aspect-[3.33]" />
+            </a>
+          </div>
+        </section>
+      </div>
     </header>
   </main>
 </div>

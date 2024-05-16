@@ -41,7 +41,12 @@ export class EventsComponent {
     ];
     return months[monthIndex];
   }
-  constructor(private router: Router, private apiService: ApiService, @Inject(DOCUMENT) private document: Document) {
+  constructor(
+    private router: Router,
+    private apiService: ApiService,
+    @Inject(DOCUMENT) private document: Document,
+    public eventService: EventsService
+  ) {
     if (typeof window !== 'undefined') {
       this.isMobile = window.innerWidth < 769;
     }

@@ -1,11 +1,12 @@
 import { Component, Input, ElementRef, HostListener, Output, EventEmitter } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonService } from '../../services/common.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-side-bar',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, CommonModule],
   templateUrl: './side-bar.component.html',
   styleUrl: './side-bar.component.css',
 })

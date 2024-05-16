@@ -1,4 +1,4 @@
-<main class="flex max-sm:flex-col max-sm:px-5 md:justify-between md:items-start md:mt-64 md:ml-28">
+<main class="flex max-sm:flex-col max-sm:px-5 md:justify-between md:items-start md:ml-28">
   <h1 class="text-6xl md:mb-20 font-[550] my-8 md:w-2/3 flex flex-wrap">culture and shared purpose to leave an enduring impact.</h1>
   <button
     class="md:mr-28 max-sm:w-2/3 md:mt-5 border-solid border-black dark:border-darkfont border rounded-full px-5 h-10 md:h-20 flex items-center justify-center text-2xl md:text-3xl"
@@ -11,7 +11,7 @@
 <div class="">
   <div class="md:pl-24 overflow-x-auto md:py-5 md:px-32 parent custom-scrollbar">
     <ul class="flex">
-      @for (item of items;track item){
+      @for (item of items.slice(0,6);track item){
       <li class="max-sm:scroll-ml-4 md:scroll-ml-6 snap-start md:min-w-[300px] flex-shrink-0 m-5">
         <div class="flex flex-col w-80 max-sm:w-48">
           <img [src]="item.images[0].value" [alt]="item.title" class="w-full aspect-square object-cover drag-cursor" />
@@ -30,10 +30,12 @@
 </div>
 
 <main class="flex justify-center items-center min-h-[60vh]">
-  <section class="text-center mt-10 gap-28 md:w-2/3">
-    <p class="font-SFPro font-[550] md:text-4xl max-sm:text-2xl leading-9 p-5 md:px-32">
-      Because when it comes to coexistence, there are no limits – only endless possibilities as collective evolution takes us all
-    </p>
+  <section class="text-center mt-10 gap-28">
+    <div class="w-full flex justify-center">
+      <p class="font-SFPro font-[500] md:text-4xl max-sm:text-2xl leading-9 p-5 md:px-32 w-2/3">
+        Because when it comes to coexistence, there are no limits – only endless possibilities as collective evolution takes us all
+      </p>
+    </div>
     <p class="md:text-[150px] max-sm:text-[5rem] font-bold mt-10">for you, furrcrew</p>
   </section>
 </main>

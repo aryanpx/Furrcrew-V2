@@ -1,10 +1,18 @@
+@keyframes slideInAndFade {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 .scrollable-div {
   height: 2500px; /* set a fixed height for the div */
   overflow-y: scroll; /* enable vertical scrollbar */
 }
 .frame1 {
-  position: relative;
-  justify-content: space-between;
 }
 .phone {
   transition: all 0.5s linear;
@@ -15,15 +23,19 @@
   height: 100%;
   width: 50%;
   opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease; /* Smooth transition */
+  transition: opacity 0.3s ease;
+}
+
+.services-col {
+  animation: slideInAndFade 1s ease-in-out forwards;
 }
 
 .left_component {
-  right: 166px;
-  top: -361px;
+  right: 350px;
+  top: -400px;
 }
 
 .right_component {
-  right: 160px;
-  top: 600px;
+  right: 340px;
+  top: 640px;
 }

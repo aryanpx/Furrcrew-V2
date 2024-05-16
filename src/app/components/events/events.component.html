@@ -64,7 +64,7 @@
 <div
   class="rounded-t-3xl md:rounded-[80px_80px_0px_0px] pt-10 md:py-20 mt-44 flex flex-col w-full bg-[#ECECEC] dark:bg-[#323232] max-md:mt-10"
 >
-  <section class="md:mt-10 flex flex-col w-full max-w-[1680px] px-5">
+  <section class="md:mt-10 flex flex-col w-full max-w-full px-5">
     <div class="flex max-sm:flex-col md:justify-between md:p-5 items-start md:px-20">
       <div class="flex flex-col">
         <h1 class="md:text-6xl font-[550] max-md:text-4xl">Upcoming Events</h1>
@@ -85,13 +85,13 @@
         <div class="w-full flex z-10 justify-center pl-32 pb-4">
           <img src="assets/icons/drawing-pin.png" alt="Dog event" class="max-w-full aspect-[1.56] w-[150px]" />
         </div>
-        <div class="p-5 bg-white dark:bg-black shadow-md mt-[-60px] cursor-pointer" (click)="goToEventDetails(event.id)">
+        <div class="p-5 bg-white dark:bg-black shadow-md -mt-16 cursor-pointer" (click)="goToEventDetails(event.id)">
           <img src="{{ event.coverImage || event.images[0].value }}" alt="Event venue" class="w-full aspect-square object-cover" />
           <div class="flex items-center h-16">
             <h2 class="text-2xl font-bold line-clamp-2">{{ event.title }}</h2>
           </div>
           <div class="mt-3">
-            <p>{{ event.address.address }}</p>
+            <p class="line-clamp-1">{{ event.address.address }}</p>
             <time datetime="2024-04-14">{{ formatDate(event.scheduledDate) }}</time>
           </div>
         </div>
@@ -132,12 +132,12 @@
     <div class="flex gap-5">
       <footer class="flex justify-center mt-9 text-xl md:text-3xl leading-9 underline whitespace-nowrap max-md:max-w-full">
         <a href="https://www.instagram.com/furrcrewofficial/" class="flex items-center"
-          ><img src="assets/icons/instagram-color.svg" /> &#64;furrcrewofficial
+          ><img src="assets/icons/instagram-color.svg" class="pr-2" /> &#64;furrcrewofficial
         </a>
       </footer>
       <footer class="flex justify-center mt-9 text-xl md:text-3xl leading-9 underline whitespace-nowrap max-md:max-w-full">
         <a href="https://www.instagram.com/furrfiestaofficial/" class="flex items-center"
-          ><img src="assets/icons/instagram-color.svg" /> &#64;furrfiestaofficial
+          ><img src="assets/icons/instagram-color.svg" class="pr-2" /> &#64;furrfiestaofficial
         </a>
       </footer>
     </div>

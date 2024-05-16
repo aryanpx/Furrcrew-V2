@@ -19,7 +19,7 @@ export class ApiService {
     return this.http.get(url);
   }
   getActiveEvents() {
-    let url = 'https://api.furrcrew.com/events/v1/event/?status=Active&deviceType=All';
+    let url = 'https://api-dev.furrcrew.com/events/v1/event/?status=Active&deviceType=All';
     // let url = this.configUrl + 'events/v1/event/?status=active?deviceType=All';
     return this.http.get(url);
   }
