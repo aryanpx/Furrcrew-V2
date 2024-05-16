@@ -7,16 +7,19 @@
     </p>
   </header>
   <div id="search" class="p-5 flex justify-center w-full search">
-    <form class="flex bg-white border-gray-600 border rounded-full overflow-hidden w-full md:w-[55%]" [formGroup]="formGroup">
+    <form
+      class="flex bg-white dark:bg-[#323232] border-gray-600 border rounded-full overflow-hidden w-full md:w-[55%]"
+      [formGroup]="formGroup"
+    >
       <button type="submit" class="py-3.5 pr-4 pl-5">
-        <img src="{{ searchIconUrl }}" alt="Search" class="aspect-square w-6" />
+        <img src="{{ searchIconUrl }}" alt="Search" class="aspect-square w-6 outline-white" />
       </button>
       <input
         ng-scroll-to-top
         formControlName="search"
         (click)="scrollToTop()"
         (input)="filterBlogs()"
-        class="flex flex-grow p-3 text-xl leading-8 outline-none rounded-full"
+        class="flex flex-grow p-3 text-xl leading-8 outline-none rounded-full dark:bg-[#323232]"
         type="search"
         placeholder="Search"
         aria-label="Search"

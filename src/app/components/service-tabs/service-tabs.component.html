@@ -1,4 +1,4 @@
-<main class="flex justify-center items-center px-16 md:py-20 w-full max-md:px-5 max-md:mt-10 tab-container">
+<main class="flex justify-center items-center px-16 md:px-20 w-full max-md:px-5 max-md:mt-10 tab-container">
   <section class="flex flex-col mt-12 mb-6 w-full max-w-[1430px] max-md:mt-10">
     <nav class="flex gap-5 max-sm:overflow-x-scroll snap-x">
       <div class="flex flex-col flex-1 cursor-pointer scroll-ml-6 snap-start" (click)="setActiveTab(0)">
@@ -51,17 +51,27 @@
               services offered in the industry.
             </p>
             <div class="flex gap-5 justify-between self-start mt-7">
-              <img loading="lazy" src="assets/icons/thumbsup.svg" alt="Easy booking flow icon" class="shrink-0 w-10 aspect-square" />
+              <img
+                loading="lazy"
+                [src]="themeService.isDarkTheme ? 'assets/icons/darkThumbsup.svg' : 'assets/icons/thumbsup.svg'"
+                alt="Easy booking flow icon"
+                class="shrink-0 w-10 aspect-square"
+              />
               <span>Easy booking flow</span>
             </div>
             <div class="flex gap-5 justify-between self-start mt-6">
-              <img loading="lazy" src="assets/icons/webuser.svg" alt="Online, offline bookings icon" class="shrink-0 w-10 aspect-square" />
+              <img
+                loading="lazy"
+                [src]="themeService.isDarkTheme ? 'assets/icons/darkWebuser.svg' : 'assets/icons/webuser.svg'"
+                alt="Online, offline bookings icon"
+                class="shrink-0 w-10 aspect-square"
+              />
               <span>Online, offline bookings</span>
             </div>
             <div class="flex gap-5 justify-between self-start mt-6">
               <img
                 loading="lazy"
-                src="assets/icons/injection.svg"
+                [src]="themeService.isDarkTheme ? 'assets/icons/darkInjection.svg' : 'assets/icons/injection.svg'"
                 alt="Home visits and vaccinations icon"
                 class="shrink-0 w-10 aspect-square"
               />
@@ -70,7 +80,7 @@
             <div class="flex gap-5 justify-between self-start mt-6">
               <img
                 loading="lazy"
-                src="assets/icons/cardarrow.svg"
+                [src]="themeService.isDarkTheme ? 'assets/icons/darkCardarrow.svg' : 'assets/icons/cardarrow.svg'"
                 alt="Easy refunds and rebooking of appointments icon"
                 class="shrink-0 w-10 aspect-square"
               />

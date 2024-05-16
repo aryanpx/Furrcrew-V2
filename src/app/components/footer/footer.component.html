@@ -1,73 +1,50 @@
 <div class="md:flex border-t gap-20 mt-20 max-sm:mt-14">
-  <div class="flex justify-center items-center px-5 py-5 border-solid border-darkfont border-opacity-40 md:flex-col md:w-1/3">
-    <nav class="w-full flex-col flex md:flex-row md:gap-20 justify-center">
-      <ul class="flex gap-5 mt-4 md:flex-col flex-wrap md:h-48">
-        <li><a routerLink="/" class="block md:text-2xl">Home</a></li>
-        <li><a routerLink="/about" class="block md:text-2xl">About Us</a></li>
-        <li><a routerLink="/blogs" class="block md:text-2xl">Blogs</a></li>
-        <li><a routerLink="/events" class="block md:text-2xl">Events</a></li>
-        <li><a routerLink="/privacy-policy" class="block md:text-2xl">Privacy Policy</a></li>
-        <li><a href="mailto:support@furrcrew.com" class="block md:text-2xl">Support</a></li>
-        <li><a routerLink="/terms-and-condition" class="block md:text-2xl">Terms & Condition</a></li>
-      </ul>
-    </nav>
-  </div>
-  <div
-    class="flex max-sm:flex-col max-sm:justify-center max-sm:border-t md:border-l-2 md:border-l-black md:dark:border-l-darkfont items-center md:pl-20 md:h-48 md:mt-10"
-  >
-    <section class="gap-5 mt-5 max-sm:text-sm text-xl leading-4">
-      <div class="flex flex-col gap-3">
-        <div class="flex gap-4 leading-5 md:leading-9">
-          <img
-            loading="lazy"
-            [src]="themeService.isDarkTheme ? 'assets/icons/darkLocation.svg' : 'assets/icons/location.svg'"
-            alt="Location icon"
-            class="shrink-0 aspect-square ml-3 w-[1rem]"
-          />
-          <p class="w-80 md:w-full md:pr-60">
-            Office No- 503,504, 5th floor, Majestique Cityview, opposite Apsara Theatre, Gultekadi, Pune, Maharashtra – 411037
-          </p>
+  <div class="flex max-sm:flex-col w-full justify-center">
+    <div class="flex justify-center items-center px-5 py-5 border-solid border-darkfont border-opacity-40 md:flex-col md:w-2/3">
+      <nav class="w-full flex-col flex md:flex-row md:gap-20 justify-center">
+        <ul class="flex gap-5 mt-4 md:flex-col flex-wrap md:h-48">
+          <li><a routerLink="/" class="block md:text-2xl">Home</a></li>
+          <li><a routerLink="/about" class="block md:text-2xl">About Us</a></li>
+          <li><a routerLink="/blogs" class="block md:text-2xl">Blogs</a></li>
+          <li><a routerLink="/events" class="block md:text-2xl">Events</a></li>
+          <li><a routerLink="/privacy-policy" class="block md:text-2xl">Privacy Policy</a></li>
+          <li><a href="mailto:support@furrcrew.com" class="block md:text-2xl">Support</a></li>
+          <li><a routerLink="/terms-and-condition" class="block md:text-2xl">Terms & Condition</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div
+      class="flex max-sm:flex-col max-sm:justify-center max-sm:border-t md:border-l-2 md:border-l-black md:dark:border-l-darkfont items-center md:pl-20 md:h-48 md:w-2/3 md:mt-10"
+    >
+      <section class="gap-5 mt-5 max-sm:text-sm text-xl leading-4">
+        <div class="flex flex-col gap-3">
+          <div class="flex gap-4 leading-5 md:leading-9">
+            <img
+              loading="lazy"
+              src="assets/icons/location.svg"
+              alt="Location icon"
+              class="shrink-0 aspect-square ml-3 w-[1rem] dark:invert"
+            />
+            <p class="w-3/4">
+              Office No- 503,504, 5th floor, Majestique Cityview, opposite Apsara Theatre, Gultekadi, Pune, Maharashtra – 411037
+            </p>
+          </div>
+          <div class="flex gap-4">
+            <img loading="lazy" src="assets/icons/mail.svg" alt="Email icon" class="shrink-0 aspect-square ml-3 w-[1rem] dark:invert" />
+            <a href="mailto:support@furrcrew.com">support&#64;furrcrew.com</a>
+          </div>
+          <div class="flex gap-4">
+            <img loading="lazy" src="assets/icons/phone.svg" alt="Phone icon" class="shrink-0 aspect-square ml-3 w-[1rem] dark:invert" />
+            <a href="tel:02029805658">020 2980 5658</a>
+          </div>
         </div>
-        <div class="flex gap-4">
-          <img
-            loading="lazy"
-            [src]="themeService.isDarkTheme ? 'assets/icons/darkMail.svg' : 'assets/icons/mail.svg'"
-            alt="Email icon"
-            class="shrink-0 aspect-square ml-3 w-[1rem]"
-          />
-          <a href="mailto:support@furrcrew.com">support&#64;furrcrew.com</a>
+        <div class="flex flex-row gap-8 w-[1.5rem] ml-3">
+          <img loading="lazy" src="assets/icons/instagram.svg" alt="instagram logo" class="mt-6 dark:invert" />
+          <img loading="lazy" src="assets/icons/facebook.svg" alt="facebook logo" class="mt-6 dark:invert" />
+          <img loading="lazy" src="assets/icons/twitter.svg" alt="twitter logo" class="mt-6 dark:invert" />
         </div>
-        <div class="flex gap-4">
-          <img
-            loading="lazy"
-            [src]="themeService.isDarkTheme ? 'assets/icons/darkPhone.svg' : 'assets/icons/phone.svg'"
-            alt="Phone icon"
-            class="shrink-0 aspect-square ml-3 w-[1rem]"
-          />
-          <a href="tel:02029805658">020 2980 5658</a>
-        </div>
-      </div>
-      <div class="flex flex-row gap-8 w-[1.5rem] ml-3">
-        <img
-          loading="lazy"
-          [src]="themeService.isDarkTheme ? 'assets/icons/darkInstagram.svg' : 'assets/icons/instagram.svg'"
-          alt="instagram logo"
-          class="mt-6"
-        />
-        <img
-          loading="lazy"
-          [src]="themeService.isDarkTheme ? 'assets/icons/darkFacebook.svg' : 'assets/icons/facebook.svg'"
-          alt="facebook logo"
-          class="mt-6"
-        />
-        <img
-          loading="lazy"
-          [src]="themeService.isDarkTheme ? 'assets/icons/darkTwitter.svg' : 'assets/icons/twitter.svg'"
-          alt="twitter logo"
-          class="mt-6"
-        />
-      </div>
-    </section>
+      </section>
+    </div>
   </div>
 </div>
 <footer class="flex justify-center text-sm p-10 md:text-2xl">© BVUR Innovations India Pvt. Ltd.</footer>

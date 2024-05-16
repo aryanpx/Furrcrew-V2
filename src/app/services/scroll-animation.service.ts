@@ -20,19 +20,19 @@ export class ScrollAnimationService {
           const maxLeft = (windowWidth - phoneWidth) / 2;
           const maxRight = maxLeft;
           if (windowWidth > 600) {
-            const rotationAngle = Math.max(0, Math.min((scrollTop - phoneOffsetTop) * 0.1, 90)) * -1;
+            const rotationAngle = Math.max(0, Math.min((scrollTop - phoneOffsetTop) * 0.2, 90)) * -1;
             const top = Math.abs(rotationAngle);
-            const left = Math.min(22, Math.abs(rotationAngle) / 2);
+            const left = Math.min(10, -6 + Math.abs(rotationAngle) / 2);
             // const left = Math.min(maxLeft, Math.max(-maxRight, maxLeft - (maxLeft * scaleFactor) / 2));
             const opacity = 1 - Math.max(0, Math.min((scrollTop - phoneOffsetTop) / windowHeight, 1)) * 6;
             if (rotationAngle > -90) {
               $('.phone').css({
                 transform: `rotate(${rotationAngle}deg) scale(${scaleFactor}) `,
-                position: Math.abs(rotationAngle) > 0 ? 'fixed' : 'sticky',
+                // position: Math.abs(rotationAngle) > 0 ? 'sticky' : 'sticky',
                 left: `${left}%`,
                 top: `${top}px`,
               });
-              $('.paragraph').css('opacity', opacity);
+              // $('.paragraph').css('opacity', opacity);
               $('.phone_side_containers').css({ opacity: 0 });
             } else {
               $('.phone').css({

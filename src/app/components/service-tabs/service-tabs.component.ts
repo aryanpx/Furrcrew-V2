@@ -2,6 +2,7 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Component, ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import $ from 'jquery';
+import { ThemeService } from '../../services/theme.service';
 @Component({
   selector: 'app-service-tabs',
   standalone: true,
@@ -18,7 +19,8 @@ export class ServiceTabsComponent implements OnInit {
   constructor(
     private sanitizer: DomSanitizer,
     @Inject(DOCUMENT) public document: Document,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    public themeService: ThemeService
   ) {
     // this.setActiveTab(0);
   }

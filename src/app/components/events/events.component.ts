@@ -14,8 +14,23 @@ import { ApiService } from '../../services/api.service';
 })
 export class EventsComponent {
   events: any = [];
-  imageWidth: string = '66.666667%';
+  videoWidth: string = '66.666667%';
   isMobile: boolean = false;
+  constructor(
+    private router: Router,
+    private apiService: ApiService,
+    @Inject(DOCUMENT) private document: Document,
+    public eventService: EventsService
+  ) {
+    if (typeof window !== 'undefined') {
+      this.isMobile = window.innerWidth < 769;
+    }
+  }
+  ngOnInit() {
+    this.apiService.getActiveEvents().subscribe((data) => {
+      this.events = data;
+    });
+  }
   formatDate(timestamp: number): string {
     const date = new Date(timestamp);
     const formattedDate = `${this.addZero(date.getDate())} ${this.getMonthName(date.getMonth())} ${date.getFullYear()}`;
@@ -41,29 +56,15 @@ export class EventsComponent {
     ];
     return months[monthIndex];
   }
-  constructor(
-    private router: Router,
-    private apiService: ApiService,
-    @Inject(DOCUMENT) private document: Document,
-    public eventService: EventsService
-  ) {
-    if (typeof window !== 'undefined') {
-      this.isMobile = window.innerWidth < 769;
-    }
-  }
-  ngOnInit() {
-    this.apiService.getActiveEvents().subscribe((data) => {
-      this.events = data;
-    });
-  }
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    if (scrollPosition < window.innerHeight) {
-      const widthIncrease = (scrollPosition / window.innerHeight) * 33.333333; // Calculate the percentage increase based on scroll
-      this.imageWidth = `${66.666667 + widthIncrease}%`;
+    const viewportHeight = window.innerHeight;
+    if (scrollPosition < viewportHeight) {
+      const widthIncrease = (scrollPosition / viewportHeight) * 33.333333; // Calculate the percentage increase based on scroll
+      this.videoWidth = `${66.666667 + widthIncrease}%`;
     } else {
-      this.imageWidth = '100%'; // Once the scroll is past the screen height, ensure image is full width
+      this.videoWidth = '100%';
     }
   }
   goToEventDetails(eventId: number) {
