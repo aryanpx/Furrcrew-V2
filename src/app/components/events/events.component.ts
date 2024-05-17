@@ -8,7 +8,7 @@ import { ApiService } from '../../services/api.service';
 @Component({
   selector: 'app-events',
   standalone: true,
-  imports: [FooterComponent, RouterLink, CommonModule],
+  imports: [RouterLink, CommonModule],
   templateUrl: './events.component.html',
   styleUrl: './events.component.css',
 })

@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { EventsService } from '../../../services/events.service';
-import { FooterComponent } from '../../footer/footer.component';
 import { ApiService } from '../../../services/api.service';
 
 @Component({
   selector: 'app-past-events',
   standalone: true,
-  imports: [FooterComponent],
+  imports: [],
   templateUrl: './past-events.component.html',
   styleUrl: './past-events.component.css',
 })

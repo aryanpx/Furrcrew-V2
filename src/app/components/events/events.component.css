@@ -1,0 +1,15 @@
+@keyframes video-resize {
+  from {
+    width: 66.66%;
+    scale: 0.8;
+  }
+  to {
+    width: calc(100% - 1.25rem);
+    scale: 1;
+  }
+}
+.video {
+  animation-timeline: view(block);
+  animation-name: video-resize;
+  animation-range: entry -10% contain 40%;
+}

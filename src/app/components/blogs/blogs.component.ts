@@ -1,7 +1,6 @@
 import { Component, ElementRef, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { BlogsService } from '../../services/blogs.service';
-import { FooterComponent } from '../footer/footer.component';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../../services/api.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -10,7 +9,7 @@ import $ from 'jquery';
 @Component({
   selector: 'app-blogs',
   standalone: true,
-  imports: [FooterComponent, FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule],
   templateUrl: './blogs.component.html',
   styleUrl: './blogs.component.css',
 })

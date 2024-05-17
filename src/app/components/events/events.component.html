@@ -3,15 +3,9 @@
   <p class="text-2xl md:text-3xl">– Building communities through shared experiences and growth</p>
 </section>
 
-<div class="flex justify-center p-5 ">
-  <video
-    autoplay
-    loop
-    muted
-    src="assets/videos/pet_video.mp4"
-    class="max-sm:aspect-[9/16] object-cover max-h-[80vh]"
-    [ngStyle]="{ width: !isMobile ? videoWidth : '100%' }"
-  >
+<div class="flex justify-center p-5 video">
+  <video autoplay loop muted src="assets/videos/pet_video.mp4" class="max-sm:aspect-[9/16] object-cover max-h-[80vh]">
+    <!-- [ngStyle]="{ width: !isMobile ? videoWidth : '100%' }" -->
     Your browser does not support video tag
   </video>
 </div>
@@ -182,5 +176,3 @@
   <img loading="lazy" src="assets/images/event-gallery11.png" class="w-full aspect-square max-md:mt-7" />
   <img loading="lazy" src="assets/images/event-gallery12.png" class="w-full aspect-square max-md:mt-7" />
 </div>
-
-<app-footer></app-footer>

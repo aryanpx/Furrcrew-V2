@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FooterComponent } from '../../footer/footer.component';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { EventsService } from '../../../services/events.service';
 import { ApiService } from '../../../services/api.service';
@@ -7,7 +6,7 @@ import { ApiService } from '../../../services/api.service';
 @Component({
   selector: 'app-past-events-details',
   standalone: true,
-  imports: [FooterComponent, RouterLink],
+  imports: [RouterLink],
   templateUrl: './past-events-details.component.html',
   styleUrl: './past-events-details.component.css',
 })

@@ -1,15 +1,13 @@
 import { Component, ElementRef, HostListener, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { FooterComponent } from '../../footer/footer.component';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ApiService } from '../../../services/api.service';
 import { GoogleMapsModule } from '@angular/google-maps';
-import { EventsService } from '../../../services/events.service';
 
 @Component({
   selector: 'app-upcoming-events',
   standalone: true,
-  imports: [FooterComponent, CommonModule, RouterLink, GoogleMapsModule],
+  imports: [CommonModule, RouterLink, GoogleMapsModule],
   templateUrl: './upcoming-events.component.html',
   styleUrl: './upcoming-events.component.css',
 })
