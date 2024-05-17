@@ -20,14 +20,4 @@ import { NavigationStart, Router } from '@angular/router';
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
 })
-export class BodyComponent {
-  constructor(private router: Router) {
-    this.router.events.subscribe((event) => {
-      // if (event instanceof NavigationStart) {
-      // window.onbeforeunload = function () {
-      window.scrollTo(0, 0);
-      // };
-      // }
-    });
-  }
-}
+export class BodyComponent {}

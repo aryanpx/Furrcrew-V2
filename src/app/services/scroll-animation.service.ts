@@ -28,7 +28,7 @@ export class ScrollAnimationService {
             if (rotationAngle > -90) {
               $('.phone').css({
                 transform: `rotate(${rotationAngle}deg) scale(${scaleFactor}) `,
-                // position: Math.abs(rotationAngle) > 0 ? 'sticky' : 'sticky',
+                position: Math.abs(rotationAngle) > 0 ? 'fixed' : 'sticky',
                 left: `${left}%`,
                 top: `${top}px`,
               });

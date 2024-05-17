@@ -27,7 +27,7 @@
     <ul class="snap-x flex max-sm:flex-col md:overflow-x-auto md:py-5 md:gap-10">
       @for (blog of filterBlogById(blogs,blog.id).slice(0,6);track blog){
       <li
-        class="scroll-ml-6 snap-start max-sm:max-w-full md:min-w-[300px] flex-shrink-0 mt-6 cursor-pointer"
+        class="scroll-ml-6 snap-start max-sm:max-w-full md:min-w-[18.75rem] flex-shrink-0 mt-6 cursor-pointer"
         (click)="goToBlogsDetails(blog.id)"
       >
         <div class="flex md:flex-col md:w-80 w-full">

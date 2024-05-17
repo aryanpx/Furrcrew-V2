@@ -15,7 +15,8 @@
 .frame1 {
 }
 .phone {
-  transition: all 0.5s linear;
+  transition: all 0.25s linear;
+  /* transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
 }
 .phone_side_containers {
   position: absolute;

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -13,4 +13,13 @@ import { HeaderComponent } from './components/header/header.component';
 })
 export class AppComponent {
   title = 'Furrcrew-V2';
+  constructor(private router: Router) {
+    this.router.events.subscribe((event) => {
+      // if (event instanceof NavigationStart) {
+      // window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+      // };
+      // }
+    });
+  }
 }
