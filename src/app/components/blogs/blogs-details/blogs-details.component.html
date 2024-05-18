@@ -4,7 +4,7 @@
       <div class="items-center">
         <a routerLink="/blogs" class="text-xl flex items-center">
           <button>
-            <img src="assets/icons/backArrow.svg" />
+            <img src="assets/icons/backArrow.svg" class="dark:invert"/>
           </button>
           Back
         </a>
@@ -23,7 +23,7 @@
     <!-- {{ blog.data }} -->
     <div class="text-lg mt-10" [innerHTML]="blog.data"></div>
     <hr />
-    <div class="gap-0 mt-16 text-3xl leading-8 text-black font-[510] max-md:flex-wrap max-md:mt-10 max-md:max-w-full">Other blogs</div>
+    <div class="gap-0 mt-16 text-3xl leading-8 font-[510] max-md:flex-wrap max-md:mt-10 max-md:max-w-full">Other blogs</div>
     <ul class="snap-x flex max-sm:flex-col md:overflow-x-auto md:py-5 md:gap-10">
       @for (blog of filterBlogById(blogs,blog.id).slice(0,6);track blog){
       <li

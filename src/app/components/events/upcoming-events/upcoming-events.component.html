@@ -1,5 +1,5 @@
-<div class="md:p-24 md:pb-32 flex flex-col gap-5">
-  <div class="items-center pl-5 pt-5">
+<div class="md:p-24 md:py-12 md:pb-32 flex flex-col gap-5">
+  <div class="items-center pl-5">
     <a routerLink="/events" class="text-xl flex items-center max-sm:mt-10">
       <button>
         <img src="assets/icons/backArrow.svg" class="dark:invert" />
@@ -252,25 +252,24 @@
         ></div>
       </div>
       <div
-        class="flex flex-col gap-4 mt-12 max-sm:text-2xl md:text-4xl whitespace-nowrap font-[590] max-md:flex-wrap max-md:mt-10 max-md:max-w-full"
+        class="flex flex-col gap-4 mt-12 max-sm:text-2xl md:text-4xl  whitespace-nowrap font-[590] max-md:flex-wrap max-md:mt-10 max-md:max-w-full"
       >
         <div
-          class="flex gap-5 justify-between pr-7 max-md:flex-wrap max-md:pr-5 max-md:max-w-full cursor-pointer"
+          class="flex gap-5 justify-between pr-7 max-md:flex-wrap max-md:pr-5 border-b pb-7 border-black max-md:max-w-full cursor-pointer"
           (click)="toggleLocation()"
         >
           <div class="gap-0 my-auto">Location</div>
           <img loading="lazy" src="assets/icons/minus.svg" *ngIf="showLocation" class="shrink-0 gap-0 w-12 aspect-square dark:invert" />
           <img loading="lazy" src="assets/icons/plusIcon.svg" *ngIf="!showLocation" class="shrink-0 dark:invert gap-0 w-12 aspect-square" />
         </div>
-        <div class="shrink-0 gap-0 mt-4 h-px bg-black border border-black border-solid max-md:flex-wrap max-md:max-w-full"></div>
       </div>
       <!-- <app-google-map></app-google-map> -->
       <div [hidden]="!showLocation">
         <a [href]="'https://maps.google.com/?q=' + event.address.latitude + ',' + event.address.longitude"> LINK TO DIRECTIONS </a>
         <div #mapContainer id="map" class="h-[25rem] w-full"></div>
       </div>
-      <div class="flex flex-col gap-4 mt-12 max-sm:text-2xl md:text-4xl font-[590] max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
-        <div class="flex gap-5 justify-between pr-7 max-md:flex-wrap max-md:pr-5 max-md:max-w-full cursor-pointer" (click)="toggleTerms()">
+      <div class="flex flex-col gap-4 mt-12 max-sm:text-2xl md:text-4xl font-[590] max-md:flex-wrap max-md:mt-10 max-md:max-w-full ">
+        <div class="flex gap-5 justify-between pr-7 max-md:flex-wrap max-md:pr-5 max-md:max-w-full cursor-pointer border-b pb-7 border-black" (click)="toggleTerms()">
           <div class="gap-0 my-auto">Terms & Conditions</div>
           <img loading="lazy" src="assets/icons/minus.svg" *ngIf="showTerms" class="shrink-0 gap-0 w-12 aspect-square dark:invert" />
           <img loading="lazy" src="assets/icons/plusIcon.svg" *ngIf="!showTerms" class="shrink-0 dark:invert gap-0 w-12 aspect-square" />
