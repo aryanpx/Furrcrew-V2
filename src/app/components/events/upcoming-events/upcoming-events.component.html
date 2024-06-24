@@ -12,74 +12,73 @@
       <div class="flex flex-col w-[38%] max-md:w-full">
         <div class="card h-full rounded-full max-sm:fixed" [class.flipped]="isFlipped" (click)="flipCard()">
           <div class="front-content md:absolute max-sm:px-5">
-            <img loading="lazy" src="{{ event.images[0].value }}" class="max-sm:aspect-square h-full rounded-3xl object-fill" />
+            <img loading="lazy" src="{{ event.images[0].value }}"
+              class="max-sm:aspect-square h-full rounded-3xl object-fill" />
           </div>
           <div class="back-content absolute max-sm:hidden">
             <div
-              class="flex flex-col gap-0 justify-center h-full w-full border-2 border-gray-200 border-solid max-md:flex-wrap rounded-[2rem] max-md:max-w-full"
-            >
-              <div class="flex flex-col gap-0 justify-center px-11 py-14 w-full max-md:flex-wrap max-md:px-5 max-md:max-w-full">
+              class="flex flex-col gap-0 justify-center h-full w-full border-2 border-gray-200 border-solid max-md:flex-wrap rounded-[2rem] max-md:max-w-full">
+              <div
+                class="flex flex-col gap-0 justify-center px-11 py-14 w-full max-md:flex-wrap max-md:px-5 max-md:max-w-full">
                 <div class="flex flex-col max-md:flex-wrap max-md:max-w-full">
                   <div class="gap-0 self-center text-center font-[510] text-3xl">Select An Option To Book</div>
                   <div
-                    class="flex flex-col gap-3 justify-center mt-10 font-bold text-white max-md:flex-wrap max-md:mt-10 max-md:max-w-full"
-                  >
-                    <div class="flex gap-5 px-6 py-6 bg-blue-700 rounded-2xl tracking-[0.16rem] max-md:flex-wrap max-md:px-5">
-                      <img loading="lazy" src="assets/icons/furrcrew-w-light.png" class="shrink-0 gap-0 aspect-[1.43] w-[3.75rem]" />
+                    class="flex flex-col gap-3 justify-center mt-10 font-bold text-white max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
+                    <div
+                      class="flex gap-5 px-6 py-6 bg-blue-700 rounded-2xl tracking-[0.16rem] max-md:flex-wrap max-md:px-5">
+                      <img loading="lazy" src="assets/icons/furrcrew-w-light.png"
+                        class="shrink-0 gap-0 aspect-[1.43] w-[3.75rem]" />
                       <div class="flex-1 gap-0 my-auto text-2xl">FurrCrew App</div>
-                      <img loading="lazy" src="assets/icons/arrowupright.svg" class="shrink-0 gap-0 self-start w-10 aspect-square" />
+                      <img loading="lazy" src="assets/icons/arrowupright.svg"
+                        class="shrink-0 gap-0 self-start w-10 aspect-square" />
                     </div>
                     <div
-                      class="flex gap-2 w-1/2 justify-center items-center self-center text-xl text-center text-gray-500 whitespace-nowrap"
-                    >
-                      <div class="flex-1 shrink-0 gap-0 self-stretch my-auto h-px bg-gray-500 border border-gray-500 border-solid"></div>
-                      <div class="gap-0 self-stretch">or</div>
-                      <div class="flex-1 shrink-0 gap-0 self-stretch my-auto h-px bg-gray-500 border border-gray-500 border-solid"></div>
-                    </div>
-                    <div
-                      class="flex gap-0 justify-center items-center bg-orange-600 rounded-2xl tracking-[0.16rem] max-md:flex-wrap max-md:max-w-full"
-                    >
+                      class="flex gap-2 w-1/2 justify-center items-center self-center text-xl text-center text-gray-500 whitespace-nowrap">
                       <div
-                        class="flex overflow-hidden relative flex-col gap-0 justify-center items-center w-full fill-[radial-gradient(92.18%_99.11%_at_26.56%_107.7%,#FD5_0%,#FD5_10%,#FF543E_50%,#C837AB_100%)] min-h-[5.75rem] max-md:flex-wrap max-md:max-w-full"
-                      >
-                        <img
-                          loading="lazy"
-                          src="assets/logo/insta-background.png"
-                          class="object-cover absolute inset-0 size-full rounded-2xl"
-                        />
+                        class="flex-1 shrink-0 gap-0 self-stretch my-auto h-px bg-gray-500 border border-gray-500 border-solid">
+                      </div>
+                      <div class="gap-0 self-stretch">or</div>
+                      <div
+                        class="flex-1 shrink-0 gap-0 self-stretch my-auto h-px bg-gray-500 border border-gray-500 border-solid">
+                      </div>
+                    </div>
+                    <div
+                      class="flex gap-0 justify-center items-center bg-orange-600 rounded-2xl tracking-[0.16rem] max-md:flex-wrap max-md:max-w-full">
+                      <div
+                        class="flex overflow-hidden relative flex-col gap-0 justify-center items-center w-full fill-[radial-gradient(92.18%_99.11%_at_26.56%_107.7%,#FD5_0%,#FD5_10%,#FF543E_50%,#C837AB_100%)] min-h-[5.75rem] max-md:flex-wrap max-md:max-w-full">
+                        <img loading="lazy" src="assets/logo/insta-background.png"
+                          class="object-cover absolute inset-0 size-full rounded-2xl" />
                         <div
-                          class="flex overflow-hidden relative flex-col gap-5 justify-between px-6 py-4 w-full fill-[radial-gradient(182.61%_44.3%_at_-16.75%_7.2%,#3771C8_0%,#3771C8_12.8%,rgba(102,0,255,0.00)_100%)] min-h-[5.75rem] max-md:flex-wrap max-md:px-5 max-md:max-w-full"
-                        >
-                          <img loading="lazy" src="assets/icons/unknown.svg" class="object-cover absolute inset-0 size-full" />
+                          class="flex overflow-hidden relative flex-col gap-5 justify-between px-6 py-4 w-full fill-[radial-gradient(182.61%_44.3%_at_-16.75%_7.2%,#3771C8_0%,#3771C8_12.8%,rgba(102,0,255,0.00)_100%)] min-h-[5.75rem] max-md:flex-wrap max-md:px-5 max-md:max-w-full">
+                          <img loading="lazy" src="assets/icons/unknown.svg"
+                            class="object-cover absolute inset-0 size-full" />
                           <div class="flex relative gap-5">
-                            <img loading="lazy" src="assets/icons/instagram-light.svg" class="shrink-0 gap-0 aspect-square w-[3.75rem]" />
+                            <img loading="lazy" src="assets/icons/instagram-light.svg"
+                              class="shrink-0 gap-0 aspect-square w-[3.75rem]" />
                             <div class="flex-auto gap-0 my-auto text-2xl">Instagram DM</div>
-                            <img loading="lazy" src="assets/icons/arrowupright.svg" class="shrink-0 gap-0 my-auto w-10 aspect-square" />
+                            <img loading="lazy" src="assets/icons/arrowupright.svg"
+                              class="shrink-0 gap-0 my-auto w-10 aspect-square" />
                           </div>
                         </div>
                       </div>
                     </div>
                     <div
-                      class="flex gap-2 w-1/2 justify-center items-center self-center text-xl text-center text-gray-500 whitespace-nowrap"
-                    >
-                      <div class="flex-1 shrink-0 gap-0 self-stretch my-auto h-px bg-gray-500 border border-gray-500 border-solid"></div>
+                      class="flex gap-2 w-1/2 justify-center items-center self-center text-xl text-center text-gray-500 whitespace-nowrap">
+                      <div
+                        class="flex-1 shrink-0 gap-0 self-stretch my-auto h-px bg-gray-500 border border-gray-500 border-solid">
+                      </div>
                       <div class="gap-0 self-stretch">or</div>
-                      <div class="flex-1 shrink-0 gap-0 self-stretch my-auto h-px bg-gray-500 border border-gray-500 border-solid"></div>
+                      <div
+                        class="flex-1 shrink-0 gap-0 self-stretch my-auto h-px bg-gray-500 border border-gray-500 border-solid">
+                      </div>
                     </div>
                     <div
-                      class="flex gap-5 items-center px-6 py-4 whitespace-nowrap bg-teal-700 rounded-2xl tracking-[0.16rem] max-md:flex-wrap max-md:px-5"
-                    >
-                      <img
-                        loading="lazy"
-                        src="assets/icons/callChatBold.svg"
-                        class="shrink-0 gap-0 self-stretch aspect-square w-[3.75rem]"
-                      />
+                      class="flex gap-5 items-center px-6 py-4 whitespace-nowrap bg-teal-700 rounded-2xl tracking-[0.16rem] max-md:flex-wrap max-md:px-5">
+                      <img loading="lazy" src="assets/icons/callChatBold.svg"
+                        class="shrink-0 gap-0 self-stretch aspect-square w-[3.75rem]" />
                       <div class="flex-1 gap-0 self-stretch my-auto">+91-20-29805658</div>
-                      <img
-                        loading="lazy"
-                        src="assets/icons/arrowupright.svg"
-                        class="shrink-0 gap-0 self-stretch my-auto w-10 aspect-square"
-                      />
+                      <img loading="lazy" src="assets/icons/arrowupright.svg"
+                        class="shrink-0 gap-0 self-stretch my-auto w-10 aspect-square" />
                     </div>
                   </div>
                 </div>
@@ -95,8 +94,7 @@
             <div class="z-[1] rounded-lg p-8 max-w-md">
               <div>
                 <div
-                  class="bg-white dark:bg-[#323232] flex flex-col gap-0 justify-center w-full border-2 border-gray-200 dark:border dark:border-[#545454] border-solid max-md:flex-wrap rounded-[2rem] max-md:max-w-full"
-                >
+                  class="bg-white dark:bg-[#323232] flex flex-col gap-0 justify-center w-full border-2 border-gray-200 dark:border dark:border-[#545454] border-solid max-md:flex-wrap rounded-[2rem] max-md:max-w-full">
                   <div class="flex flex-col gap-0 justify-center p-5 w-full max-md:flex-wrap max-md:max-w-full">
                     <div class="flex flex-col gap-3 max-md:flex-wrap max-md:max-w-full">
                       <div class="flex justify-between font-[510] text-2xl">
@@ -104,74 +102,61 @@
                         <button (click)="toggleModal()" class="text-gray-600 dark:text-darkfont">&times;</button>
                       </div>
                       <div
-                        class="flex flex-col gap-3 justify-center mt-10 font-bold text-white max-md:flex-wrap max-md:mt-10 max-md:max-w-full"
-                      >
+                        class="flex flex-col gap-3 justify-center mt-10 font-bold text-white max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
                         <div class="flex gap-2 py-5 items-center bg-blue-700 rounded-2xl px-5">
-                          <img loading="lazy" src="assets/icons/furrcrew-w-light.png" class="shrink-0 gap-0 w-[2.5rem]" />
+                          <img loading="lazy" src="assets/icons/furrcrew-w-light.png"
+                            class="shrink-0 gap-0 w-[2.5rem]" />
                           <div class="flex-1 text-xl tracking-[0.16rem]">FurrCrew App</div>
-                          <img loading="lazy" src="assets/icons/arrowupright.svg" class="shrink-0 gap-0 self-start w-10 aspect-square" />
+                          <img loading="lazy" src="assets/icons/arrowupright.svg"
+                            class="shrink-0 gap-0 self-start w-10 aspect-square" />
                         </div>
                         <div
-                          class="flex gap-2 w-1/2 justify-center items-center self-center text-xl text-center text-gray-500 whitespace-nowrap"
-                        >
+                          class="flex gap-2 w-1/2 justify-center items-center self-center text-xl text-center text-gray-500 whitespace-nowrap">
                           <div
-                            class="flex-1 shrink-0 gap-0 self-stretch my-auto h-px bg-gray-500 border border-gray-500 border-solid"
-                          ></div>
+                            class="flex-1 shrink-0 gap-0 self-stretch my-auto h-px bg-gray-500 border border-gray-500 border-solid">
+                          </div>
                           <div class="gap-0 self-stretch">or</div>
                           <div
-                            class="flex-1 shrink-0 gap-0 self-stretch my-auto h-px bg-gray-500 border border-gray-500 border-solid"
-                          ></div>
+                            class="flex-1 shrink-0 gap-0 self-stretch my-auto h-px bg-gray-500 border border-gray-500 border-solid">
+                          </div>
                         </div>
                         <div
-                          class="flex gap-0 justify-center items-center bg-orange-600 rounded-2xl tracking-[0.16rem] max-md:flex-wrap max-md:max-w-full"
-                        >
+                          class="flex gap-0 justify-center items-center bg-orange-600 rounded-2xl tracking-[0.16rem] max-md:flex-wrap max-md:max-w-full">
                           <div
-                            class="flex overflow-hidden relative flex-col gap-0 justify-center items-center w-full fill-[radial-gradient(92.18%_99.11%_at_26.56%_107.7%,#FD5_0%,#FD5_10%,#FF543E_50%,#C837AB_100%)] max-md:flex-wrap max-md:max-w-full"
-                          >
-                            <img
-                              loading="lazy"
-                              src="assets/logo/insta-background.png"
-                              class="object-cover absolute inset-0 size-full rounded-2xl"
-                            />
+                            class="flex overflow-hidden relative flex-col gap-0 justify-center items-center w-full fill-[radial-gradient(92.18%_99.11%_at_26.56%_107.7%,#FD5_0%,#FD5_10%,#FF543E_50%,#C837AB_100%)] max-md:flex-wrap max-md:max-w-full">
+                            <img loading="lazy" src="assets/logo/insta-background.png"
+                              class="object-cover absolute inset-0 size-full rounded-2xl" />
                             <div
-                              class="flex overflow-hidden relative flex-col gap-2 justify-between py-5 px-5 w-full fill-[radial-gradient(182.61%_44.3%_at_-16.75%_7.2%,#3771C8_0%,#3771C8_12.8%,rgba(102,0,255,0.00)_100%)]"
-                            >
-                              <img loading="lazy" src="assets/icons/unknown.svg" class="object-cover absolute inset-0 size-full" />
+                              class="flex overflow-hidden relative flex-col gap-2 justify-between py-5 px-5 w-full fill-[radial-gradient(182.61%_44.3%_at_-16.75%_7.2%,#3771C8_0%,#3771C8_12.8%,rgba(102,0,255,0.00)_100%)]">
+                              <img loading="lazy" src="assets/icons/unknown.svg"
+                                class="object-cover absolute inset-0 size-full" />
                               <div class="flex relative gap-2">
-                                <img
-                                  loading="lazy"
-                                  src="assets/icons/instagram-light.svg"
-                                  class="shrink-0 gap-0 aspect-square w-[2.5rem]"
-                                />
+                                <img loading="lazy" src="assets/icons/instagram-light.svg"
+                                  class="shrink-0 gap-0 aspect-square w-[2.5rem]" />
                                 <div class="flex-auto gap-0 my-auto text-xl">Instagram DM</div>
-                                <img loading="lazy" src="assets/icons/arrowupright.svg" class="shrink-0 gap-0 my-auto w-10 aspect-square" />
+                                <img loading="lazy" src="assets/icons/arrowupright.svg"
+                                  class="shrink-0 gap-0 my-auto w-10 aspect-square" />
                               </div>
                             </div>
                           </div>
                         </div>
                         <div
-                          class="flex gap-2 w-1/2 justify-center items-center self-center text-xl text-center text-gray-500 whitespace-nowrap"
-                        >
+                          class="flex gap-2 w-1/2 justify-center items-center self-center text-xl text-center text-gray-500 whitespace-nowrap">
                           <div
-                            class="flex-1 shrink-0 gap-0 self-stretch my-auto h-px bg-gray-500 border border-gray-500 border-solid"
-                          ></div>
+                            class="flex-1 shrink-0 gap-0 self-stretch my-auto h-px bg-gray-500 border border-gray-500 border-solid">
+                          </div>
                           <div class="gap-0 self-stretch">or</div>
                           <div
-                            class="flex-1 shrink-0 gap-0 self-stretch my-auto h-px bg-gray-500 border border-gray-500 border-solid"
-                          ></div>
+                            class="flex-1 shrink-0 gap-0 self-stretch my-auto h-px bg-gray-500 border border-gray-500 border-solid">
+                          </div>
                         </div>
-                        <div class="flex gap-2 items-center px-5 py-5 whitespace-nowrap bg-teal-700 rounded-2xl tracking-[0.16rem]">
-                          <img
-                            loading="lazy"
-                            src="assets/icons/callChatBold.svg"
-                            class="shrink-0 gap-0 self-stretch aspect-square w-[2.5rem]"
-                          />
+                        <div
+                          class="flex gap-2 items-center px-5 py-5 whitespace-nowrap bg-teal-700 rounded-2xl tracking-[0.16rem]">
+                          <img loading="lazy" src="assets/icons/callChatBold.svg"
+                            class="shrink-0 gap-0 self-stretch aspect-square w-[2.5rem]" />
                           <div class="flex-1 gap-0 self-stretch my-auto">+91-20-29805658</div>
-                          <img
-                            loading="lazy"
-                            src="assets/icons/arrowupright.svg"
-                            class="shrink-0 gap-0 self-stretch my-auto w-10 aspect-square"
-                          />
+                          <img loading="lazy" src="assets/icons/arrowupright.svg"
+                            class="shrink-0 gap-0 self-stretch my-auto w-10 aspect-square" />
                         </div>
                       </div>
                     </div>
@@ -182,21 +167,21 @@
           </div>
         </div>
         <div
-          class="flex flex-col grow justify-center p-14 max-sm:mx-2 border-2 border-gray-200 dark:border-[#545454] border-solid rounded-[2rem] max-md:px-5 max-md:mt-1 max-md:max-w-full"
-        >
+          class="flex flex-col grow justify-center p-14 max-sm:mx-2 border-2 border-gray-200 dark:border-[#545454] border-solid rounded-[2rem] max-md:px-5 max-md:mt-1 max-md:max-w-full">
           <div class="flex flex-col max-md:max-w-full">
             <div class="flex flex-col max-md:max-w-full">
               <div class="flex flex-col max-md:max-w-full">
-                <div class="text-5xl font-bold tracking-normal max-md:max-w-full max-md:text-4xl max-sm:text-3xl">{{ event.title }}</div>
-                <div
-                  class="mt-3 text-2xl max-sm:text-xl tracking-normal leading-10 max-md:max-w-full line-clamp-2"
-                  [innerHTML]="event.description"
-                ></div>
+                <div class="text-5xl font-bold tracking-normal max-md:max-w-full max-md:text-4xl max-sm:text-3xl">{{
+                  event.title }}</div>
+                <div class="mt-3 text-2xl max-sm:text-xl tracking-normal leading-10 max-md:max-w-full line-clamp-2"
+                  [innerHTML]="event.description"></div>
               </div>
-              <div class="flex flex-col mt-9 text-2xl max-sm:text-xl tracking-normal leading-10 font-[590] max-md:max-w-full">
+              <div
+                class="flex flex-col mt-9 text-2xl max-sm:text-xl tracking-normal leading-10 font-[590] max-md:max-w-full">
                 <div class="flex gap-3 max-md:flex-wrap">
                   <img loading="lazy" src="assets/icons/location.png" class="shrink-0 w-9 aspect-square" />
-                  <div class="flex-1 my-auto max-md:max-w-full">{{ event.address.address }} , {{ event.address.city }}</div>
+                  <div class="flex-1 my-auto max-md:max-w-full">{{ event.address.address }} , {{ event.address.city }}
+                  </div>
                 </div>
                 <div class="flex gap-3 mt-6 max-md:flex-wrap">
                   <img loading="lazy" src="assets/icons/time.svg" class="shrink-0 w-9 aspect-square" />
@@ -213,8 +198,7 @@
             </div>
             <div
               class="flex cursor-pointer justify-center items-center p-6 max-w-full text-3xl max-sm:text-2xl tracking-normal leading-10 text-white bg-blue-500 rounded-xl font-[510] w-[33.75rem] px-5 mt-10"
-              (click)="!isMobileView ? flipCard() : toggleModal()"
-            >
+              (click)="!isMobileView ? flipCard() : toggleModal()">
               {{ !isFlipped ? "Book Tickets" : "Show Poster" }}
             </div>
           </div>
@@ -223,68 +207,59 @@
     </div>
   </div>
   <div
-    class="flex gap-0 justify-center items-center px-5 py-20 border-2 border-gray-200 dark:border-[#545454] border-solid rounded-[2rem] flex-wrap max-sm:mx-2"
-  >
+    class="flex gap-0 justify-center items-center px-5 py-20 border-2 border-gray-200 dark:border-[#545454] border-solid rounded-[2rem] flex-wrap max-sm:mx-2">
     <div class="flex flex-col gap-5 w-full max-md:flex-wrap max-md:max-w-full">
       <div class="flex flex-col gap-5 max-md:flex-wrap max-md:max-w-full">
-        <div class="flex flex-col gap-4 max-sm:text-2xl md:text-4xl whitespace-nowrap font-[590] max-md:flex-wrap max-md:max-w-full">
+        <div
+          class="flex flex-col gap-4 max-sm:text-2xl md:text-4xl whitespace-nowrap font-[590] max-md:flex-wrap max-md:max-w-full">
           <div
             class="flex gap-5 justify-between max-md:flex-wrap max-md:max-w-full border-b pb-7 pr-7 max-md:pr-5 border-black cursor-pointer"
-            (click)="toggleDescription()"
-          >
+            (click)="toggleDescription()">
             <div class="gap-0 my-auto">Description</div>
-            <img
-              loading="lazy"
-              src="assets/icons/minus.svg"
-              *ngIf="showDescription"
-              class="shrink-0 gap-0 w-12 aspect-square dark:invert"
-            />
-            <img
-              loading="lazy"
-              src="assets/icons/plusIcon.svg"
-              *ngIf="!showDescription"
-              class="shrink-0 dark:invert gap-0 w-12 aspect-square"
-            />
+            <img loading="lazy" src="assets/icons/minus.svg" *ngIf="showDescription"
+              class="shrink-0 gap-0 w-12 aspect-square dark:invert" />
+            <img loading="lazy" src="assets/icons/plusIcon.svg" *ngIf="!showDescription"
+              class="shrink-0 dark:invert gap-0 w-12 aspect-square" />
           </div>
           <!-- <div class="shrink-0 gap-0 mt-4 h-px bg-black border border-black border-solid max-md:flex-wrap max-md:max-w-full"></div> -->
         </div>
         <div
           class="gap-0 mt-9 mr-5 text-2xl max-sm:text-xl tracking-normal leading-10 max-md:flex-wrap max-md:mr-2.5 max-md:max-w-full"
-          [hidden]="!showDescription"
-          [innerHTML]="event.description"
-        ></div>
+          [hidden]="!showDescription" [innerHTML]="event.description"></div>
       </div>
       <div
-        class="flex flex-col gap-4 mt-12 max-sm:text-2xl md:text-4xl whitespace-nowrap font-[590] max-md:flex-wrap max-md:mt-10 max-md:max-w-full"
-      >
+        class="flex flex-col gap-4 mt-12 max-sm:text-2xl md:text-4xl whitespace-nowrap font-[590] max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
         <div
           class="flex gap-5 justify-between pr-7 max-md:flex-wrap max-md:pr-5 border-b pb-7 border-black max-md:max-w-full cursor-pointer"
-          (click)="toggleLocation()"
-        >
+          (click)="toggleLocation()">
           <div class="gap-0 my-auto">Location</div>
-          <img loading="lazy" src="assets/icons/minus.svg" *ngIf="showLocation" class="shrink-0 gap-0 w-12 aspect-square dark:invert" />
-          <img loading="lazy" src="assets/icons/plusIcon.svg" *ngIf="!showLocation" class="shrink-0 dark:invert gap-0 w-12 aspect-square" />
+          <img loading="lazy" src="assets/icons/minus.svg" *ngIf="showLocation"
+            class="shrink-0 gap-0 w-12 aspect-square dark:invert" />
+          <img loading="lazy" src="assets/icons/plusIcon.svg" *ngIf="!showLocation"
+            class="shrink-0 dark:invert gap-0 w-12 aspect-square" />
         </div>
       </div>
       <!-- <app-google-map></app-google-map> -->
       <div [hidden]="!showLocation">
-        <a [href]="'https://maps.google.com/?q=' + event.address.latitude + ',' + event.address.longitude"> LINK TO DIRECTIONS </a>
+        <a target="_blank"
+          [href]="'https://maps.google.com/?q=' + event.address.latitude + ',' + event.address.longitude"> LINK TO
+          DIRECTIONS </a>
         <div #mapContainer id="map" class="h-[25rem] w-full"></div>
       </div>
-      <div class="flex flex-col gap-4 mt-12 max-sm:text-2xl md:text-4xl font-[590] max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
+      <div
+        class="flex flex-col gap-4 mt-12 max-sm:text-2xl md:text-4xl font-[590] max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
         <div
           class="flex gap-5 justify-between pr-7 max-md:flex-wrap max-md:pr-5 max-md:max-w-full cursor-pointer border-b pb-7 border-black"
-          (click)="toggleTerms()"
-        >
+          (click)="toggleTerms()">
           <div class="gap-0 my-auto">Terms & Conditions</div>
-          <img loading="lazy" src="assets/icons/minus.svg" *ngIf="showTerms" class="shrink-0 gap-0 w-12 aspect-square dark:invert" />
-          <img loading="lazy" src="assets/icons/plusIcon.svg" *ngIf="!showTerms" class="shrink-0 dark:invert gap-0 w-12 aspect-square" />
+          <img loading="lazy" src="assets/icons/minus.svg" *ngIf="showTerms"
+            class="shrink-0 gap-0 w-12 aspect-square dark:invert" />
+          <img loading="lazy" src="assets/icons/plusIcon.svg" *ngIf="!showTerms"
+            class="shrink-0 dark:invert gap-0 w-12 aspect-square" />
         </div>
         <div
           class="gap-0 mt-9 mr-5 text-2xl max-sm:text-xl tracking-normal leading-10 max-md:flex-wrap max-md:mr-2.5 max-md:max-w-full"
-          [hidden]="!showTerms"
-          [innerHTML]="event.terms"
-        ></div>
+          [hidden]="!showTerms" [innerHTML]="event.terms"></div>
       </div>
     </div>
   </div>
