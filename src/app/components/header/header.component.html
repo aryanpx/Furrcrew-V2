@@ -22,7 +22,7 @@
       <button (click)="toggleSidebar()">
         <img [src]="theme === 'dark' ? 'assets/icons/hamburgerDark.svg' : 'assets/icons/hamburger.svg'" />
       </button>
-      <div class="sidebar" [class.active]="sidebarOpen" (closeSidebar)="closeSidebar()">
+      <div class="sidebar" [class.active]="sidebarOpen" [class.inactive]="!sidebarOpen" (closeSidebar)="closeSidebar()">
         <app-side-bar [sidebarOpen]="sidebarOpen" [theme]="theme"></app-side-bar>
       </div>
     </div>

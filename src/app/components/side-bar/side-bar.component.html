@@ -1,19 +1,19 @@
 <div
   *ngIf="sidebarOpen"
   class="sidebar"
-  [class]="sidebarOpen ? 'active' : 'inactive'"
   class="md:w-[20vw] bg-[#ECECEC] dark:bg-[#353535] backdrop-blur-md"
+  [class]="sidebarOpen ? 'active' : 'inactive'"
 >
   <main class="flex flex-col">
     <header class="flex flex-col items-center max-sm:w-[100vw] h-[100vh]">
       <img
         src="assets/icons/closeIcon.svg"
         alt="X"
-        class="self-end stroke-[0.375rem] stroke-zinc-800 max-md:mr-2 cursor-pointer py-24 px-16 dark:invert"
+        class="self-end stroke-[0.375rem] max-sm:w-[2rem] cursor-pointer my-24 mx-16 max-sm:my-14 dark:invert"
         (click)="toggleSidebar()"
       />
       <div class="flex flex-col w-full items-end px-20">
-        <nav class="flex flex-col text-3xl font-[400] w-full">
+        <nav class="flex flex-col text-3xl max-sm:text-2xl font-[400] w-full">
           <h1 class="self-end text-right"><a routerLink="about" class="cursor-pointer" (click)="toggleSidebar()">About Us</a></h1>
           <div class="shrink-0 mt-6 h-px border border-solid bg-zinc-200 bg-opacity-10 border-zinc-800 border-opacity-20"></div>
           <h2 class="self-end mt-6"><a routerLink="blogs" class="cursor-pointer" (click)="toggleSidebar()">Blogs</a></h2>

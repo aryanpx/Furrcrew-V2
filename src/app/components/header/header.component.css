@@ -5,7 +5,7 @@
   /* Add any other styles you need for the sticky header */
 }
 .sidebar {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
@@ -20,7 +20,7 @@
 
 .sidebar.inactive {
   visibility: hidden;
-  transform: translateX(-100%);
+  transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
   z-index: 0;
 }

@@ -54,11 +54,11 @@ export class ScrollAnimationService {
               const opacity = 1 - Math.max(0, Math.min((scrollTop - phoneOffsetTop) / windowHeight, 1)) * 6;
               $('.phone').css({
                 transform: `rotate(${rotationAngle}deg) `,
-                position: Math.abs(rotationAngle) > 0 ? 'fixed' : 'static',
-                top: `${top}px`,
+                position: Math.abs(rotationAngle) > 0 ? 'sticky' : 'sticky',
+                bottom: `${top + 100}px`,
                 right: `${right}px`,
               });
-              $('.paragraph').css('opacity', opacity);
+              // $('.paragraph').css('opacity', opacity);
             } else {
               console.log('scroll up');
               $('.phone').css({
