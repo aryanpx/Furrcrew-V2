@@ -1,4 +1,4 @@
-<div class="md:p-24 md:py-12 md:pb-32 flex flex-col gap-5">
+<div class="md:p-24 md:py-6 flex flex-col gap-5">
   <div class="items-center pl-5">
     <a routerLink="/events" class="text-xl flex items-center">
       <button>
@@ -7,7 +7,7 @@
       Back
     </a>
   </div>
-  <div class="w-full md:mt-10 max-md:max-w-full">
+  <div class="w-full max-md:max-w-full">
     <div class="flex h-full gap-1 max-md:flex-col max-md:gap-5">
       <div class="flex flex-col w-[38%] max-md:w-full">
         <div class="card h-full rounded-full max-sm:fixed" [class.flipped]="isFlipped" (click)="flipCard()">
@@ -197,7 +197,7 @@
               </div>
             </div>
             <div
-              class="flex cursor-pointer justify-center items-center p-6 max-w-full text-3xl max-sm:text-2xl tracking-normal leading-10 text-white bg-blue-500 rounded-xl font-[510] w-[33.75rem] px-5 mt-10"
+              class="flex cursor-pointer justify-center items-center p-6 max-w-full text-3xl max-sm:text-2xl tracking-normal leading-10 text-white bg-blue-500 rounded-xl font-[510] w-80 px-5 mt-10"
               (click)="!isMobileView ? flipCard() : toggleModal()">
               {{ !isFlipped ? "Book Tickets" : "Show Poster" }}
             </div>
