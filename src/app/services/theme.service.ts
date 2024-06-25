@@ -16,10 +16,10 @@ export class ThemeService {
         // console.log('🚀 ~ ThemeService ~ constructor ~ this.isDarkTheme:', this.isDarkTheme);  //! true on my device
         document.body.classList.add(this.isDarkTheme ? 'dark' : 'light');
         localStorage.setItem('theme', this.isDarkTheme ? 'dark' : 'light');
-        console.log('if condition running', this.isDarkTheme);
+        // console.log('if condition running', this.isDarkTheme);
       } else {
-        console.log("🚀 ~ ThemeService ~ constructor ~ localStorage.getItem('theme'):", localStorage.getItem('theme'));
-        console.log('elese condition');
+        // console.log("🚀 ~ ThemeService ~ constructor ~ localStorage.getItem('theme'):", localStorage.getItem('theme'));
+        // console.log('elese condition');
       }
     }
   }

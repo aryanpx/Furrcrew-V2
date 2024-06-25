@@ -44,7 +44,7 @@ export class PastEventsDetailsComponent implements OnInit {
     this.apiService.getActiveEvents().subscribe((res) => {
       this.events = Object.values(res);
       this.event = this.events.find((event) => event.id === eventId);
-      console.log("🚀 ~ PastEventsDetailsComponent ~ this.apiService.getActiveEvents ~ this.event:", this.event)
+      // console.log("🚀 ~ PastEventsDetailsComponent ~ this.apiService.getActiveEvents ~ this.event:", this.event)
     });
   }
   ngOnInit(): void {

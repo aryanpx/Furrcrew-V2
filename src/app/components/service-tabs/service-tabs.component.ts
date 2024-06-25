@@ -30,14 +30,14 @@ export class ServiceTabsComponent implements OnInit {
       $(window).scroll(() => {
         const tabContainer = $('.tab-container');
         const tabContainerHeight = tabContainer?.outerHeight();
-        console.log('🚀 ~ ServiceTabsComponent ~ $ ~ tabContainerHeight:', tabContainerHeight);
+        // console.log('🚀 ~ ServiceTabsComponent ~ $ ~ tabContainerHeight:', tabContainerHeight);
         const tabContainerOffset = tabContainer?.offset();
-        console.log('🚀 ~ ServiceTabsComponent ~ $ ~ tabContainerOffset:', tabContainerOffset);
+        // console.log('🚀 ~ ServiceTabsComponent ~ $ ~ tabContainerOffset:', tabContainerOffset);
         const windowHeight = window.innerHeight;
-        console.log('🚀 ~ ServiceTabsComponent ~ $ ~ windowHeight:', windowHeight);
+        // console.log('🚀 ~ ServiceTabsComponent ~ $ ~ windowHeight:', windowHeight);
         if (tabContainerOffset && tabContainerHeight) {
           if (tabContainerOffset.top >= 0 && tabContainerOffset.top + tabContainerHeight <= windowHeight) {
-            console.log('starting the progress', tabContainerOffset.top, tabContainerHeight);
+            // console.log('starting the progress', tabContainerOffset.top, tabContainerHeight);
             if (!this.progressInterval) {
               this.startProgress();
             }

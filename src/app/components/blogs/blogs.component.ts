@@ -44,14 +44,14 @@ export class BlogsComponent implements OnInit {
     });
   }
   filterBlogs() {
-    console.log('filter is called');
+    // console.log('filter is called');
     this.filteredBlogs = this.blogs.filter((blog: any) => blog.title.toLowerCase().includes(this.searchQuery.toLowerCase()));
   }
   goToBlogsDetails(blogId: number) {
     this.router.navigate(['/blogs/details'], { queryParams: { blogId: blogId } });
   }
   scrollToTop() {
-    console.log('click working');
+    // console.log('click working');
     // this.router.navigate([], { fragment: 'search' });
     const searchTop = $('#pTop')?.offset()?.top;
     $('html, body').animate(

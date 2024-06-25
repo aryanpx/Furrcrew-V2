@@ -4,7 +4,7 @@ import $ from 'jquery';
   providedIn: 'root',
 })
 export class ScrollAnimationService {
-  constructor() {}
+  constructor() { }
 
   initScrollAnimation(): void {
     if (typeof window !== 'undefined') {
@@ -60,7 +60,7 @@ export class ScrollAnimationService {
               });
               // $('.paragraph').css('opacity', opacity);
             } else {
-              console.log('scroll up');
+              // console.log('scroll up');
               $('.phone').css({
                 transform: `rotate(${rotationAngle}deg) scale(${scaleFactor})`,
                 position: 'sticky',

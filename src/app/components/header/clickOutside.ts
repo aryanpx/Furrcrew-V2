@@ -7,7 +7,7 @@ export class ClickOutsideDirective {
   @Output() clickOutside = new EventEmitter<void>();
 
   constructor(private elementRef: ElementRef) {
-    console.log('click outside directive');
+    // console.log('click outside directive');
   }
 
   @HostListener('document:click', ['$event.target'])

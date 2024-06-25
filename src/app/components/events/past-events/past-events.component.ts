@@ -51,7 +51,7 @@ export class PastEventsComponent {
   ngOnInit() {
     this.apiService.getPastEvents().subscribe((data) => {
       this.events = data;
-      this.filteredEvents = this.events; 
+      this.filteredEvents = this.events;
     });
     this.formGroup.get('search')?.valueChanges.subscribe((value) => {
       this.searchQuery = value;
@@ -60,7 +60,6 @@ export class PastEventsComponent {
   }
 
   filterEvents() {
-    console.log('filter is called');
     this.filteredEvents = this.events.filter((blog: any) => blog.title.toLowerCase().includes(this.searchQuery.toLowerCase()));
   }
 }

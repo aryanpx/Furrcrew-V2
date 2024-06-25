@@ -41,7 +41,7 @@ export class HeaderComponent {
     @Inject(DOCUMENT) private document: Document,
     private commonService: CommonService
   ) {
-    console.log('🚀 ~ HeaderComponent ~ theme:', this.theme);
+    // console.log('🚀 ~ HeaderComponent ~ theme:', this.theme);
     const localStorage = document.defaultView?.localStorage;
     if (localStorage !== undefined) {
       const preferredTheme = localStorage.getItem('theme');
