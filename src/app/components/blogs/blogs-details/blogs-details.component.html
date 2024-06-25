@@ -1,7 +1,7 @@
 <div class="flex flex-col items-center">
   <div class="md:w-2/3 max-sm:w-11/12">
     <div class="flex flex-row">
-      <div class="items-center">
+      <div class="items-center my-3">
         <a routerLink="/blogs" class="text-xl flex items-center">
           <button>
             <img src="assets/icons/backArrow.svg" class="dark:invert" />
@@ -11,7 +11,7 @@
       </div>
     </div>
     <div *ngIf="blog" class="flex flex-col flex-1 gap-5 max-md:flex-wrap max-md:max-w-full">
-      <div class="flex text-6xl text-ellipsis max-md:flex-wrap max-md:max-w-full max-md:text-4xl mt-10">{{ blog.title }}
+      <div class="flex text-6xl text-ellipsis max-md:flex-wrap max-md:max-w-full max-md:text-4xl">{{ blog.title }}
       </div>
       <div class="flex gap-5">
         <div class="flex text-gray-600">{{ blog.readTimeSpan }}</div>
@@ -26,9 +26,9 @@
     <hr />
     <div class="gap-0 mt-16 text-3xl leading-8 font-[510] max-md:flex-wrap max-md:mt-10 max-md:max-w-full ">Other blogs
     </div>
-    <ul class="snap-x flex max-sm:flex-col md:overflow-x-auto md:py-5 md:gap-10 parent drag-cursor custom-scrollbar">
+    <ul class=" flex max-sm:flex-col md:overflow-x-auto md:py-5 md:gap-10 parent drag-cursor custom-scrollbar">
       @for (blog of filterBlogById(blogs,blog.id).slice(0,6);track blog){
-      <li class="scroll-ml-6 snap-start max-sm:max-w-full md:min-w-[18.75rem] flex-shrink-0 mt-6 ">
+      <li class="scroll-ml-6  max-sm:max-w-full md:min-w-[18.75rem] flex-shrink-0 mt-6 ">
         <div class="flex md:flex-col md:w-80 w-full">
           <div class="flex">
             <img [src]="blog.coverImage" [alt]="blog.title" class="w-72 aspect-square object-cover" />
