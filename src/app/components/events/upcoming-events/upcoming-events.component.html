@@ -99,7 +99,7 @@
                     <div class="flex flex-col gap-3 max-md:flex-wrap max-md:max-w-full">
                       <div class="flex justify-between font-[510] text-2xl">
                         Select An Option To Book
-                        <button (click)="toggleModal()" class="text-gray-600 dark:text-darkfont">&times;</button>
+                        <button (click)="toggleModal()" class="text-gray-400 dark:text-darkfont">&times;</button>
                       </div>
                       <div
                         class="flex flex-col gap-3 justify-center mt-10 font-bold text-white max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
@@ -190,7 +190,7 @@
                 <div class="flex gap-3 mt-6 leading-10 text-zinc-500 max-md:flex-wrap">
                   <img loading="lazy" src="assets/icons/money.svg" class="shrink-0 w-9 aspect-square" />
                   <div class="flex-1 my-auto max-md:max-w-full">
-                    ₹{{ event.prices[0].eventPrice }}
+                    ₹{{ event.prices !== undefined ? event.prices[0].eventPrice : '0' }}
                     <span class="text-xl font-[510] text-zinc-500"> onwards </span>
                   </div>
                 </div>
@@ -213,7 +213,7 @@
         <div
           class="flex flex-col gap-4 max-sm:text-2xl md:text-4xl whitespace-nowrap font-[590] max-md:flex-wrap max-md:max-w-full">
           <div
-            class="flex gap-5 justify-between max-md:flex-wrap max-md:max-w-full border-b pb-7 pr-7 max-md:pr-5 border-black cursor-pointer"
+            class="flex gap-5 justify-between max-md:flex-wrap max-md:max-w-full border-b pb-7 pr-7 max-md:pr-5 border-black dark:border-gray-400 cursor-pointer"
             (click)="toggleDescription()">
             <div class="gap-0 my-auto">Description</div>
             <img loading="lazy" src="assets/icons/minus.svg" *ngIf="showDescription"
@@ -230,7 +230,7 @@
       <div
         class="flex flex-col gap-4 mt-12 max-sm:text-2xl md:text-4xl whitespace-nowrap font-[590] max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
         <div
-          class="flex gap-5 justify-between pr-7 max-md:flex-wrap max-md:pr-5 border-b pb-7 border-black max-md:max-w-full cursor-pointer"
+          class="flex gap-5 justify-between pr-7 max-md:flex-wrap max-md:pr-5 border-b pb-7 border-black dark:border-gray-400 max-md:max-w-full cursor-pointer"
           (click)="toggleLocation()">
           <div class="gap-0 my-auto">Location</div>
           <img loading="lazy" src="assets/icons/minus.svg" *ngIf="showLocation"
@@ -249,7 +249,7 @@
       <div
         class="flex flex-col gap-4 mt-12 max-sm:text-2xl md:text-4xl font-[590] max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
         <div
-          class="flex gap-5 justify-between pr-7 max-md:flex-wrap max-md:pr-5 max-md:max-w-full cursor-pointer border-b pb-7 border-black"
+          class="flex gap-5 justify-between pr-7 max-md:flex-wrap max-md:pr-5 max-md:max-w-full cursor-pointer border-b pb-7 border-black dark:border-gray-400"
           (click)="toggleTerms()">
           <div class="gap-0 my-auto">Terms & Conditions</div>
           <img loading="lazy" src="assets/icons/minus.svg" *ngIf="showTerms"

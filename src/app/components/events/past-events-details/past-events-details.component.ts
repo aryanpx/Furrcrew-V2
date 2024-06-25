@@ -14,15 +14,37 @@ export class PastEventsDetailsComponent implements OnInit {
   events: any[] = [];
   event: any;
 
-  constructor(private route: ActivatedRoute, public eventsService: EventsService, private apiService: ApiService) {}
-  formatDate(unixTimestamp: number): string {
-    const date = new Date(unixTimestamp * 1000);
-    return date.toUTCString(); // Adjust format as per your requirement
+  constructor(private route: ActivatedRoute, public eventsService: EventsService, private apiService: ApiService) { }
+  formatDate(timestamp: number): string {
+    const date = new Date(timestamp);
+    const formattedDate = `${this.addZero(date.getDate())} ${this.getMonthName(date.getMonth())} ${date.getFullYear()}`;
+    return formattedDate.toUpperCase();
+  }
+  addZero(n: number): string {
+    return n < 10 ? '0' + n : '' + n;
+  }
+  getMonthName(monthIndex: number): string {
+    const months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+    return months[monthIndex];
   }
   getEvents(eventId: string) {
     this.apiService.getActiveEvents().subscribe((res) => {
       this.events = Object.values(res);
       this.event = this.events.find((event) => event.id === eventId);
+      console.log("🚀 ~ PastEventsDetailsComponent ~ this.apiService.getActiveEvents ~ this.event:", this.event)
     });
   }
   ngOnInit(): void {

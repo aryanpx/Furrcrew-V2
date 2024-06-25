@@ -50,6 +50,7 @@ export class UpcomingEventsComponent implements OnInit {
     this.apiService.getActiveEvents().subscribe((res) => {
       this.events = Object.values(res);
       this.event = this.events.find((event) => event.id === eventId);
+      // console.log("🚀 ~ UpcomingEventsComponent ~ this.apiService.getActiveEvents ~ this.event:", this.event.prices[0].price);
     });
   }
   ngOnInit(): void {
@@ -65,9 +66,30 @@ export class UpcomingEventsComponent implements OnInit {
       this.isFlipped = !this.isFlipped;
     }
   }
-  formatDate(unixTimestamp: number): string {
-    const date = new Date(unixTimestamp * 1000);
-    return date.toUTCString();
+  formatDate(timestamp: number): string {
+    const date = new Date(timestamp);
+    const formattedDate = `${this.addZero(date.getDate())} ${this.getMonthName(date.getMonth())} ${date.getFullYear()}`;
+    return formattedDate.toUpperCase();
+  }
+  addZero(n: number): string {
+    return n < 10 ? '0' + n : '' + n;
+  }
+  getMonthName(monthIndex: number): string {
+    const months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+    return months[monthIndex];
   }
   toggleModal() {
     this.showBookModal = !this.showBookModal;
