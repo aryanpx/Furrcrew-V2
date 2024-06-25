@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, Renderer2 } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 
@@ -14,14 +14,14 @@ export class BlogsListComponent implements OnInit {
   startX!: number;
   scrollLeft!: number;
 
-  constructor(private router: Router, private apiService: ApiService, private elementRef: ElementRef) {
-    console.log('Blogs is running');
+  constructor(private router: Router, private apiService: ApiService, private elementRef: ElementRef, private renderer: Renderer2) {
+    // console.log('Blogs is running');
     this.apiService.getAllBlogs().subscribe((res) => {
       this.items = Object.values(res);
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   @HostListener('mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
@@ -48,10 +48,12 @@ export class BlogsListComponent implements OnInit {
     const slider = this.elementRef.nativeElement.querySelector('.parent');
     this.startX = event.pageX - slider.offsetLeft;
     this.scrollLeft = slider.scrollLeft;
+    this.renderer.addClass(document.body, 'dragging');
   }
 
   stopDragging(event: MouseEvent) {
     this.mouseDown = false;
+    this.renderer.removeClass(document.body, 'dragging');
   }
 
   move(event: MouseEvent) {

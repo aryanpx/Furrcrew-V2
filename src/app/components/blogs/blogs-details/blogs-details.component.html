@@ -4,14 +4,15 @@
       <div class="items-center">
         <a routerLink="/blogs" class="text-xl flex items-center">
           <button>
-            <img src="assets/icons/backArrow.svg" class="dark:invert"/>
+            <img src="assets/icons/backArrow.svg" class="dark:invert" />
           </button>
           Back
         </a>
       </div>
     </div>
     <div *ngIf="blog" class="flex flex-col flex-1 gap-5 max-md:flex-wrap max-md:max-w-full">
-      <div class="flex text-6xl text-ellipsis max-md:flex-wrap max-md:max-w-full max-md:text-4xl mt-10">{{ blog.title }}</div>
+      <div class="flex text-6xl text-ellipsis max-md:flex-wrap max-md:max-w-full max-md:text-4xl mt-10">{{ blog.title }}
+      </div>
       <div class="flex gap-5">
         <div class="flex text-gray-600">{{ blog.readTimeSpan }}</div>
         <div class="flex">Read By author_name</div>
@@ -23,13 +24,11 @@
     <!-- {{ blog.data }} -->
     <div class="text-lg mt-10" [innerHTML]="blog.data"></div>
     <hr />
-    <div class="gap-0 mt-16 text-3xl leading-8 font-[510] max-md:flex-wrap max-md:mt-10 max-md:max-w-full">Other blogs</div>
-    <ul class="snap-x flex max-sm:flex-col md:overflow-x-auto md:py-5 md:gap-10">
+    <div class="gap-0 mt-16 text-3xl leading-8 font-[510] max-md:flex-wrap max-md:mt-10 max-md:max-w-full ">Other blogs
+    </div>
+    <ul class="snap-x flex max-sm:flex-col md:overflow-x-auto md:py-5 md:gap-10 parent drag-cursor custom-scrollbar">
       @for (blog of filterBlogById(blogs,blog.id).slice(0,6);track blog){
-      <li
-        class="scroll-ml-6 snap-start max-sm:max-w-full md:min-w-[18.75rem] flex-shrink-0 mt-6 cursor-pointer"
-        (click)="goToBlogsDetails(blog.id)"
-      >
+      <li class="scroll-ml-6 snap-start max-sm:max-w-full md:min-w-[18.75rem] flex-shrink-0 mt-6 ">
         <div class="flex md:flex-col md:w-80 w-full">
           <div class="flex">
             <img [src]="blog.coverImage" [alt]="blog.title" class="w-72 aspect-square object-cover" />
@@ -37,7 +36,8 @@
           <div class="flex flex-col max-sm:pl-5 w-full max-sm:justify-between">
             <h2 class="mt-6 text-2xl leading-9 line-clamp-2 h-20">{{ blog.title }}</h2>
             <div class="flex md:mt-6 gap-3">
-              <a routerLink="blogs" class="text-xl md:text-2xl leading-9">READ MORE</a>
+              <a routerLink="blogs" class="text-xl md:text-2xl leading-9" (click)="goToBlogsDetails(blog.id)">READ
+                MORE</a>
               <img src="assets/icons/arrowright.svg" alt="Read more" />
             </div>
           </div>

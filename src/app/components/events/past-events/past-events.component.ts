@@ -12,7 +12,7 @@ import { ApiService } from '../../../services/api.service';
 })
 export class PastEventsComponent {
   events: any = [];
-  constructor(private router: Router, public eventsService: EventsService, private apiService: ApiService) {}
+  constructor(private router: Router, public eventsService: EventsService, private apiService: ApiService) { }
   goToEventDetails(eventId: number) {
     this.router.navigate(['/events/past-events/details'], { queryParams: { eventId: eventId } });
   }
@@ -42,7 +42,7 @@ export class PastEventsComponent {
     return months[monthIndex];
   }
   ngOnInit() {
-    this.apiService.getActiveEvents().subscribe((data) => {
+    this.apiService.getPastEvents().subscribe((data) => {
       this.events = data;
     });
   }
