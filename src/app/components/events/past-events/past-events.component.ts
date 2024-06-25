@@ -2,17 +2,24 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { EventsService } from '../../../services/events.service';
 import { ApiService } from '../../../services/api.service';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-past-events',
   standalone: true,
-  imports: [],
+  imports: [FormsModule, ReactiveFormsModule],
   templateUrl: './past-events.component.html',
   styleUrl: './past-events.component.css',
 })
 export class PastEventsComponent {
+  formGroup: FormGroup = new FormGroup({});
   events: any = [];
-  constructor(private router: Router, public eventsService: EventsService, private apiService: ApiService) { }
+  filteredEvents: any[] = []; // Filtered list of events
+  searchQuery: string = ''; // Search query
+  search: any;
+  constructor(private router: Router, public eventsService: EventsService, private apiService: ApiService, private fb: FormBuilder) {
+    this.formGroup = fb.group({ search: [''] });
+  }
   goToEventDetails(eventId: number) {
     this.router.navigate(['/events/past-events/details'], { queryParams: { eventId: eventId } });
   }
@@ -44,6 +51,16 @@ export class PastEventsComponent {
   ngOnInit() {
     this.apiService.getPastEvents().subscribe((data) => {
       this.events = data;
+      this.filteredEvents = this.events; 
     });
+    this.formGroup.get('search')?.valueChanges.subscribe((value) => {
+      this.searchQuery = value;
+      this.filterEvents(); // Call your filter function
+    });
+  }
+
+  filterEvents() {
+    console.log('filter is called');
+    this.filteredEvents = this.events.filter((blog: any) => blog.title.toLowerCase().includes(this.searchQuery.toLowerCase()));
   }
 }
