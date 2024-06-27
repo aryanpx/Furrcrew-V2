@@ -15,7 +15,7 @@
   </p>
 </section>
 <div
-  class="flex gap-5 max-md:gap-0 h-[250vh] max-sm:[200vh] items-start md:flex-row-reverse max-sm:flex-col-reverse frame1 relative">
+  class="flex gap-5 max-md:gap-0 h-[150vh] max-sm:[200vh] items-start md:flex-row-reverse max-sm:flex-col-reverse frame1 relative">
   <div class="max-sm:p-5 max-lg:p-5 flex flex-col ml-28 mt-20 max-md:ml-0 paragraph">
     <div class="flex flex-col p-5 max-md:mt-10 md:max-w-full">
       <h2 class="mt-32 dark:text-darkfont text-[3.438rem] font-bold leading-[3.75rem] md:w-[35rem]">simple for you, good
@@ -34,30 +34,30 @@
       </p>
     </div>
   </div>
-  <div class="flex flex-col max-md:flex-col max-md:w-full sticky -left-[-6%] phone max-sm:fixed">
+  <div class="flex flex-col max-md:flex-col max-md:w-full sticky left-[6%] phone max-sm:fixed">
     <!-- <img src="assets/images/Calendar.png" class="w-80 relative top-0 right-0" /> -->
-    <div class="phone_side_containers left_component flex rotate-90 gap-5">
+    <div class="phone_side_containers absolute  h-full w-1/2 right-[350px] top-[-400px] flex rotate-90 gap-5">
       <div class="flex flex-col gap-3">
-        <img src="assets/images/Calendar.png" />
-        <img src="assets/images/video-player.png" />
+        <img class="c" src="assets/images/Calendar.png" />
+        <img class="v" src="assets/images/video-player.png" />
       </div>
       <div class="flex flex-col gap-3">
-        <img src="assets/images/grooming.png" />
-        <img src="assets/images/ngos.png" />
-        <img src="assets/images/adoption-centres.png" />
+        <img class="g" src="assets/images/grooming.png" />
+        <img class="n" src="assets/images/ngos.png" />
+        <img class="a" src="assets/images/adoption-centres.png" />
       </div>
     </div>
     <div class="flex">
       <img id="phoneImage" loading="lazy" [src]="imageSrc" alt="Detailed description of the image"
-        class="grow md:mt-52 " />
-      <div class="phone_side_containers right_component flex rotate-90 gap-3 w-full">
+        class="grow md:mt-52 md:w-[60vw]" />
+      <div class="phone_side_containers absolute  h-full w-1/2 right-[340px] top-[640px] flex rotate-90 gap-3">
         <div class="flex flex-col gap-3">
           <div class="flex">
-            <img src="assets/images/pet-image.png" class="" />
-            <img src="assets/images/veterinarian-services.png" class="" />
+            <img class="p" src="assets/images/pet-image.png" />
+            <img class="vs" src="assets/images/veterinarian-services.png" />
           </div>
           <div class="flex">
-            <img src="assets/images/timeSlot.png" class="" />
+            <img class="t" src="assets/images/timeSlot.png" />
           </div>
         </div>
       </div>

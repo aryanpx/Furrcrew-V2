@@ -15,7 +15,7 @@
 .frame1 {
 }
 .phone {
-  transition: all 0.25s linear;
+  transition: all 0.2s linear;
   /* transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
   position: absolute;
   /* top: 50%; */
@@ -23,24 +23,11 @@
   /* transform: translate(-50%, -50%); */
 }
 .phone_side_containers {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 50%;
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease;
+  /* transition: opacity 0.3s ease;   */
+  /* opacity: 0; */
 }
 
 .services-col {
   animation: slideInAndFade 1s ease-in-out forwards;
 }
 
-.left_component {
-  right: 350px;
-  top: -400px;
-}
-
-.right_component {
-  right: 340px;
-  top: 640px;
-}

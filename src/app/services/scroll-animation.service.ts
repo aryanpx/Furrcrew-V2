@@ -31,23 +31,21 @@ export class ScrollAnimationService {
             const opacity = 1 - Math.max(0, Math.min((scrollTop - phoneOffsetTop) / windowHeight, 1)) * 6;
             if (rotationAngle > -90) {
               $('.phone').css({
-                transform: `rotate(${rotationAngle}deg) scale(${scaleFactor}) `,
-                position: Math.abs(rotationAngle) > 0 ? 'fixed' : 'sticky',
-                left: `${left}%`,
-                top: `${top}px`,
+                // transform: `rotate(${rotationAngle}deg) scale(${scaleFactor}) `,
+                position: 'absolute',
+                // left: `${left}%`,
+                // top: `${top}px`,
               });
               // $('.paragraph').css('opacity', opacity);
-              $('.phone_side_containers').css({ opacity: 0 });
+              // $('.phone_side_containers').css({ opacity: 0 });
             } else {
               $('.phone').css({
-                transform: `rotate(${rotationAngle}deg) scale(${scaleFactor})`,
+                // transform: `rotate(${rotationAngle}deg) scale(${scaleFactor})`,
                 position: 'sticky',
-                left: `${left}%`,
-                top: `${top}px`,
+                // left: `${left}%`,
+                // top: `${top}px`,
               });
-              $('.phone_side_containers').css({
-                opacity: 1,
-              });
+              // $('.phone_side_containers').css({ opacity: 1 });
             }
           } else if (windowWidth <= 600) {
             const rotationAngle = Math.max(0, Math.min((scrollTop - phoneOffsetTop) * 0.2, 90)) * -1;
@@ -76,6 +74,7 @@ export class ScrollAnimationService {
     }
   }
   gsapScrollAnimation(): void {
+    this.hideComponents()
     gsap.registerPlugin(ScrollTrigger)
     if (isPlatformBrowser(this.platformId)) {
       gsap.set(".phone", {
@@ -86,18 +85,39 @@ export class ScrollAnimationService {
         top: '50%',
         rotate: -90,
         xPercent: 20,
-        yPercent: -60,
-        // ease: "power1.inOut",
+        markers: { startColor: "white", endColor: "white", fontSize: "18px", fontWeight: "bold", indent: 20 },
+        // yPercent: 100,
+        ease: "power4.out",
         delay: 0.5,
         duration: 0.5,
-        scale: 0.5,
+        scale: 0.65,
         fastScrollEnd: 100,
         scrollTrigger: {
           trigger: ".trigger-div",
-          scrub: 1,
-          onUpdate: (self) => console.log(self.progress)
-        }
+          scrub: true,
+          start: "bottom 50%+=100px",
+          // onUpdate: (self) => { if (self.progress > 0.5) { this.showComponents(); } else if (self.progress < 0.5) { this.hideComponents(); } },
+          onEnter: () => this.showComponents(),
+          onLeaveBack: () => this.hideComponents(),
+        },
       });
     }
+  }
+
+  // Function to show components with animations
+  showComponents() {
+    gsap.fromTo(".c", { x: -300, opacity: 0, }, { x: 0, opacity: 1, duration: 2 });
+    gsap.fromTo(".v", { y: 300, opacity: 0, }, { y: 0, opacity: 1, duration: 2 });
+    gsap.fromTo(".g", { x: 100, opacity: 0, }, { x: 0, opacity: 1, duration: 2 });
+    gsap.fromTo(".n", { x: 150, opacity: 0, }, { x: 0, opacity: 1, duration: 2 });
+    gsap.fromTo(".a", { x: 200, opacity: 0, }, { x: 0, opacity: 1, duration: 2 });
+    gsap.fromTo(".p", { y: -300, opacity: 0, }, { y: 0, opacity: 1, duration: 2 });
+    gsap.fromTo(".vs", { x: 200, opacity: 0, }, { x: 0, opacity: 1, duration: 2 });
+    gsap.fromTo(".t", { y: 300, opacity: 0, }, { y: 0, opacity: 1, duration: 2 });
+  }
+
+  // Function to hide components with animations
+  hideComponents() {
+    gsap.to(".c, .v, .g, .n, .a, .p, .vs, .t", { opacity: 0, duration: 0.1 });
   }
 }
