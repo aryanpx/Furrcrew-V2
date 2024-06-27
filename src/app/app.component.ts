@@ -17,7 +17,9 @@ export class AppComponent {
     this.router.events.subscribe((event) => {
       // if (event instanceof NavigationStart) {
       // window.onbeforeunload = function () {
-      window.scrollTo(0, 0);
+      if (typeof window !== 'undefined') {
+        window.scrollTo(0, 0);
+      }
       // };
       // }
     });

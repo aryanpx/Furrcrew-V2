@@ -78,27 +78,24 @@ export class ScrollAnimationService {
   gsapScrollAnimation(): void {
     gsap.registerPlugin(ScrollTrigger)
     if (isPlatformBrowser(this.platformId)) {
-      // gsap.set(".phone", { rotate: 20 })
       gsap.set(".phone", {
         xPercent: -20,
-        // yPercent: -50, 
         rotate: 0,
-        // position: 'absolute',
-        // left: '50%'
       });
-      // gsap.to(".phone", { yPercent: 100, rotate: -90, ease: "none", duration: 10, scale: 0.5, scrollTrigger: { trigger: ".phone", scrub: 1 } })
       gsap.to(".phone", {
         top: '50%',
         rotate: -90,
         xPercent: 20,
-        yPercent: -45,
-        // y: 300,
-        ease: "none",
-        duration: 1,
+        yPercent: -60,
+        // ease: "power1.inOut",
+        delay: 0.5,
+        duration: 0.5,
         scale: 0.5,
+        fastScrollEnd: 100,
         scrollTrigger: {
           trigger: ".trigger-div",
-          scrub: 1
+          scrub: 1,
+          onUpdate: (self) => console.log(self.progress)
         }
       });
     }
