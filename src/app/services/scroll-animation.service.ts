@@ -1,10 +1,14 @@
-import { Injectable } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import $ from 'jquery';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
 @Injectable({
   providedIn: 'root',
 })
 export class ScrollAnimationService {
-  constructor() { }
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
 
   initScrollAnimation(): void {
     if (typeof window !== 'undefined') {
@@ -67,6 +71,34 @@ export class ScrollAnimationService {
               });
             }
           }
+        }
+      });
+    }
+  }
+  gsapScrollAnimation(): void {
+    gsap.registerPlugin(ScrollTrigger)
+    if (isPlatformBrowser(this.platformId)) {
+      // gsap.set(".phone", { rotate: 20 })
+      gsap.set(".phone", {
+        xPercent: -20,
+        // yPercent: -50, 
+        rotate: 0,
+        // position: 'absolute',
+        // left: '50%'
+      });
+      // gsap.to(".phone", { yPercent: 100, rotate: -90, ease: "none", duration: 10, scale: 0.5, scrollTrigger: { trigger: ".phone", scrub: 1 } })
+      gsap.to(".phone", {
+        top: '50%',
+        rotate: -90,
+        xPercent: 20,
+        yPercent: -45,
+        // y: 300,
+        ease: "none",
+        duration: 1,
+        scale: 0.5,
+        scrollTrigger: {
+          trigger: ".trigger-div",
+          scrub: 1
         }
       });
     }

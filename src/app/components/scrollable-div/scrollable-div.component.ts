@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ScrollAnimationService } from '../../services/scroll-animation.service';
+
 
 @Component({
   selector: 'app-scrollable-div',
@@ -16,6 +17,7 @@ export class ScrollableDivComponent implements OnInit {
     // Assuming your SVG file is located in the assets folder
     const svgPath = 'assets/images/Phone_Image.svg';
     this.imageSrc = this.sanitizer.bypassSecurityTrustResourceUrl(svgPath);
-    this.scrollAnimationService.initScrollAnimation();
+    // this.scrollAnimationService.initScrollAnimation();
+    this.scrollAnimationService.gsapScrollAnimation()
   }
 }
