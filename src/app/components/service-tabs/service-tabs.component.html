@@ -90,7 +90,8 @@
         </div>
         <div class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
           <div class="flex overflow-hidden relative flex-col py-px md:min-h-[35.938rem]">
-            <img loading="lazy" [src]="vetImg" alt="Featured vet care service" class="w-full h-full" />
+            <img *ngIf="!themeService.isDarkTheme" loading="lazy" [src]="vetImg" alt="Featured vet care service" class="w-full h-full" />
+            <img *ngIf="themeService.isDarkTheme" loading="lazy" [src]="vetImgDark" alt="Featured vet care service" class="w-full h-full" />            
           </div>
         </div>
       </div>

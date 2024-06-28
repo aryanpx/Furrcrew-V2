@@ -12,6 +12,7 @@ import { ThemeService } from '../../services/theme.service';
 })
 export class ServiceTabsComponent implements OnInit {
   vetImg!: SafeResourceUrl;
+  vetImgDark!: SafeResourceUrl;
   groomingImg!: SafeResourceUrl;
   trainerImg!: SafeResourceUrl;
   walkerImg!: SafeResourceUrl;
@@ -58,6 +59,7 @@ export class ServiceTabsComponent implements OnInit {
     this.groomingImg = this.sanitizer.bypassSecurityTrustResourceUrl('assets/images/groomingServices.svg');
     this.trainerImg = this.sanitizer.bypassSecurityTrustResourceUrl('assets/images/trainerServices.svg');
     this.walkerImg = this.sanitizer.bypassSecurityTrustResourceUrl('assets/images/walkerServices.svg');
+    this.vetImgDark = this.sanitizer.bypassSecurityTrustResourceUrl('assets/images/vetServicesDark.svg');
     if (isPlatformBrowser(this.platformId)) {
       // Check if platform is browser
       // this.initSliderAnimation();
