@@ -1,7 +1,7 @@
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Component, ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import $ from 'jquery';
+// import $ from 'jquery';
 import { ThemeService } from '../../services/theme.service';
 @Component({
   selector: 'app-service-tabs',
@@ -29,30 +29,30 @@ export class ServiceTabsComponent implements OnInit {
     // this.setActiveTab(0);
   }
 
-  initSliderAnimation(): void {
-    if (typeof window !== 'undefined') {
-      $(window).scroll(() => {
-        const tabContainer = $('.tab-container');
-        const tabContainerHeight = tabContainer?.outerHeight();
-        // console.log('🚀 ~ ServiceTabsComponent ~ $ ~ tabContainerHeight:', tabContainerHeight);
-        const tabContainerOffset = tabContainer?.offset();
-        // console.log('🚀 ~ ServiceTabsComponent ~ $ ~ tabContainerOffset:', tabContainerOffset);
-        const windowHeight = window.innerHeight;
-        // console.log('🚀 ~ ServiceTabsComponent ~ $ ~ windowHeight:', windowHeight);
-        if (tabContainerOffset && tabContainerHeight) {
-          if (tabContainerOffset.top >= 0 && tabContainerOffset.top + tabContainerHeight <= windowHeight) {
-            // console.log('starting the progress', tabContainerOffset.top, tabContainerHeight);
-            if (!this.progressInterval) {
-              this.startProgress();
-            }
-          } else {
-            clearInterval(this.progressInterval);
-            this.progressInterval = null;
-          }
-        }
-      });
-    }
-  }
+  // initSliderAnimation(): void {
+  //   if (typeof window !== 'undefined') {
+  //     $(window).scroll(() => {
+  //       const tabContainer = $('.tab-container');
+  //       const tabContainerHeight = tabContainer?.outerHeight();
+  //       // console.log('🚀 ~ ServiceTabsComponent ~ $ ~ tabContainerHeight:', tabContainerHeight);
+  //       const tabContainerOffset = tabContainer?.offset();
+  //       // console.log('🚀 ~ ServiceTabsComponent ~ $ ~ tabContainerOffset:', tabContainerOffset);
+  //       const windowHeight = window.innerHeight;
+  //       // console.log('🚀 ~ ServiceTabsComponent ~ $ ~ windowHeight:', windowHeight);
+  //       if (tabContainerOffset && tabContainerHeight) {
+  //         if (tabContainerOffset.top >= 0 && tabContainerOffset.top + tabContainerHeight <= windowHeight) {
+  //           // console.log('starting the progress', tabContainerOffset.top, tabContainerHeight);
+  //           if (!this.progressInterval) {
+  //             this.startProgress();
+  //           }
+  //         } else {
+  //           clearInterval(this.progressInterval);
+  //           this.progressInterval = null;
+  //         }
+  //       }
+  //     });
+  //   }
+  // }
 
   ngOnInit(): void {
     this.vetImg = this.sanitizer.bypassSecurityTrustResourceUrl('assets/images/vetServices.svg');

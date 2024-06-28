@@ -2,17 +2,18 @@
   <div class="md:w-2/3 flex flex-col w-full max-w-full px-5">
     <div class="flex flex-col gap-5 px-5 max-w-full text-center text-black dark:text-white max-md:flex-wrap">
       <div class="gap-0 self-center text-6xl font-[590] max-md:text-4xl md:mt-10 max-sm:mt-5">Past Events</div>
-      <div class="flex text-3xl justify-center text-[#71788A]">
+      <div #searchComponent class="flex text-3xl justify-center text-[#71788A]">
         Browse through past fun and knowledgeable experiences curated just for you and your furry partners
       </div>
     </div>
     <div class="flex gap-5 max-md:flex-col justify-center p-5">
-      <form class="flex justify-center bg-white dark:bg-[#323232] border-gray-600 border rounded-[1.875rem] overflow-hidden md:w-2/3"
+      <form
+        class="flex justify-center bg-white dark:bg-[#323232] border-gray-600 border rounded-[1.875rem] overflow-hidden md:w-2/3"
         [formGroup]="formGroup">
         <button type="submit" class="py-3.5 pr-4 pl-5">
           <img src="assets/icons/searchIcon.svg" alt="Search" class="aspect-square w-6 " />
         </button>
-        <input formControlName="search" (input)="filterEvents()"
+        <input formControlName="search" (input)="filterEvents()" (click)="scrollToTop()"
           class="flex flex-grow p-3 text-xl leading-8 outline-none dark:bg-[#323232]" type="search" placeholder="Search"
           aria-label="Search" />
       </form>

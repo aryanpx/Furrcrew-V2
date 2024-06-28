@@ -1,10 +1,11 @@
-import { Component, ElementRef, OnInit, inject } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { BlogsService } from '../../services/blogs.service';
-import { HttpClient } from '@angular/common/http';
+// import { HttpClient } from '@angular/common/http';
+import gsap from 'gsap';
 import { ApiService } from '../../services/api.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import $ from 'jquery';
+// import $ from 'jquery';
 
 @Component({
   selector: 'app-blogs',
@@ -14,8 +15,9 @@ import $ from 'jquery';
   styleUrl: './blogs.component.css',
 })
 export class BlogsComponent implements OnInit {
+  @ViewChild('searchComponent') searchComponent!: ElementRef;
   formGroup: FormGroup = new FormGroup({});
-  http = inject(HttpClient);
+  // http = inject(HttpClient);
   blogs: any = [];
   title = 'Blogs';
   searchIconUrl = 'assets/icons/searchIcon.svg';
@@ -51,15 +53,22 @@ export class BlogsComponent implements OnInit {
     this.router.navigate(['/blogs/details'], { queryParams: { blogId: blogId } });
   }
   scrollToTop() {
-    // console.log('click working');
+    console.log('click working');
+    // if (typeof window !== 'undefined') {
+    //   gsap.to(window, { duration: 2, scrollTo: '#search', ease: 'power2' });
+    // }
+    if (this.searchComponent) {
+      this.searchComponent.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
     // this.router.navigate([], { fragment: 'search' });
-    const searchTop = $('#pTop')?.offset()?.top;
-    $('html, body').animate(
-      {
-        scrollTop: searchTop,
-      },
-      500
-    );
+    // gsap.to(window, { duration: 2, scrollTo: "#search", ease: "power2" })
+    // const searchTop = $('#pTop')?.offset()?.top;
+    // $('html, body').animate(
+    //   {
+    //     scrollTop: searchTop,
+    //   },
+    //   500
+    // );
     // $('search').animatescroll();
   }
 }

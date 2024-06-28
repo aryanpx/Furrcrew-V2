@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { EventsService } from '../../../services/events.service';
 import { ApiService } from '../../../services/api.service';
@@ -12,6 +12,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
   styleUrl: './past-events.component.css',
 })
 export class PastEventsComponent {
+  @ViewChild('searchComponent') searchComponent!: ElementRef;
   formGroup: FormGroup = new FormGroup({});
   events: any = [];
   filteredEvents: any[] = []; // Filtered list of events
@@ -61,5 +62,11 @@ export class PastEventsComponent {
 
   filterEvents() {
     this.filteredEvents = this.events.filter((blog: any) => blog.title.toLowerCase().includes(this.searchQuery.toLowerCase()));
+  }
+  scrollToTop() {
+
+    if (this.searchComponent) {
+      this.searchComponent.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 }
