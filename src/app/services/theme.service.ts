@@ -20,6 +20,7 @@ export class ThemeService {
       } else {
         // console.log("🚀 ~ ThemeService ~ constructor ~ localStorage.getItem('theme'):", localStorage.getItem('theme'));
         // console.log('elese condition');
+        this.isDarkTheme = localStorage.getItem('theme') === 'dark';
       }
     }
   }
