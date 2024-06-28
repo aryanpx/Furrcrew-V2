@@ -16,7 +16,7 @@ export class ScrollableDivComponent implements OnInit {
   ngOnInit(): void {
     // Assuming your SVG file is located in the assets folder
     this.imageSrc = this.sanitizer.bypassSecurityTrustResourceUrl('assets/images/Phone_Image.svg');
-    this.scrollAnimationService.initScrollAnimation();
+    // this.scrollAnimationService.initScrollAnimation();
     this.scrollAnimationService.gsapScrollAnimation()
   }
 
