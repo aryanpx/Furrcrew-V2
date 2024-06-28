@@ -1,7 +1,7 @@
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ApiService } from '../../../services/api.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 
 @Component({
   selector: 'app-blogs-details',
@@ -17,7 +17,10 @@ export class BlogsDetailsComponent implements OnInit {
   startX!: number;
   scrollLeft!: number;
 
-  constructor(private route: ActivatedRoute, public apiService: ApiService, private router: Router,private elementRef: ElementRef) {}
+  constructor(private route: ActivatedRoute, public apiService: ApiService, private router: Router,private elementRef: ElementRef,private location: Location) {}
+  goBack(): void {
+    this.location.back();
+  }
   getBlogs(blogId: string) {
     this.apiService.getAllBlogs().subscribe((res) => {
       this.blogs = Object.values(res);

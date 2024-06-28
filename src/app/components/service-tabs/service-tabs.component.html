@@ -26,7 +26,7 @@
             [style.width.%]="activeTab === 2 ? progressWidth : '100'"
           ></div>
         </div>
-        <h2 class="mt-6 text-2xl leading-6">NGO</h2>
+        <h2 class="mt-6 text-2xl leading-6">WALKER</h2>
       </div>
       <div class="flex flex-col flex-1 cursor-pointer scroll-ml-6 snap-start" (click)="setActiveTab(3)">
         <div class="bg-slate-300 max-sm:w-[15rem]">
@@ -35,7 +35,7 @@
             [style.width.%]="activeTab === 3 ? progressWidth : '100'"
           ></div>
         </div>
-        <h2 class="mt-6 text-2xl leading-6">ADOPTION</h2>
+        <h2 class="mt-6 text-2xl leading-6">TRAINER</h2>
       </div>
     </nav>
     <article *ngIf="activeTab === 0" class="px-0.5 mt-14 max-md:mt-10 fadeInOut">
@@ -138,7 +138,7 @@
         </div>
         <div class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
           <div class="flex overflow-hidden relative flex-col py-px md:min-h-[35.938rem]">
-            <img loading="lazy" [src]="vetImg" alt="Featured vet care service" class="w-full h-full" />
+            <img loading="lazy" [src]="groomingImg" alt="Featured vet care service" class="w-full h-full" />
           </div>
         </div>
       </div>
@@ -148,7 +148,7 @@
         <div class="flex flex-col w-6/12 max-md:w-full">
           <div class="flex flex-col text-2xl leading-6">
             <h1 class="text-6xl font-[590] leading-[3.313rem] max-md:text-4xl max-md:leading-9">
-              NGO at <br />
+              WALKER at <br />
               your fingertips
             </h1>
             <p class="mt-6">
@@ -189,7 +189,7 @@
         </div>
         <div class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
           <div class="flex overflow-hidden relative flex-col py-px md:min-h-[35.938rem]">
-            <img loading="lazy" [src]="vetImg" alt="Featured vet care service" class="w-full h-full" />
+            <img loading="lazy" [src]="trainerImg" alt="Featured vet care service" class="w-full h-full" />
           </div>
         </div>
       </div>
@@ -199,7 +199,7 @@
         <div class="flex flex-col w-6/12 max-md:w-full">
           <div class="flex flex-col text-2xl leading-6">
             <h1 class="text-6xl font-[590] leading-[3.313rem] max-md:text-4xl max-md:leading-9">
-              Adoption at <br />
+              TRAINER at <br />
               your fingertips
             </h1>
             <p class="mt-6">
@@ -237,7 +237,7 @@
         </div>
         <div class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
           <div class="flex overflow-hidden relative flex-col py-px md:min-h-[35.938rem]">
-            <img loading="lazy" [src]="vetImg" alt="Featured vet care service" class="w-full h-full" />
+            <img loading="lazy" [src]="walkerImg" alt="Featured vet care service" class="w-full h-full" />
           </div>
         </div>
       </div>

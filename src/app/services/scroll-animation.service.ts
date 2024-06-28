@@ -74,13 +74,13 @@ export class ScrollAnimationService {
     }
   }
   gsapScrollAnimation(): void {
-    this.hideComponents()
     gsap.registerPlugin(ScrollTrigger)
     if (isPlatformBrowser(this.platformId)) {
       gsap.set(".phone", {
         xPercent: -20,
         rotate: 0,
       });
+      this.hideComponents()
       gsap.to(".phone", {
         top: '50%',
         rotate: -90,

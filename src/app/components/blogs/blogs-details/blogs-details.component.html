@@ -2,7 +2,7 @@
   <div class="md:w-2/3 max-sm:w-11/12">
     <div class="flex flex-row">
       <div class="items-center my-3">
-        <a routerLink="/blogs" class="text-xl flex items-center">
+        <a (click)="goBack()" class="text-xl flex items-center cursor-pointer">
           <button>
             <img src="assets/icons/backArrow.svg" class="dark:invert" />
           </button>
@@ -26,7 +26,7 @@
     <hr />
     <div class="gap-0 mt-16 text-3xl leading-8 font-[510] max-md:flex-wrap max-md:mt-10 max-md:max-w-full ">Other blogs
     </div>
-    <ul class=" flex max-sm:flex-col md:overflow-x-auto md:py-5 md:gap-10 parent drag-cursor custom-scrollbar">
+    <ul class=" flex max-sm:flex-col md:overflow-x-auto md:py-5 md:gap-10 parent ">
       @for (blog of filterBlogById(blogs,blog.id).slice(0,6);track blog){
       <li class="scroll-ml-6  max-sm:max-w-full md:min-w-[18.75rem] flex-shrink-0 mt-6 ">
         <div class="flex md:flex-col md:w-80 w-full">

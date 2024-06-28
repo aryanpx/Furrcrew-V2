@@ -9,13 +9,13 @@
 </main>
 
 <div class="">
-  <div class="md:pl-24 overflow-x-auto md:py-5 md:px-32 parent drag-cursor custom-scrollbar">
+  <div class="md:pl-24 overflow-x-auto md:py-5 md:px-32 parent">
     <ul class="flex">
       @for (item of items.slice(0,6);track item){
-      <li class="max-sm:scroll-ml-4 md:scroll-ml-6 snap-start md:min-w-[18.75rem] flex-shrink-0 m-5 ">
+      <li class="max-sm:scroll-ml-4 md:scroll-ml-6 snap-start md:min-w-[18.75rem] flex-shrink-0 m-5 cursor-pointer" (click)="goToBlogsDetails(item.id)">
         <div class="flex flex-col w-80 max-sm:w-48">
           <img [src]="item.images[0].value" [alt]="item.title" class="w-full aspect-square object-cover " />
-          <a class="text-2xl leading-9" (click)="goToBlogsDetails(item.id)">
+          <a class="text-2xl leading-9">
             <h2 class="mt-6 text-2xl leading-9 line-clamp-2 h-20 cursor-pointer">{{ item.title }}</h2>
             <div class="flex gap-3 items-center mt-6 cursor-pointer">
               READ MORE

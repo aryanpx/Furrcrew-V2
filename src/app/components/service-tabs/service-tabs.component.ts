@@ -12,6 +12,9 @@ import { ThemeService } from '../../services/theme.service';
 })
 export class ServiceTabsComponent implements OnInit {
   vetImg!: SafeResourceUrl;
+  groomingImg!: SafeResourceUrl;
+  trainerImg!: SafeResourceUrl;
+  walkerImg!: SafeResourceUrl;
   activeTab: number = 0;
   progressWidth: number = 0;
   progressInterval: any = null;
@@ -51,7 +54,10 @@ export class ServiceTabsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.vetImg = this.sanitizer.bypassSecurityTrustResourceUrl('assets/images/vetImg.png');
+    this.vetImg = this.sanitizer.bypassSecurityTrustResourceUrl('assets/images/vetServices.svg');
+    this.groomingImg = this.sanitizer.bypassSecurityTrustResourceUrl('assets/images/groomingServices.svg');
+    this.trainerImg = this.sanitizer.bypassSecurityTrustResourceUrl('assets/images/trainerServices.svg');
+    this.walkerImg = this.sanitizer.bypassSecurityTrustResourceUrl('assets/images/walkerServices.svg');
     if (isPlatformBrowser(this.platformId)) {
       // Check if platform is browser
       // this.initSliderAnimation();

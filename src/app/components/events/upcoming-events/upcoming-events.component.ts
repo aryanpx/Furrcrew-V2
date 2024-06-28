@@ -3,11 +3,11 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ApiService } from '../../../services/api.service';
 import { GoogleMapsModule } from '@angular/google-maps';
-
+import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'app-upcoming-events',
   standalone: true,
-  imports: [CommonModule, RouterLink, GoogleMapsModule],
+  imports: [CommonModule, RouterLink, GoogleMapsModule,MatIconModule],
   templateUrl: './upcoming-events.component.html',
   styleUrl: './upcoming-events.component.css',
 })

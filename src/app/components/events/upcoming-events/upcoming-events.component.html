@@ -242,8 +242,8 @@
       <!-- <app-google-map></app-google-map> -->
       <div [hidden]="!showLocation">
         <a target="_blank"
-          [href]="'https://maps.google.com/?q=' + event.address.latitude + ',' + event.address.longitude"> LINK TO
-          DIRECTIONS </a>
+          [href]="'https://maps.google.com/?q=' + event.address.latitude + ',' + event.address.longitude" class="flex items-center text-blue-500 hover:text-blue-700 p-5 underline">
+          Get Directions on Google Maps  <mat-icon>assistant_direction</mat-icon> </a>
         <div #mapContainer id="map" class="h-[25rem] w-full"></div>
       </div>
       <div

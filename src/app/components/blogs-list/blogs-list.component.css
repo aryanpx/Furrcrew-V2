@@ -22,11 +22,17 @@
   cursor: url("../../../assets/icons/dragIcon.png"), auto;
 }
 .dragging {
-  cursor: url("../../../assets//icons/dragIcon2.png"), auto;
+  cursor: url("../../../assets/icons/dragIcon2.png"), auto;
 }
 .scroll-container {
   width: 300px; /* Adjust width as needed */
   height: 200px; /* Adjust height as needed */
   overflow-x: scroll;
   white-space: nowrap; /* Ensures that items don't wrap to next line */
+}
+.parent:hover {
+  z-index: 10;
+  scrollbar-width:thin; 
+  scrollbar-color: black white ; 
+  /* scrollbar-arrow-color:; */
 }
